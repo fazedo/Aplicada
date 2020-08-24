@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
-
+\usepackage{graphicx}
 %opening
 \title{}
 \author{}
@@ -50,6 +50,210 @@ Quando $\theta=\pi/2$, $\vec{u}=\vec{j}$,
 \right| = 1\cdot 0 \cdot 1 + 2\cdot(-1)\cdot1 + 3\cdot 1\cdot 2 - 3\cdot 0\cdot 1 - 2\cdot 1\cdot 1 - 1 \cdot (-1) \cdot 2
 \end{eqnarray*}
 
+\section{Ângulo entre vetores}
+
+Usaremos:
+$$\vec{u}\cdot\vec{v} = \|u\|\|v\|\cos(\alpha)$$
+$$|\vec{u}\times\vec{v}| = \|u\|\|v\|\sin(\alpha)$$
+
+
+\section{Funções vetoriais}
+
+$$\vec{u}(t) = u_1(t)\vec{i}+u_2(t)\vec{j}+u_3(t)\vec{k}$$
+
+Exemplo: vetor posição.
+$$\vec{r}(t) = x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$$
+
+A velocidade é a derivada:
+$$\vec{v}(t) = x'(t)\vec{i}+y'(t)\vec{j}+z'(t)\vec{k}$$
+
+Teorema:
+Se $\|\vec{r}(t)\|$ é constante, então:
+$$\vec{r}(t)\cdot \vec{r}\!~'(t)=0$$
+
+
+Aplicação na cinemática:
+Se a velocidade de uma partícula tem módulo constante, isto é, velocidade escalar constante, então:
+$$\vec{v}(t)\cdot \vec{v}\!~'(t)=\vec{v}(t)\cdot \vec{a}(t)=0$$
+
+Generalização:
+Se $\vec{v}(t)=v(t)\vec{T}(t)$
+onde $\vec{T}(t)$ é o vetor tangente unitário dado por:
+$$\vec{T}(t) = \frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|} $$
+
+Diferenciando, temos:
+\begin{eqnarray*}
+ \vec{a}&=&\vec{v}~\!'(t)=\frac{d}{dt}\left[v(t)\vec{T}(t)\right]\\
+ &=&\underbrace{v'(t)\vec{T}(t)}_{tangencial}+\underbrace{v(t)\vec{T}'(t)}_{normal}
+\end{eqnarray*}
+Observação. Como $\|\vec{T}(t)\|=1$, o teorema citado anteriormente garante que $\vec{T}(t)\cdot\vec{T}'(t)=0$.
+
+\section{Curvatura}
+A curvatura de uma curva descrita por $\vec{r}(t)$ é dada por:
+$$\kappa(t) = \left\|\frac{d}{ds}\vec{T}(s)\right\|$$
+onde $s(t)$ é o comprimento da curva.
+
+\subsection{Circunferência}
+
+\begin{eqnarray*}
+\vec{r}(t)&=&\cos(t)\vec{i}+\sin(t)\vec{j} \\
+\vec{r}~\!'(t)&=&-\sin(t)\vec{i}+\cos(t)\vec{j} \\
+\|\vec{r}~\!'(t)\|&=&\sqrt{\sin^2(t)+\cos^2(t)}=1 \\
+\end{eqnarray*}
+Assim:
+$$\vec{T}(t) = \frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|}=-\sin(t)\vec{i}+\cos(t)\vec{j}.$$
+\begin{eqnarray*}
+\kappa(t) &=& \left\|\frac{d}{ds}\vec{T}(s)\right\|\\
+&=&\left\|\frac{d}{dt}\vec{T}(t)\right\|/ \frac{ds}{dt}\\
+&=&\left\|\frac{d}{dt}\vec{T}(t)\right\|/ \|\vec{r}~\!'(t)\|\\
+&=&\left\|\frac{d}{dt}\vec{T}(t)\right\|\\
+&=&\left\|-\cos(t)\vec{i}-\sin(t)\vec{j}\right\|=1\\
+\end{eqnarray*}
+
+
+
+\section{Vetores $\vec{T}$-$\vec{N}$-$\vec{B}$ (24/agosto)}
+\begin{center}
+ \includegraphics[width=7cm]{figs/helice_TNB.png}
+ \end{center}
+
+ \subsection{Vetor tangente unitário}
+ Se uma curva é parametrizada pela função $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$.
+ 
+ Definimos o vetor tangente unitário:
+ $$\vec{T}(t) = \frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|},~~\vec{r}~\!'(t)\neq \vec{0}.$$
+
+ 
+ \subsection{Vetor normal unitário}
+ Definimos o vetor normal unitário como:
+ $$\vec{N}(t) = \frac{\vec{T}~\!'(t)}{\|\vec{T}~\!'(t)\|},~~\vec{T}~\!'(t)\neq \vec{0}.$$
+
+  Obs: $\vec{N}(t)\cdot \vec{T}(t)=0$ porque $\vec{T}(t)$ tem norma constante. 
+ 
+
+ 
+\subsubsection{Aplicação na cinemática}
+Se a velocidade de uma partícula é a função $\vec{v}(t)$, então podemos escrever:
+ $$\vec{v}(t)=v(t)\vec{T}(t)$$
+onde $\vec{T}(t)$ é o vetor tangente unitário dado por:
+$$\vec{T}(t) = \frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|}=\frac{\vec{v}(t)}{\|\vec{v}(t)\|} $$
+
+Diferenciando, temos:
+\begin{eqnarray*}
+ \vec{a}&=&\vec{v}~\!'(t)=\frac{d}{dt}\left[v(t)\vec{T}(t)\right]\\
+ &=&\underbrace{v'(t)\vec{T}(t)}_{tangencial}+\underbrace{v(t)\vec{T}'(t)}_{normal}
+\end{eqnarray*}
+Como $\vec{N}(t) = \frac{\vec{T}~\!'(t)}{\|\vec{T}~\!'(t)\|}$, obtemos:
+\begin{eqnarray*}
+ \vec{a}&=&\underbrace{v'(t)\vec{T}(t)}_{tangencial}+\underbrace{v(t)\|\vec{T}~\!'(t)\|\vec{N}(t)}_{normal}
+\end{eqnarray*}
+ 
+\subsection{Vetor binormal unitário}
+O vetor binormal unitário é definido como:
+
+ $$\vec{B}(t)=\vec{T}(t)\times\vec{N}(t)$$
+
+ Obs: $\vec{T}(t)\times\vec{N}(t)\cdot \vec{T}(t) = \vec{T}(t)\times\vec{N}(t)\cdot \vec{N}(t)=0$ e
+ $$\|\vec{T}(t)\times\vec{N}(t)\|=\|\vec{T}(t)\|\|\vec{N}(t)\|\sin(\alpha)=1\cdot 1 \cdot 1=1$$
+ %\subsection{Hélice circular uniforme}
+
+\subsection{Hélice}
+Seja  hélice circular uniforme dada por:
+$$\vec{r}(t)=\cos(t)\vec{i}+\sin(t)\vec{j}+ t\vec{k}$$
+isto é:
+\begin{eqnarray*}
+ x(t)&=&\cos(t)\\
+ y(t)&=&\sin(t)\\
+ z(t)&=&t
+\end{eqnarray*}
+
+$$\vec{r}\!~'(t)=-\sin(t)\vec{i}+\cos(t)\vec{j}+ \vec{k}$$
+
+A norma é dada por:
+$$\|\vec{r}\!~'(t)\|=\sqrt{\sin^2(t)+\cos^2(t)+1}=\sqrt{2}$$
+
+Assim:
+$$\vec{T}(t)=\frac{-\sin(t)\vec{i}+\cos(t)\vec{j}+ \vec{k}}{\sqrt{2}}$$
+
+Para calcular $\vec{N}$, derivamos $\vec{T}$:
+
+$$\vec{T}~\!'(t)=\frac{-\cos(t)\vec{i}-\sin(t)\vec{j}}{\sqrt{2}}$$
+e
+$$\|\vec{T}~\!'(t)\|=\frac{\sqrt{\cos^2(t)+\sin^2(t)}}{\sqrt{2}}=\frac{1}{\sqrt{2}}$$
+assim:
+$$\vec{N}(t) = \frac{\vec{T}~\!'(t)}{\|\vec{T}~\!'(t)\|}=-\cos(t)\vec{i}-\sin(t)\vec{j}$$
+
+
+Finalmente o vetor binormal unitário é dado por:
+$$\vec{B}(t)= \vec{T}(t)\times \vec{N}(t)$$
+
+\begin{eqnarray*}
+ \vec{B}(t)&=&\frac{1}{\sqrt{2}}\left|
+ \begin{array}{ccc}
+\vec{i}&  \vec{j}&\vec{k}\\
+-\sin(t)&\cos(t)&1\\
+-\cos(t)&-\sin(t)&0
+ \end{array}
+ \right|\\
+ &=&\frac{1}{\sqrt{2}}\left[\vec{i}\left(0+\sin(t)\right)+\vec{j}\left(-\cos(t)+0\right)+\vec{k}\left(\sin^2(t)+\cos^2(t)\right)\right]\\
+ &=&\frac{1}{\sqrt{2}}\left[\sin(t)\vec{i}-\cos(t)\vec{j}+\vec{k}\right]
+\end{eqnarray*}
+
+
+
+\begin{center}
+ \includegraphics[width=10cm]{figs/helice_dextro.png}
+ \end{center}
+
+ \section{Parabóla}
+ 
+ Considere a parábola dada por:
+ $$y = ax^2, ~~z=0$$
+ com $a>0$.
+
+ Primeiro, parametrizamos a curva:
+ $$x(t)=t,~~~ y(t)=at^2,~~~ z(t)=0.$$
+ 
+ assim:
+ $$\vec{r}(t)=t\vec{i}+at^2\vec{j}$$
+ $$\vec{r}~\!'(t)=\vec{i}+2at\vec{j}$$
+\begin{eqnarray*}
+\vec{T}(t)&=&\frac{\vec{i}+2at\vec{j}}{\sqrt{1+4a^2t^2}} \\
+&=&\left(1+4a^2t^2\right)^{-1/2}\vec{i}+2at\left(1+4a^2t^2\right)^{-1/2}\vec{j}
+\end{eqnarray*}
+
+Obs:
+\begin{eqnarray*}
+\frac{d}{dt}\left(1+4a^2t^2\right)^{-1/2} &=& (-1/2)\left(1+4a^2t^2\right)^{-1/2-1}(8a^2t)\\
+ &=&-4a^2t\left(1+4a^2t^2\right)^{-3/2}
+\end{eqnarray*}
+\begin{eqnarray*}
+\frac{d}{dt}\left[2at\left(1+4a^2t^2\right)^{-1/2}\right] &=& 
+2a\left(1+4a^2t^2\right)^{-1/2}+2at\left[-4a^2t\left(1+4a^2t^2\right)^{-3/2}\right]\\
+&=& 
+2a\left(1+4a^2t^2\right)^{-1/2}-8a^3t^2\left(1+4a^2t^2\right)^{-3/2}\\
+&=&\frac{2a(1+4a^2t^2)-8a^3t^2}{(1+4a^2t^2)^{3/2}}\\
+&=&\frac{2a}{(1+4a^2t^2)^{3/2}}\\
+\end{eqnarray*}
+
+Portanto:
+\begin{eqnarray*}
+\vec{T}'(t)&=&\frac{1}{(1+4a^2t^2)^{3/2}}\left[-4a^2t\vec{i}+2a\vec{j}\right]
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\|\vec{T}'(t)\|&=&\frac{1}{(1+4a^2t^2)^{3/2}}\left\|-4a^2t\vec{i}+2a\vec{j}\right\|\\
+&=&\frac{1}{(1+4a^2t^2)^{3/2}}\sqrt{16a^4t^2+4a^2}\\
+&=&\frac{2a}{(1+4a^2t^2)^{3/2}}\sqrt{4a^2t^2+1}\\
+&=&\frac{2a}{(1+4a^2t^2)}
+\end{eqnarray*}
+
+O vetor normal é dado, portanto, por:
+\begin{eqnarray*}
+\vec{N}(t)&=&\frac{\vec{T'}(t)}{\|\vec{T'}(t)\|}\\
+&=&\frac{1}{2a\sqrt{1+4a^2t^2}}\left[-4a^2t\vec{i}+2a\vec{j}\right]
+\end{eqnarray*}
 
 
 \end{document}
+
