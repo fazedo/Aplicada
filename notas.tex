@@ -255,5 +255,122 @@ O vetor normal é dado, portanto, por:
 \end{eqnarray*}
 
 
-\end{document}
+\begin{center}
+ \includegraphics[width=10cm]{figs/duas_helices.png}
+ \end{center}
+
+ \section{Orientação}
+ 
+ Circunferência no plano orientada no sentido anti-horário:
+ \begin{eqnarray*}
+  x(t) &=& \cos(t)\\
+  y(t) &=& \sin(t)\\
+  %z(t) &=& t
+ \end{eqnarray*}
+ 
+\begin{eqnarray*}
+  x(0) &=& 1\\
+  y(0) &=& 0
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+  x(\pi/2) &=& 0\\
+  y(\pi/2) &=& 1
+ \end{eqnarray*}
+ 
+ 
+ 
+ Circunferência no plano orientada no sentido horário:
+ \begin{eqnarray*}
+  x(t) &=& \sin(t)\\
+  y(t) &=& \cos(t)\\
+  %z(t) &=& t
+ \end{eqnarray*}
+ 
+\begin{eqnarray*}
+  x(0) &=& 0\\
+  y(0) &=& 1
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+  x(\pi/2) &=& 1\\
+  y(\pi/2) &=& 0
+ \end{eqnarray*}
+ 
+
+ \section{Torçao - 41min}
+ \begin{eqnarray*}
+  x(t) &=& \cos(t)\\
+  y(t) &=& \sin(t)\\
+  z(t) &=& \sin(2t)
+ \end{eqnarray*}
+ 
+ \begin{eqnarray*}
+  \vec{r}(t) &=& \cos(t)\vec{i}+\sin(t)\vec{j}+ \sin(2t)\vec{k}
+ \end{eqnarray*}
+ 
+
+  \begin{eqnarray*}
+\tau = \frac{\vec{r}\!~'\times\vec{r}\!~''\cdot \vec{r}\!~'''}{\|\vec{r}\!~'\times\vec{r}\!~''\|^2}
+  \end{eqnarray*}
+
+ \begin{eqnarray*}
+  \vec{r}\!~'(t) &=& -\sin(t)\vec{i}+\cos(t)\vec{j}+
+  2\cos(2t)\vec{k}\\
+  \vec{r}\!~''(t) &=& -\cos(t)\vec{i}-\sin(t)\vec{j}-4\sin(2t)\vec{k}\\
+  \vec{r}\!~'''(t) &=& \sin(t)\vec{i}-\cos(t)\vec{j}-
+  8\cos(2t)\vec{k}
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+  \vec{r}\!~'(\pi/2) &=& -\vec{i}-
+  2\vec{k}\\
+  \vec{r}\!~''(\pi/2) &=& -\vec{j}\\
+  \vec{r}\!~'''(\pi/2) &=& \vec{i}+
+  8\vec{k}
+ \end{eqnarray*}
+
+ 
+ \begin{eqnarray*}
+\vec{r}\!~'(\pi/2)\times \vec{r}\!~''(\pi/2)=\left(-\vec{i}-
+  2\vec{k}\right)\times (-\vec{j})=\vec{k}-2\vec{i}=-2\vec{i}+\vec{k}
+  \end{eqnarray*}
+ Dica: ijkij
+ 
+\begin{eqnarray*}
+   \vec{r}\!~'\times\vec{r}\!~''\cdot \vec{r}\!~'''= \left(-2\vec{i}+\vec{k}\right)\cdot \left(\vec{i}+8\vec{k}\right)= -2+8=6
+  \end{eqnarray*}
+ 
+
+ \begin{eqnarray*}
+\|\vec{r}\!~' \times \vec{r}\!~''\|=\|-2\vec{i}+\vec{k}\|=\sqrt{2^2+1^2}=\sqrt{5}
+ \end{eqnarray*}
+ Finalmente
+ $$\tau=\frac{6}{5}$$
+
+
+ \begin{center}
+ \includegraphics[width=10cm]{figs/curva_cs.png}
+ \end{center}
+ 
+ \section{}
+\begin{eqnarray*}
+  x(t) &=& \int_0^t\cos(\tau^2)d\tau\\
+  y(t) &=& \int_0^t\sin(\tau^2)d\tau
+\end{eqnarray*}
+ 
+\begin{eqnarray*}
+  x'(t) &=& \cos(t^2)\\
+  y'(t) &=& \sin(t^2)
+\end{eqnarray*}
+
+\begin{eqnarray*}
+  x''(t) &=& -2t\sin(t^2)\\
+  y''(t) &=& 2t\cos(t^2)
+\end{eqnarray*}
+
+Teorema fundamental do cálculo:
+$$\frac{d}{dx} \int_a^x f(y)dy = f(x)$$
+ 
+ \end{document}
 
