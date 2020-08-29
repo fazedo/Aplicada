@@ -372,5 +372,122 @@ O vetor normal é dado, portanto, por:
 Teorema fundamental do cálculo:
 $$\frac{d}{dx} \int_a^x f(y)dy = f(x)$$
  
+ 
+ \section{}
+ \begin{eqnarray*}
+  x(t) &=& \sin(t)\\
+  y(t) &=& \cos(t)\\
+  z(t) &=& \cos(2t)
+ \end{eqnarray*}
+ 
+ Cacule t para $(1,0,-1)$
+ 
+ \begin{eqnarray*}
+\sin(t)=1 \Longrightarrow t = \pi/2 + 2k\pi\\
+\cos(t)=0 \Longrightarrow t = \pi/2 + k\pi\\
+ \cos(2t)=-1 \Longrightarrow 2t = \pi + 2k\pi\\
+ \end{eqnarray*}
+
+ \section{Comprimento de arco. 122min}
+ 
+ \begin{eqnarray*}
+ \vec{r}(t)&=&2\cos(\pi t)\vec{i}+2\sin(\pi t)\vec{i}-t\vec{k}\\
+  \vec{r}\!~'(t)&=&-2\pi\sin(\pi t)\vec{i}+2\pi\cos(\pi t)\vec{i}-\vec{k}\\
+  \|\vec{r}\!~'(t)\|&=&\sqrt{(2\pi)^2+1}=\sqrt{4\pi^2+1}
+ \end{eqnarray*}
+ 
+ $$L=\int_0^1ds = \int_0^1\|\vec{r}\!~'(t)\|dt=\sqrt{4\pi^2+1}$$
+ 
+%%Dia 28 de agosto
+ \section{Curvatura da elipse}.
+ 
+ \begin{center}
+ \includegraphics[width=10cm]{figs/elipse.png}
+ \end{center}
+ 
+ $$\vec{r}(t)=a\cos(t)\vec{i}+b\sin(t)\vec{j}$$
+ onde $a$ e $b$ são constantes positivas. 
+ 
+ \begin{eqnarray*}
+  \vec{r}(t)&=&a\cos(t)\vec{i}+b\sin(t)\vec{j}\\
+  \vec{r}\!~'(t)&=&-a\sin(t)\vec{i}+b\cos(t)\vec{j}\\
+  \vec{r}\!~''(t)&=&-a\cos(t)\vec{i}-b\sin(t)\vec{j}\\
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+  \vec{r}\!~'(t)\times \vec{r}\!~''(t)&=&\left(-a\sin(t)\vec{i}+b\cos(t)\vec{j}\right)\times \left(-a\cos(t)\vec{i}-b\sin(t)\vec{j}\right)\\
+  &=&ab\sin^2(t)\vec{k}+ab\cos^2(t)\vec{k}= ab\vec{k}
+   \end{eqnarray*}
+
+ 
+ \begin{eqnarray*}
+\|\vec{r}\!~'(t)\| &=&\|-a\sin(t)\vec{i}+b\cos^2(t)\vec{j}\|\\
+&=& \sqrt{a^2\sin^2(t)+b^2\cos(t)}
+ \end{eqnarray*}
+
+E obtemos: 
+ \begin{eqnarray*}
+  \kappa(t)&=&\frac{\|\vec{r}~\!'(t)\times \vec{r}~\!''(t)\|}{\|\vec{r}~\!'(t)\|^3}\\
+  &=&\frac{|ab|}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}\\ &=&\frac{ab}{\left[a^2\sin^2(t)+b^2\cos^2(t)\right]^{3/2}}
+ \end{eqnarray*}
+
+ Nos vértices $t=0$ e $t=\pi$:
+ $$\kappa(0)=\kappa(\pi)=\frac{ab}{(b^2)^{3/2}}=\frac{a}{b^2}$$
+ 
+ 
+ Nos vértices $t=\pi/2$ e $t=3\pi/2$:
+ $$\kappa(\pi/2)=\kappa(3\pi/2)=\frac{ab}{(a^2)^{3/2}}=\frac{b}{a^2}$$
+ 
+ 
+ \section{Aceleração normal e curvatura}
+ Se um pessoa percorre uma trajetória elíptica com semi-eixos $a=100$ e $b=200$ com velocidade escalar constante de 2 m/s. Qual é a aceleração normal máxima.
+ $$a_N = \kappa v^2=\kappa_{max} 2^2=4\frac{200}{100^2}=\frac{8}{100}=0,08$$
+ 
+ \section{Campos 53}
+ \begin{itemize}
+  \item Campos vetoriais e escalares
+  \item Campo (vetorial) conservativo. $\vec{F}=\vec{\nabla}\varphi$, $\varphi$ é o potencial. $\vec{\nabla}\times\vec{F}=\vec{0}$.
+  \item O campo elétrico é conservativo quando o campo magnético é constante no tempo.
+  \end{itemize}
+
+\section{Gradiente (pág 5/5)}
+O gradiente de um campo escalar é um campo vetorial. Em cada ponto, é o vetor que aponta na direção e sentido de maior variação e cujo módulo é a máxima derivada direcional:
+  $$\frac{\partial f}{\partial \vec{u}}=\vec{u}\cdot\vec{\nabla} f,~~\|\vec{u}\|=1$$ 
+
+  Obs: Direção de máxima derivada direcional é dada pelo vetor unitário (versor):
+  $$\vec{u}=\hat{u}=\frac{\vec{\nabla} f}{\|\vec{\nabla} f\|}$$
+ 
+ Direção de mínima derivada direcional (maior valor absoluto e sinal negativo) é dada pelo vetor unitário (versor):
+  $$\vec{u}=\hat{u}=-\frac{\vec{\nabla} f}{\|\vec{\nabla} f\|}$$
+ 
+ Se $\vec{u}\cdot \vec{\nabla}f = 0$
+
+ \section{Divergente}
+ O divergente de um campo vetorial é o campo escalar dado por:
+ $$\vec{\nabla}\cdot \vec{F} = \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z}$$
+ Ex.
+ $$     \vec{F}=xy\vec{i}+y^3\vec{j}+xyz^2\vec{k}$$
+  \begin{eqnarray*}
+ \vec{\nabla}\cdot\vec{F}&=&\frac{\partial }{\partial x}(xy)+\frac{\partial }{\partial y}(y^3)+\frac{\partial }{\partial z}(xyz^2)\\
+ &=&y+ 3y^2+2xyz
+ \end{eqnarray*}
+ 
+ 
+ 
+ \section{}
+ 
+ \begin{eqnarray*}
+\vec{r}(t)&=&\int_0^t\cos(\tau^2)d\tau\vec{i}+\int_0^t\sin(\tau^2)d\tau\vec{j}  
+ \end{eqnarray*}
+
+ \begin{eqnarray*}
+\vec{r}\!~'(t)&=&\cos(t^2)\vec{i}+\sin(t^2)\vec{j}  
+ \end{eqnarray*}
+
+ Teorema fundamental do cálculo:
+ $$\frac{d}{dt}\int_a^t f(x)dx = f(t)$$
+$$\int\cos(t^2)dt \neq \sin(t^2)+C$$
+ 
+ 
  \end{document}
 

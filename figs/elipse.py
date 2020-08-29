@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 a = 4
-b = 3
+b = 2
 
 t = np.linspace(0, 2*np.pi, 101)
 
@@ -16,6 +16,6 @@ ax.plot(x, y)
 
 
 fig.set_facecolor('white')
-plt.axis('equal')
-#plt.show()
+plt.axis('scaled')
+plt.show()
 plt.savefig('elipse.png', dpi=200)
