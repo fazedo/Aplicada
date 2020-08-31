@@ -489,5 +489,170 @@ O gradiente de um campo escalar é um campo vetorial. Em cada ponto, é o vetor 
 $$\int\cos(t^2)dt \neq \sin(t^2)+C$$
  
  
+ \section{Questão sobre gradientes (10min)}
+
+ $$\vec{F}=x\vec{i}+xe^y\vec{j} + xyz\vec{k}$$ 
+$$\vec{F}\cdot \vec{F}=x^2+x^2e^{2y} + x^2y^2z^2$$ 
+\begin{eqnarray*}
+\vec{\nabla}\left(\vec{F}\cdot\vec{F}\right)&=& \left(2x+2xe^{2y}+2xy^2z^2\right) \vec{i}+
+\left(2x^2e^{2y}+2x^2yz^2\right) \vec{j}
++2 x^2y^2z \vec{k}
+ \end{eqnarray*}
+
+ $$\left(e^y\right)^2=e^{y^2}$$
+ 
+ \section{Campos vetoriais - 31/08}
+Exemplo 1, página 4/2.
+ 
+ \begin{eqnarray*}
+  \vec{F}=\sqrt{y}~\!\vec{i}
+ \end{eqnarray*}
+
+ 
+ \begin{center}
+ \includegraphics[width=10cm]{figs/exemplo_1_4_2.png}
+ \end{center}
+
+ 
+ Exemplo 2.
+ \begin{eqnarray*}
+  \vec{F}=x~\!\vec{i}
+ \end{eqnarray*}
+
+ 
+ \begin{center}
+ \includegraphics[width=10cm]{figs/exemplo_2_4_2.png}
+ \end{center}
+
+
+  Exemplo 3.s
+ \begin{eqnarray*}
+  \vec{F}=-y~\!\vec{i}+x~\!\vec{j}
+ \end{eqnarray*}
+
+ 
+ \begin{center}
+ \includegraphics[width=10cm]{figs/exemplo_3_4_2.png}
+ \end{center}
+
+ \newpage
+
+   Exemplo inverso do quadrado.
+ \begin{eqnarray*}
+  \vec{F}=\frac{\hat{r}}{r^2} =\frac{\vec{r}}{r^3}=\frac{x\vec{i}+y\vec{j}+z\vec{k}}{r^3}
+ \end{eqnarray*}
+
+ 
+ \begin{center}
+ \includegraphics[width=10cm]{figs/campo_inv_q.png}
+ \end{center}
+
+ \section{O operador del - 35min}
+ $$\vec{\nabla}=\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}$$
+ 
+ Gradiente:
+ $$\vec{\nabla}f=\vec{i}\frac{\partial}{\partial x}f+\vec{j}\frac{\partial}{\partial y}f+\vec{k}\frac{\partial}{\partial z}f=\vec{i}\frac{\partial f}{\partial x}+\vec{j}\frac{\partial f}{\partial y}+\vec{k}\frac{\partial f}{\partial z}$$
+ 
+ Divergente:
+ \begin{eqnarray*}
+\vec{\nabla}\cdot\vec{F}=\left(\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\right)\cdot\left(F_1\vec{i}+F_2\vec{j}+F_3\vec{k}\right)=  \frac{\partial}{\partial x}F_1+\frac{\partial}{\partial y}F_2 +\frac{\partial}{\partial z}F_3
+ \end{eqnarray*}
+
+ Rotacional:
+ \begin{eqnarray*}
+\vec{\nabla}\times\vec{F}&=&\left(\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\right)\times\left(F_1\vec{i}+F_2\vec{j}+F_3\vec{k}\right)\\
+&=&\left|
+\begin{array}{ccc}
+\vec{i}&\vec{j}&\vec{k} \\
+\frac{\partial}{\partial x } & \frac{\partial}{\partial y } &\frac{\partial}{\partial z } \\
+F_1&F_2&F_3
+\end{array}
+\right|\\
+&=&
+\vec{i}\left(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\right)
++\vec{j}\left(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\right)
++\vec{k}\left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)
+ \end{eqnarray*}
+
+ Laplaciano:
+ 
+ \begin{eqnarray*}
+\nabla^2f &=& \vec{\nabla}\cdot\vec{\nabla}f \\
+&=&\vec{\nabla}\cdot\left( \vec{i}\frac{\partial}{\partial x}f+\vec{j}\frac{\partial}{\partial y}f +\vec{k}\frac{\partial}{\partial z}f\right)\\
+&=&\frac{\partial^2 f}{\partial^2 x}+\frac{\partial^2 f}{\partial^2 y}+\frac{\partial^2 f}{\partial^2 z}
+ \end{eqnarray*}
+
+ 
+\section{Exemplo 4. 55min}
+$$f(x,y)=x+y$$
+$$\vec{\nabla}f = \vec{i} +\vec{j}$$
+ 
+ \section{Exemplo 5. 55min}
+
+ $$\vec{F}=x^2y\vec{i}+2y^3z\vec{j}+3z\vec{k} $$
+ 
+ \begin{eqnarray*}
+  \vec{\nabla}\cdot\vec{F}=2xy+6y^2z+3
+ \end{eqnarray*}
+
+  \begin{eqnarray*}
+\vec{\nabla}\times\vec{F}&=&\left(\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\right)\times\left(F_1\vec{i}+F_2\vec{j}+F_3\vec{k}\right)\\
+&=&\left|
+\begin{array}{ccc}
+\vec{i}&\vec{j}&\vec{k} \\[.2cm]
+\frac{\partial}{\partial x } & \frac{\partial}{\partial y } &\frac{\partial}{\partial z } \\[.2cm]
+x^2y&2y^3z&3z
+\end{array}
+\right|\\
+&=&\left(0-2y^3\right)\vec{i}+\left(0-0\right)\vec{j}+\left(0-x^2\right)\vec{k}
+ \end{eqnarray*}
+
+ 
+\section{Exemplo 6 - 72min}
+$$f=xyz$$
+$$\vec{F}=-y\vec{i}+x\vec{j}+z\vec{k} $$
+\begin{eqnarray*}
+ (\vec{F}\cdot\vec{\nabla})f&=&?
+\end{eqnarray*}
+
+\begin{eqnarray*}
+ (\vec{F}\cdot\vec{\nabla})&=&\left(-y\vec{i}+x\vec{j}+z\vec{k}\right)\cdot\left(\vec{i}\frac{\partial}{\partial x}+\vec{j}\frac{\partial}{\partial y}+\vec{k}\frac{\partial}{\partial z}\right)\\
+ &=&-y\frac{\partial}{\partial x}+x\frac{\partial}{\partial y} + z \frac{\partial}{\partial z}
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+ (\vec{F}\cdot\vec{\nabla})f&=&\left(-y\frac{\partial}{\partial x}+x\frac{\partial}{\partial y} + z \frac{\partial}{\partial z}\right)(xyz)\\
+ &=&-y(yz)+x(xz)+z(xy)=-y^2z+x^2z+xyz
+\end{eqnarray*}
+
+\section{Exemplo 10 - pág 5/6 - 83min}
+
+$$T = \frac{xy}{1+x^2+y^2}=xy(1+x^2+y^2)^{-1}$$
+
+\begin{eqnarray*}
+ \frac{\partial T}{\partial x}&=&y(1+x^2+y^2)^{-1}-xy(2x)(1+x^2+y^2)^{-2}\\
+ &=&\frac{y(1+x^2+y^2)-2x^2y}{(1+x^2+y^2)^{2}}\\
+ &=&\frac{y-x^2y+y^3}{(1+x^2+y^2)^{2}}
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+ \frac{\partial T}{\partial y}
+ &=&\frac{x-y^2x+x^3}{(1+x^2+y^2)^{2}}
+\end{eqnarray*}
+
+No ponto $(1,1)$:
+$$\vec{\nabla}T (1,1) = \frac{1}{9}\vec{i}+\frac{1}{9}\vec{j}$$
+
+Direção do vetor $\vec{a}=2\vec{i}-\vec{j}$.
+$$\frac{\partial T}{\partial \vec{u}}=\vec{u}\cdot\nabla f,~~\vec{u}=\frac{\vec{a}}{\|\vec{a}\|}$$
+
+$$\frac{\partial T}{\partial \vec{u}}=\frac{2\vec{i}-\vec{j}}{\sqrt{5}}\cdot\left(\frac{1}{9}\vec{i}+\frac{1}{9}\vec{j}\right)=\frac{1}{9\sqrt{5}}(2-1)=\frac{\sqrt{5}}{45}$$
+
+item b:
+
+$$\vec{u}=-\frac{\vec{\nabla}T}{\|\vec{\nabla}T\|}=\frac{-2\vec{i}+\vec{j}}{\sqrt{5}}$$
+
  \end{document}
 

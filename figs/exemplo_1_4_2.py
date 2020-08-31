@@ -18,7 +18,7 @@ for i in range(N):
         X[i, j] = x[i]
         Y[i, j] = y[j]
 
-        F1[i, j] = np.sqrt(y[i])
+        F1[i, j] = np.sqrt(y[j])
         F2[i, j] = 0
 
 fig, ax = plt.subplots()
