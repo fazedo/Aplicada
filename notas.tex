@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 %opening
@@ -6,7 +6,7 @@
 \author{}
 
 \begin{document}
-
+\chapter{22 de agosto}
 
 \section{Encontros}
 
@@ -111,7 +111,7 @@ $$\vec{T}(t) = \frac{\vec{r}~\!'(t)}{\|\vec{r}~\!'(t)\|}=-\sin(t)\vec{i}+\cos(t)
 \end{eqnarray*}
 
 
-
+\chapter{24 de agosto}
 \section{Vetores $\vec{T}$-$\vec{N}$-$\vec{B}$ (24/agosto)}
 \begin{center}
  \includegraphics[width=7cm]{figs/helice_TNB.png}
@@ -398,7 +398,8 @@ $$\frac{d}{dx} \int_a^x f(y)dy = f(x)$$
  
  $$L=\int_0^1ds = \int_0^1\|\vec{r}\!~'(t)\|dt=\sqrt{4\pi^2+1}$$
  
-%%Dia 28 de agosto
+ \chapter{28 de agosto}
+
  \section{Curvatura da elipse}.
  
  \begin{center}
@@ -501,7 +502,8 @@ $$\vec{F}\cdot \vec{F}=x^2+x^2e^{2y} + x^2y^2z^2$$
 
  $$\left(e^y\right)^2=e^{y^2}$$
  
- \section{Campos vetoriais - 31/08}
+ \chapter{31 de agosto}
+ \section{Campos vetoriais}
 Exemplo 1, página 4/2.
  
  \begin{eqnarray*}
@@ -525,7 +527,7 @@ Exemplo 1, página 4/2.
  \end{center}
 
 
-  Exemplo 3.s
+  Exemplo 3.
  \begin{eqnarray*}
   \vec{F}=-y~\!\vec{i}+x~\!\vec{j}
  \end{eqnarray*}
@@ -654,5 +656,70 @@ item b:
 
 $$\vec{u}=-\frac{\vec{\nabla}T}{\|\vec{\nabla}T\|}=\frac{-2\vec{i}+\vec{j}}{\sqrt{5}}$$
 
- \end{document}
+\chapter{2 de setembro}
+
+\section{Exemplo 11. pág 5/7}
+$$z=2000-2x^2-4y^2$$
+
+Seção transversal para $z=0$:
+$$2x^2+4y^2=2000-0$$
+$$\frac{x^2}{1000}+\frac{y^2}{500}=1$$
+$$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$$
+
+Retornando:
+$$2x^2+4y^2=2000-z$$
+
+Seção longitudinal para $x=0$:
+$$4y^2=2000-z$$
+$$z=2000-4y^2$$
+
+{\bf Item a:} $P=(-20,5)$.
+Veremos a elevação $z$ como uma função de $x$ e $y$, isto é, $z=f(x,y)=2000-2x^2-4y^2$.
+
+$$\vec{\nabla}f = -4x\vec{i} -8y\vec{j}$$
+
+\begin{eqnarray*}\vec{u}&=&\frac{\vec{\nabla}f}{\|\vec{\nabla}f\|}=\frac{-4x\vec{i} -8y\vec{j}}{\|-4x\vec{i} -8y\vec{j}\|}\\
+&=&\frac{80\vec{i} -40\vec{j}}{\|80\vec{i} -40\vec{j}\|}= \frac{2\vec{i}-\vec{j}}{\sqrt{5}}\\
+&=&\frac{\sqrt{5}}{5}\left(2\vec{i}-\vec{j}\right)
+\end{eqnarray*}
+
+
+{\bf Item b:} Direção nordeste $\vec{v}=\frac{\vec{i}+\vec{j}}{\sqrt{2}}$
+
+
+\begin{eqnarray*}\frac{\partial f}{\partial \vec{u}}&=&\vec{u}\cdot\vec{\nabla}f=\left(\frac{\vec{i}+\vec{j}}{\sqrt{2}}\right)\cdot\left(80\vec{i}-40\vec{j}\right)\\
+&=&\frac{80-40}{\sqrt{2}}=20\sqrt{2}
+\end{eqnarray*}
+\begin{center}{\bf \huge Qual é a unidade?}\end{center}
+Adimensional!!!
+
+
+\section{Potenciais centrais- 40min}
+$$\varphi(x,y,z) = \varphi(r)$$
+$$\vec{r}=x\vec{i}+y\vec{j}+z\vec{z}$$
+$${r}=\sqrt{x^2+y^2+z^2}$$
+
+Ex.
+$$\varphi(x,y,z) = \sqrt{x^2+y^2+z^2}=r$$
+
+\section{Exemplo 12 - página 5/9 - 48min}
+
+$$\varphi(r)=-k\frac{1}{r}=-kr^{-1}$$
+\begin{eqnarray*}\vec{F}&=&\vec{\nabla}\varphi(r)=\varphi'(r)\hat{r}\\
+&=&kr^{-2}\hat{r}= \frac{k}{r^2}\hat{r}\\&=&\frac{k}{r^3}\vec{r}
+\end{eqnarray*}
+
+
+\section{}
+\end{document}
+
+
+
+
+
+
+
+
+
+
 
