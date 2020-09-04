@@ -710,8 +710,135 @@ $$\varphi(r)=-k\frac{1}{r}=-kr^{-1}$$
 \end{eqnarray*}
 
 
+\chapter{4 de setembro}
 \section{}
+Rotacional:
+$$\vec{\nabla}\times\vec{F}=rot(\vec{F})=curl(\vec{F})$$
+
+
+\section{Integral de linha, ~40min}
+Define-se integral de linha como:
+\begin{eqnarray*}
+ \int_C \vec{F}\cdot d\vec{r}=\int_{t_0}^{t_1} \vec{F}\cdot\vec{r}\!~'(t)dt
+\end{eqnarray*}
+onde $\vec{r}(t)$ é uma parametrização do caminho $C$ entre $t=t_0$ e $t=t_1$.
+
+Obs: O valor da integral de linha NÃO depente da parametrização.
+
+Quando o caminho $C$ é fechado, a integral de linha também é chamda de circulação de $\vec{F}$ ao longo de $C$:
+$$W=\oint_C \vec{F}\cdot d\vec{r}$$
+
+\section{Exemplo 2 - pag 7/4. 45min}
+$$\vec{F}=x^3y\vec{i}+ (x-y)\vec{j}$$
+O caminho é dado $C:y=x^2, z=0$ de $P_1(-2,4)$ até $P_2(1,1)$.
+
+Parametrizamos a curva como:
+\begin{eqnarray*}
+\vec{r}(t)&=&t\vec{i}+t^2\vec{j}\\
+\vec{r}\!~'(t)&=&\vec{i}+2t\vec{j}
+\end{eqnarray*}
+com $t\in [-2,1]$.
+\begin{eqnarray*}
+\vec{F}\cdot \vec{r}\!~'(t)&=&x^3y\cdot 1 + (x-y)\cdot 2t\\
+&=&t^3(t^2)+(t-t^2)2t\\
+&=&t^5+2t^2-2t^3
+\end{eqnarray*}
+Assim:
+\begin{eqnarray*}
+ W&=&\oint_C \vec{F}\cdot d\vec{r}\\
+ &=&\int_{-2}^1\left(t^5+2t^2-2t^3\right)dt\\
+ &=&\left.\left(\frac{t^6}{6}+\frac{2t^3}{3}-\frac{t^4}{2}\right)\right|_{-2}^1\\
+ &=&\frac{1-64}{6}+\frac{2+16}{3}-\frac{1-16}{2}\\
+ &=&-\frac{63}{6}+\frac{18}{3}+\frac{15}{2}\\
+ &=&\frac{-63+36+45}{6}\\
+ &=&3
+ \end{eqnarray*}
+
+{\bf item b}
+$$\vec{F}=yz\vec{i}+xz\vec{j}+xy\vec{k}$$
+
+A curva  $C$ é dada por:
+$$\vec{r}(t)=t\vec{i}+t^2\vec{j}+t^3\vec{k}$$
+para $t\in [0,1]$.
+
+Calculamos $\vec{r}\!~'(t)$:
+$$\vec{r}\!~'(t)=\vec{i}+2t\vec{j}+3t^2\vec{k}$$
+
+\begin{eqnarray*}
+ \vec{F}\cdot \vec{r}\!~'(t)&=&yz+xz(2t)+xy(3t^2)\\
+ &=&t^2t^3+tt^3(2t)+tt^2(3t^2)\\
+ &=&t^5+2t^5+3t^5 = 6t^5
+\end{eqnarray*}
+
+Finalmente:
+$$W=\int_0^16t^5dt = \left.t^6\right|_0^1=1$$
+
+\section{Teorema fundamental das integrais de linha. Pág 7/5. 73min}
+$$\int_C \vec{\nabla}\varphi \cdot d\vec{r}=\varphi(P_1)-\varphi(P_0)$$
+Onde $C$ é um caminho que começa em $P_0$ e termina em $P_1$.
+
+Dem: Seja $\vec{r}(t)=x(t)\vec{i}+y(t)\vec{j}+z(t)\vec{k}$ uma parametrização para $C$, definimos:
+$$f(t)=\varphi(x(t),y(t),z(t))$$
+
+Derivamos em $t$:
+\begin{eqnarray*}
+ f'(t)&=&\frac{d}{dt}\varphi(x(t),y(t),z(t))\\
+ &=&\frac{\partial \varphi}{\partial x}\frac{dx}{dt}+\frac{\partial \varphi}{\partial y}\frac{dy}{dt}+\frac{\partial \varphi}{\partial z}\frac{dz}{dt}
+ \\&=&\left(\frac{\partial \varphi}{\partial x}\vec{i}+\frac{\partial \varphi}{\partial y}\vec{j}+\frac{\partial \varphi}{\partial z}\vec{k}\right)\cdot\left(\frac{dx}{d t}\vec{i}+\frac{dy}{d t}\vec{j}+\frac{dz}{d t}\vec{k}\right)\\
+ &=&\vec{\nabla}\varphi\cdot \vec{r}\!~'(t)
+\end{eqnarray*}
+
+Agora usamos o bom e velho Teorema Fundamental do Cálculo (TFC):
+
+$$\int_{t_0}^{t_1}f'(t)dt=\left. f(t) \right|_{t_0}^{t_1} =f(t_1)-f(t_0)$$
+
+Portanto:
+$$\int_C \vec{\nabla}\varphi \cdot d\vec{r}=\varphi(P_1)-\varphi(P_0)$$
+
+\section{Exemplo 3. Página 7/6. 90min}
+
+$$\vec{F}=2xy^3\vec{i}+(1+3x^2y^2)\vec{j}$$
+
+{\bf a.}
+\begin{eqnarray*}
+\vec{\nabla}\times \vec{F}&=&\left|
+\begin{array}{ccc}
+\vec{i}& \vec{j}&\vec{k}\\[.4cm]
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} &\frac{\partial}{\partial z} \\[.4cm]
+2xy^3&(1+3x^2y^2)&0
+\end{array}
+\right|\\
+&=&\left(0-0\right)\vec{i}+\left(0-0\right)\vec{j}+\left(6xy^2-6xy^2\right)\vec{k}=\vec{0}
+\end{eqnarray*}
+
+{\bf b}
+
+$$\vec{F}=\vec{\nabla}\varphi$$
+
+\begin{eqnarray*}
+ F_1 &=& \frac{\partial \varphi}{\partial x}=2xy^3\\
+ F_2 &=& \frac{\partial \varphi}{\partial y}=1+3x^2y^2\\
+ F_3 &=& \frac{\partial \varphi}{\partial z}=0
+\end{eqnarray*}
+
+Da primeira equação:
+$$\varphi=x^2y^3+C(y,z)$$
+Derivamos em $y$ e igualamos a $1+3x^2y^2$:
+$$\frac{\partial \varphi}{\partial y}=3x^2y^2+C_y(y,z)=1+3x^2y^2$$
+Assim
+$$C_y(y,z)=1$$
+Logo
+$$C(y,z)=y+D(z)$$
+Derivamos em $z$ e igualamos a $0$, temos:
+$$D'(z)=0\Longrightarrow D=cst$$
+
+Logo
+$$\varphi=x^2y^3+y+D $$
+
+{\bf item c}
+$$W=\varphi(3,1)-\varphi(1,4)=\left[3^21^3+1+D\right]-\left[1^24^3+4+D\right]=10-68=--58$$
 \end{document}
+
 
 
 
