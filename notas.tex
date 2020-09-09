@@ -837,16 +837,136 @@ $$\varphi=x^2y^3+y+D $$
 
 {\bf item c}
 $$W=\varphi(3,1)-\varphi(1,4)=\left[3^21^3+1+D\right]-\left[1^24^3+4+D\right]=10-68=-58$$
+
+
+\chapter{9 de setembro}
+
+\section{Integrais de superfície - aula 8}
+Estudaremos integrais de superfícies do tipo:
+$$\Phi = \int\int_S\vec{F}\cdot\vec{ds} = \int\int_S\vec{F}\cdot\vec{\eta}ds$$
+Onde $\vec{n}$ é o vetor normal unitário.
+
+Obs: $\vec{F}\cdot\vec{\eta}=\|\vec{F}\|\cos(\gamma)$
+Onde $\gamma$ é o ângulo entre $\vec{F}$ e o vetor normal.
+
+
+O maior desafio é parametrizar a superfície e calcular $\vec{ds}$.
+    
+
+Casos particulares de superfíceis descritas por funções ns seguintes formas:
+\begin{eqnarray*}
+ z&=&f(x,y)  ~~\hbox{ou}\\
+ y&=&f(x,z) ~~\hbox{ou}\\
+ x&=&f(y,z). 
+\end{eqnarray*}
+
+No primeiro caso, a superfícies é parametrizada como:
+$$\vec{r}(x,y) = x\vec{i}+y\vec{j}+f(x,y)\vec{k}$$
+
+Escrevemos na forma:
+\begin{eqnarray*}
+ G(x,y,z)&=&z-f(x,y)  ~~\hbox{ou}\\
+ G(x,y,z)&=&y-f(x,z) ~~\hbox{ou}\\
+ G(x,y,z)&=&x-f(y,z). 
+\end{eqnarray*}
+
+
+Assim a superfícies é a superfícies de nível de $G(x,y,z)$:
+$$G(x,y,z)=0$$
+
+Como o gradiente de $G$ é perpendicular às suas curvas de nível, o vetor normal será dado por:
+$$\vec{\eta} = \pm \frac{\vec{\nabla}G}{\|\vec{\nabla}G \|}$$
+Onde o sinal define a orientação da superfície.
+
+
+\begin{eqnarray*}
+\Phi &=&  \int\int_S\vec{F}\cdot\vec{\eta}ds\\
+&=&\pm\int\int_S\vec{F}\cdot\vec{\nabla }G\frac{1}{\|\vec{\nabla }G\|}dS\\
+&=&\pm\int\int_S\vec{F}\cdot\vec{\nabla }GdA
+\end{eqnarray*}
+
+Para o primeiro caso:
+\begin{eqnarray*}
+ G(x,y,z)&=&z-f(x,y)  
+ \end{eqnarray*}
+
+$$\vec{\nabla}G =-\frac{\partial f(x,y)}{\partial x}\vec{i}-\frac{\partial f(x,y)}{\partial y}\vec{j}+\vec{k}$$
+então:
+$$\vec{\nabla}G \cdot \vec{k}= 1$$
+
+$$\cos(\gamma)=\vec{\eta}\cdot\vec{k} = \pm \frac{\vec{\nabla}G\cdot\vec{k}}{\|\vec{\nabla}G \|}=\pm \frac{1}{\|\vec{\nabla}G \|}$$
+
+
+\section{Exemplos - 52min}
+Exemplo 5. 
+
+ Calcule o fluxo de $\vec{F}=3z^2\vec{i}+6\vec{j}+ 6xz\vec{k}$ através da superfície $S$ dada por:
+ $$y=x^2,~~ 0\leq x \leq 2,~~0\leq z \leq 3$$
+ orientada para fora da concavidade.
+
+ Isso é da forma $y=f(x,z)$? Sim, mesmo que constante em $z$.
+ 
+ Definimos:
+ $$G(x,y,z)=y-f(x,z)=y-x^2$$
+$$\vec{\nabla}G(x,y,z)=-2x\vec{i}+\vec{j} $$
+
+\begin{eqnarray*}
+\Phi&=&\int\int_S\vec{F}\cdot \vec{n}dS\\&=&-\int\int_S\vec{F}\cdot \vec{\nabla}G(x,y,z)dA 
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\vec{F}\cdot \vec{\nabla}G(x,y,z)&=&3z^2(-2x)+6(1)\\
+&=&-6xz^2+6
+\end{eqnarray*}
+
+A região projetada é o retângulo no plano $xz$ restrito a $0\leq x \leq 2,~~0\leq z \leq 3$.
+
+\begin{eqnarray*}
+\Phi&=&-\int\int_R (-6xz^2+6)dA\\
+&=&-\int_0^3\int_0^2 (-6xz^2+6)dxdz\\
+&=&-36+6\int_0^3\int_0^2xz^2dxdz\\
+&=&-36+3\int_0^3\left.x^2z^2\right|_0^2 dz\\
+&=&-36+3\int_0^34z^2dz\\
+&=&-36+4\left. z^3\right|_0^3\\
+&=&-36+4.27=72
+\end{eqnarray*}
+
+Exemplo 7 $$\vec{F}=\vec{i}+\vec{j}+\vec{k}$$
+$$S:z=\sqrt{x^2+y^2},~~~  0\leq z\leq 1.$$
+$$\sqrt{x^2+y^2}=z$$
+$$\rho=z$$
+
+Calcule o fluxo de $\vec{F}$ através de $S$ orientada para fora do cone.
+
+$$G(x,y,z)=z-\sqrt{x^2+y^2}=z-(x^2+y^2)^{1/2}$$
+\begin{eqnarray*}
+\vec{\nabla}G(x,y,z)&=&-(1/2)(x^2+y^2)^{-1/2}(2x)\vec{i}+-(1/2)(x^2+y^2)^{-1/2}(2y)\vec{j}+\vec{k} \\
+&=&\frac{-x\vec{i}-y\vec{j}}{\sqrt{x^2+y^2}}+\vec{k}
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+\vec{F}\cdot \vec{\nabla}G(x,y,z)&=&\frac{-x-y}{\sqrt{x^2+y^2}}+1
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+\Phi&=&\int\int_S\vec{F}\cdot \vec{n}dS\\&=&- \int\int_S\vec{F}\cdot \vec{\nabla}G(x,y,z)dA 
+\end{eqnarray*}
+
+A região projetada é o disco de raio unitário no plano $xy$ e centrado na origem. Para integrar neste disco usaremos coordenadas polares:
+$$x=\rho\cos(\theta),~~~y=\rho\sin(\theta),~~~dxdy =\rho d\rho d\theta $$
+
+\begin{eqnarray*}
+\Phi&=&- \int\int_A\left(\frac{-x-y}{\sqrt{x^2+y^2}}+1\right)dA \\
+&=&- \int_0^{2\pi}\int_0^1\left(\frac{-x-y}{\sqrt{x^2+y^2}}+1\right)\rho d\rho d\theta \\
+&=&- \int_0^{2\pi}\int_0^1\left(\frac{-\rho\cos(\theta)-\rho\sin(\theta)}{\rho}+1\right)\rho d\rho d\theta \\
+&=&- \int_0^{2\pi}\int_0^1\left({-\cos(\theta)-\sin(\theta)}+1\right)\rho d\rho d\theta \\
+&=&- \int_0^{2\pi}\int_0^1\rho d\rho d\theta \\
+&=&- \int_0^{2\pi}(1/2) d\theta=-\pi \\
+\end{eqnarray*}
+
 \end{document}
-
-
-
-
-
-
-
-
-
 
 
 
