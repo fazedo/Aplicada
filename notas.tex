@@ -1,6 +1,9 @@
 \documentclass[a4paper,10pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{esint}
+
 %opening
 \title{}
 \author{}
@@ -963,9 +966,127 @@ $$x=\rho\cos(\theta),~~~y=\rho\sin(\theta),~~~dxdy =\rho d\rho d\theta $$
 &=&- \int_0^{2\pi}\int_0^1\left(\frac{-\rho\cos(\theta)-\rho\sin(\theta)}{\rho}+1\right)\rho d\rho d\theta \\
 &=&- \int_0^{2\pi}\int_0^1\left({-\cos(\theta)-\sin(\theta)}+1\right)\rho d\rho d\theta \\
 &=&- \int_0^{2\pi}\int_0^1\rho d\rho d\theta \\
-&=&- \int_0^{2\pi}(1/2) d\theta=-\pi \\
+&=&- \int_0^{2\pi}(1/2) d\theta=-\pi 
 \end{eqnarray*}
 
+
+\section{}
+$$\vec{F}=r^2\vec{r}$$
+\begin{eqnarray*}\vec{\nabla}\cdot\vec{F}&=&\vec{\nabla}\cdot(r^2\vec{r})\\
+&=&\vec{\nabla}(r^2)\cdot\vec{r}+(r^2)\vec{\nabla}\cdot\vec{r}\\
+&=&(2r\hat{r})\cdot r^2\vec{r}+r^23=2r^4+3r^2
+\end{eqnarray*}
+
+
+$$\vec{F}=r^2\vec{r}=(x^2+y^2+z^2)(x\vec{i}+y\vec{j}+z\vec{k})$$
+
+$$\vec{\nabla}\cdot\vec{F}=(2x(x)+x^2+y^2+z^2)+...$$
+
+\chapter{Dia 11 de setembro}
+
+\section{Teorema da divergência}
+Seja $V$ uma região limitada por uma superfície fechada $S$ orientada para fora. Seja $\vec{F}$ um campo vetorial suave, temos:
+
+$$\oiint_S\vec{F}\cdot \vec{n}ds = \iiint_V \vec{\nabla}\cdot \vec{F}dV.$$
+
+
+\section{Teorema de Stokes}
+
+Seja $S$ uma superfícies orintáda, suave por partes, limitada por uma curva $S$.
+Seja $\vec{F}$ um campo vetorial suave, temos:
+
+$$\oint_C\vec{F}\cdot d\vec{r} = \iint_S \vec{\nabla}\times \vec{F}\cdot \vec{\eta} dS.$$
+A curva é orientada conforme a regra da mão direita.
+
+\section{Outros teoremas}
+
+Teorema fundamental do cálculo
+$$\int_a^bf'(x)dx = f(b)-f(a)$$
+Teorema fundamental das integrais de linha:
+$$\int_C\vec{\nabla}\varphi \cdot d\vec{r}=\varphi(P_1)-\varphi(P_0) $$
+
+\section{Exemplos - 37min}
+
+{\bf Exemplo 8}
+{\bf item a}
+$$\Phi=\oiint_S\vec{F}\cdot \vec{n}ds = \iiint_V \vec{\nabla}\cdot \vec{F}dV.$$
+Como $\vec{F}=x\vec{i}$, $\vec{\nabla}\cdot \vec{F}=1$
+$$\Phi= \iiint_V 1dV=volume = 8.$$
+
+
+{\bf item b}
+$$\Phi=\oiint_S\vec{F}\cdot \vec{n}ds = \iiint_V \vec{\nabla}\cdot \vec{F}dV.$$
+Como $\vec{F}=x\vec{i}+y\vec{j}+z\vec{k}$, $\vec{\nabla}\cdot \vec{F}=1+1+1=3$
+$$\Phi= \iiint_V 3dV=3\times volume = 24.$$
+
+
+{\bf item c}
+$$\Phi=\oiint_S\vec{F}\cdot \vec{n}ds = \iiint_V \vec{\nabla}\cdot \vec{F}dV.$$
+Como $\vec{F}=x^2\vec{i}+y^2\vec{j}+z^2\vec{k}$, $\vec{\nabla}\cdot \vec{F}=2x+2y+2z$
+\begin{eqnarray*}
+\Phi&=& 2\iiint_V(x+y+z) dV \\
+&=&2\int_{-1}^1\int_{-1}^1\int_{-1}^1(x+y+z)dxdydz=0
+\end{eqnarray*}
+
+
+{\bf Exemplo 10}
+$$\vec{F}=x^3\vec{i}+y^3\vec{j}+z^2\vec{k}$$
+
+$$\vec{\nabla}\cdot\vec{F}=3x^2+3y^2+2z$$
+
+$$\Phi=\oiint_S\vec{F}\cdot \vec{n}ds = \iiint_V \vec{\nabla}\cdot \vec{F}dV.$$
+
+Usando cilíndrica:
+$$x=\rho \cos(\theta),~~y=\rho \sin(\theta),~~z=z.$$
+$$\vec{\nabla}\cdot\vec{F}=3\rho^2+2z$$
+
+\begin{eqnarray*}\Phi&=&\int_0^3 \int_0^{2\pi} \int_0^2 (3\rho^2+2z)\rho dz d\theta d\rho\\
+&=&\int_0^3 \int_0^{2\pi} \int_0^2 (3\rho^3+2z\rho) dz d\theta d\rho\\
+&=&\int_0^3 \int_0^{2\pi}  (6\rho^3+4\rho) d\theta d\rho\\
+&=&2\pi \int_0^3   (6\rho^3+4\rho)  d\rho\\
+&=&2\pi \left.\left(\frac{3}{2}\rho^4+2\rho^2\right)\right|_0^3\\
+&=&2\pi \left(\frac{3}{2}3^4+2\cdot3^2\right)\\
+&=&\pi \left(3^5+4\cdot3^2\right)=\pi(243+36)=279\pi
+\end{eqnarray*}
+
+\section{Exemplo 11 - 72min}
+
+$$\vec{F}=x^3\vec{i}+y^3\vec{j}+z^3\vec{k}$$
+
+$$\vec{\nabla}\cdot \vec{F}=3x^2+3y^2+3z^2$$
+ Em esféricas:
+ 
+ $$x=r\sin(\varphi)\cos(\theta) ,~~~ y=r\sin(\varphi)\sin(\theta), ~~~z=r \cos(\varphi)$$
+
+Obs: $$x^2+y^2+z^2=r^2$$
+
+
+$$\vec{\nabla}\cdot \vec{F}=3r^2$$
+
+\begin{eqnarray*}\Phi&=&\iiint_V(3r^2)dV\\
+&=&\int_0^{\pi/2} \int_0^{2\pi} \int_0^{|a|}(3r^2) r^2\sin(\varphi) dr d\theta d\varphi\\
+&=&\frac{3}{5}\int_0^{\pi/2} \int_0^{2\pi} |a|^5\sin(\varphi)  d\theta d\varphi\\
+&=&\frac{6\pi|a|^5}{5}\int_0^{\pi/2}  \sin(\varphi)  d\varphi\\
+&=&\frac{6\pi|a|^5}{5}\left[-\cos(\varphi)\right]_0^{\pi/2}\\
+&=&\frac{6\pi|a|^5}{5}
+\end{eqnarray*}
+
+
+\section{105 min}
+
+Considere o campo central $$\vec {F}=(e^{-(r-2)}-e^{(r-2)})\hat {r}$$
+e as três esferas $S_1$, $S_2$ e $S_3$, com raios 1, 2 e 3, respectivamente, todas orientadas para fora e centradas na origem. Definimos $$I_1=\iint _{S_1}\vec {F}\cdot \vec {n}dS,~~~ I_2=\iint _{S_2}\vec {F}\cdot \vec {n}dS ~~~ e  ~~~ I_3=\iint _{S_3}\vec {F}\cdot \vec {n}dS.$$
+
+\begin{eqnarray*}I_1&=&\iint _{S_1}\vec {F}\cdot \hat {r}dS\\
+&=&\iint _{S_1}(e^{-(r-2)}-e^{(r-2)})dS\\
+&=&4\pi(e^{-(1-2)}-e^{(1-2)})
+ \end{eqnarray*}
+
+\begin{eqnarray*}I_1&=&\iint _{S_1}dS\\
+&=&\int_0^{2\pi}\int_0^{\pi}\sin(\varphi)r^2d\varphi d\theta
+ \end{eqnarray*}
+
+ 
 \end{document}
 
 
