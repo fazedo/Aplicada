@@ -1087,6 +1087,95 @@ e as três esferas $S_1$, $S_2$ e $S_3$, com raios 1, 2 e 3, respectivamente, to
  \end{eqnarray*}
 
  
+ \chapter{14 de setembro -51min}
+ 
+ Exercício 1a da lista 6. (alterado)
+ $$\vec{F}=x\vec{i}+y\vec{j}+2z\vec{k}$$
+ 
+$$z=\sqrt{1-x^2-y^2}, ~~z\geq 0.$$
+
+$$G(x,y,z)=z-\sqrt{1-x^2-y^2}=z-(1-x^2-y^2)^{1/2}$$
+
+\begin{eqnarray*}
+ \vec{\nabla}G&=& (1/2)(1-x^2-y^2)^{-1/2}(-2x)\vec{i}+(1/2)(1-x^2-y^2)^{-1/2}(-2y)\vec{j} + \vec{k}\\
+ &=& -x(1-x^2-y^2)^{-1/2}\vec{i}-y(1-x^2-y^2)^{-1/2}\vec{j} + \vec{k}\\
+ &=& \frac{-x\vec{i}-y\vec{j}}{\sqrt{1-x^2-y^2}} + \vec{k}\\
+  \end{eqnarray*}
+
+\begin{eqnarray*}
+ \vec{F}\cdot\vec{\nabla}G&=&  \frac{-x^2-y^2}{\sqrt{1-x^2-y^2}} + 2z\\
+ &=&  \frac{-\rho^2}{\sqrt{1-\rho^2}} + 2z\\
+  \end{eqnarray*}
+onde:
+$$x=\rho\cos(\theta), ~~~y=\rho\sin(\theta), ~~~z=z$$
+  \begin{eqnarray*}
+\Phi&=&+\int_R\vec{F}\cdot\vec{\nabla}GdA\\
+&=&\int_0^1\int_0^{2\pi}\left(\frac{-\rho^2}{\sqrt{1-\rho^2}} + 2z\right)\rho d\theta d\rho\\
+&=&\int_0^1\int_0^{2\pi}\left(\frac{-\rho^2}{\sqrt{1-\rho^2}} + 2(1-\rho^2)\right)\rho d\theta d\rho\\
+&=&2\pi\int_0^1\left(\frac{-\rho^2}{\sqrt{1-\rho^2}} + 2(1-\rho^2)\right)\rho  d\rho\\
+  \end{eqnarray*}
+ 
+ \begin{eqnarray*}
+  \int_0^1\left(\frac{-\rho^2}{\sqrt{1-\rho^2}} \right)\rho  d\rho\\
+ \end{eqnarray*}
+Escreva 
+$$u=1-\rho^2,~~~du=-\rho d\rho$$
+\begin{eqnarray*}
+ I&=& \int_0^1\left(\frac{-\rho^2}{\sqrt{1-\rho^2}} \right)\rho  d\rho\\
+ &=&
+ \int_1^0\left(\frac{-(1-u)^2}{\sqrt{u}} \right)(-du)\\
+ &=&
+ -\int_0^1\left(\frac{(1-u)^2}{\sqrt{u}} \right)du\\
+ &=& -\int_0^1\left(\frac{(1-2u+u^2)}{\sqrt{u}} \right)du\\
+ &=&\int_0^1\left(u^{-1/2}-2u^{1/2}+u^{3/2}\right)du\\
+  \end{eqnarray*}
+E
+ 
+ \section{Exercício 1a da lista 6- 66min} 
+ $$\vec{F}=x\vec{i}+y\vec{j}+2z\vec{k}$$
+ 
+$$z={1-x^2-y^2}, ~~z\geq 0.$$
+
+$$G(x,y,z)=z-({1-x^2-y^2})$$
+
+\begin{eqnarray*}
+ \vec{\nabla}G&=& 2x\vec{i}+2y\vec{j} + \vec{k}\\
+   \end{eqnarray*}
+
+\begin{eqnarray*}
+ \vec{F}\cdot\vec{\nabla}G&=&  
+ 2x^2+2y^2+2z\\
+ &=&2\rho^2+2z
+ \end{eqnarray*}
+onde:
+$$x=\rho\cos(\theta), ~~~y=\rho\sin(\theta), ~~~z=z$$
+  \begin{eqnarray*}
+\Phi&=&+\int_R\vec{F}\cdot\vec{\nabla}GdA\\
+&=&\int_0^1\int_0^{2\pi}\left(2\rho^2+2z\right)\rho d\theta d\rho\\
+&=&\int_0^1\int_0^{2\pi}\left(2\rho^2+2(1-\rho^2)\right)\rho d\theta d\rho\\
+&=&\int_0^1\int_0^{2\pi}(2)\rho d\theta d\rho=2\pi
+  \end{eqnarray*}
+ 
+ \section{}
+ Considere a região V limitada superiormente pela superfície $S_1$ de equação $\sqrt {x^2+y^2}= 1-z^3$,  $0\leq z \leq 1$ e inferiormente pelo plano z=0 e o campo $\vec {F}=(x+\cos (y))\vec {i}+\cos (z)\vec {j}+(z+1)\vec {z}$. Assinale a alternativa que apresenta o fluxo de $\vec {F}$ através da superfície S que limita V orientada para fora.
+ 
+ 
+ $$\vec{\nabla}\cdot \vec{F}=1+1=2$$
+ 
+ \begin{eqnarray*}\Phi
+  &=&\int_0^1\int_0^{2\pi}\int_0^{1-z^3} (2)\rho d\rho d\theta dz\\
+  &=&4\pi\int_0^1\int_0^{1-z^3} \rho d\rho  dz\\
+  &=&2\pi\int_0^1\left.\rho^2\right|_0^{1-z^3} \rho d  dz\\
+  &=&2\pi\int_0^1(1-z^3)  dz\\
+ \end{eqnarray*}
+
+ \section{q3 da lista 6. 86min}
+ 
+ O vetor normal à esfera apontando para fora é $\hat{r}$.
+ Então
+ $$\vec{F}\cdot \hat{r}=r^n\vec{r}\cdot \hat{r}=r^{n+1}=a^{n+1},~~~r=a$$
+ 
+ $$\iint_S\vec{F}\cdot \hat{r}dS = a^{n+1}\iint_SdS=4\pi a^{n+1}$$
 \end{document}
 
 
