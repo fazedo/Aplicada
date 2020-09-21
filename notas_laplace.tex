@@ -1,0 +1,277 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+\chapter{18 de setembro}
+
+\section{Definição}
+
+A transformada de Laplace é definida como:
+$$F(s)=\mathcal{L}\{ f(t)\} := \int_0^\infty f(t)e^{-st}dt,~~\Re(s)>s_0$$
+
+ Exemplo:
+ 
+ $$f(t)=1$$
+ \begin{eqnarray*}
+  F(s) &=& \int_0^\infty f(t)e^{-st}dt\\
+  &=&\int_0^\infty e^{-st}dt\\
+  &=&\left.\frac{e^{-st}}{-s}\right|_{t=0}^{t \to \infty}\\
+  &=& \frac{0-1}{-s}=\frac{1}{s}, ~~s>0.
+ \end{eqnarray*}
+% 
+
+Exemplo:
+ $$f(t)=e^{as}$$
+ 
+ 
+ \begin{eqnarray*}
+  F(s) &=& \int_0^\infty f(t)e^{-st}dt\\
+  &=&\int_0^\infty e^{at}e^{-st}dt\\
+    &=&\int_0^\infty e^{(a-s)t}dt\\
+    &=&\left.\frac{e^{(a-s)t}}{a-s}\right|_0^\infty\\
+    &=&\frac{0-1}{a-s}\\
+    &=&\frac{1}{s-a},~~~s>a.
+ \end{eqnarray*}
+% 
+% 
+% 
+ \section{Propriedade da linearidade}
+% 
+ $$\mathcal{L}\{\alpha f(t)+\beta g(t)\}=\alpha\mathcal{L}\{ f(t)\}+\beta\mathcal{L}\{ g(t)\}$$
+
+ exemplo:
+ 
+ \begin{eqnarray*}
+\mathcal{L}\{3+2 e^{t}\}&=&3\mathcal{L}\{ 1\}+2\mathcal{L}\{ e^t\} \\
+&=&\frac{3}{s}+\frac{2}{s-1}
+ \end{eqnarray*}
+
+ % 
+% 
+ \section{Propriedade da derivada}
+ $$\mathcal{L}\{f'(t)\}=s\mathcal{L}\{ f(t)\}-f(0)$$
+
+ Exemplo:
+ 
+ $$f(t)=t$$
+ $$f'(t)=1$$
+ 
+ $$\mathcal{L}\{1\}=s\mathcal{L}\{ t\}-0$$
+ $$\mathcal{L}\{ t\} = \frac{1}{s^2}$$
+
+
+  Exemplo:
+ 
+ $$f(t)=t^2$$
+ $$f'(t)=2t$$
+ 
+ $$\mathcal{L}\{2t\}=s\mathcal{L}\{ t^2\}-0$$
+ $$\mathcal{L}\{ t^2\} = \frac{2}{s^3}$$
+
+ 
+ Analogamente:
+ $$\mathcal{L}\{ t^3\} = \frac{6}{s^4}$$
+
+  $$\mathcal{L}\{ t^n\} = \frac{n!}{s^{n+1}}$$
+  
+  
+  
+  Aplicação:
+  
+  $$f'(t)+f(t) = 1$$
+  com $f(0)=1$.
+
+  Aplicando a transformada de Laplace, temos:
+  
+  $$\left[sF(s)-f(0)\right]+F(s)=\frac{1}{s}$$
+  
+  $$F(s)(s+1) = \frac{1}{s}+1$$
+  
+  $$F(s) = \frac{1}{s(s+1)}+\frac{1}{(s+1)}$$
+  
+  $$F(s) = \frac{1+s}{s(s+1)}=\frac{1}{s}$$
+  
+  $$f(t)=1$$
+  
+  OBS: $f(t)=1, t\neq 2$,  $f(2)=0$.
+  
+  
+  \chapter{21 de setembro}
+
+  \section{A transformada inversa}
+  
+  Se $\mathcal{L}\{f(t)\}=F(s)$, dizemos que $f(t)$ é a transformada inversa de $F(s)$:
+  $$\mathcal{L}^ {-1}(F(s))=f(t)$$
+  
+  \section{Propriedade da derivada - derivada segunda}
+ Vimos a propriedade da derivada:
+    $$\mathcal{L}\{f'(t)\}=s\mathcal{L}\{ f(t)\}-f(0)$$
+ 
+ Agora aplicamos à derivada da função $f'(t)$:
+ \begin{eqnarray*}
+ \mathcal{L}\{f''(t)\}&=&s\mathcal{L}\{ f'(t)\}-f'(0)\\
+ &=&s\left[sF(s)-f(0)\right]-f'(0)\\
+ &=&s^2F(s)-sf(0)-f'(0)\\
+ \end{eqnarray*}
+
+ Analogamente:
+ \begin{eqnarray*}
+ \mathcal{L}\{f'''(t)\}
+  &=&s^3F(s)-s^2f(0)-sf'(0)-f''(0)\\
+ \end{eqnarray*}
+
+ 
+ % 
+ Exemplo:
+ \begin{eqnarray*}f(t)&=&\cos(\omega t)\\
+ f'(t)&=&-\omega\sin(\omega t)\\
+ f''(t)&=&-\omega^2\cos(\omega t)
+ \end{eqnarray*}
+ 
+ isto é:
+ $$f''(t)=-\omega^2f(t)$$
+ Aplicando a transformada de Laplace, temos:
+ \begin{eqnarray*}
+ \mathcal{L}\{f''(t)\}&=&-\omega^2\mathcal{L}\{ f(t)\}.
+ \end{eqnarray*}
+ Usamos a propriedade da derivada (segunda):
+ \begin{eqnarray*}
+ s^2F(s)-sf(0)-f'(0)&=&-\omega^2F(s)
+ \end{eqnarray*}
+ isto é:
+ \begin{eqnarray*}
+ (s^2+\omega^2)F(s)=sf(0)+f'(0)=s
+ \end{eqnarray*}
+ Portanto:
+ $$F(s)=\mathcal{L}\{\cos(\omega t)\}=\frac{s}{s^2+\omega^2},~~s>0$$
+% 
+ Analogamente, temos:
+ $$\mathcal{L}\{\sin(\omega t)\}=\frac{w}{s^2+\omega^2}$$
+ 
+ \section{Método das frações parciais para calcular transformadas inversas
+ }
+% * Ler seção 3.4 do livro. %https://www.ufrgs.br/reamat/TransformadasIntegrais/livro-tl/apdleatdd-mx00e9todo_das_frax00e7x00f5es_parciais_para_calcular_transformadasinversas.html
+% 
+ \begin{eqnarray*}F(s)&=&\frac{s^2-6s+4}{s^3-3s^2+2s}\\
+ &=&\frac{s^2-6s+4}{s(s^2-3s+2)}\\
+ &=&\frac{s^2-6s+4}{s(s-1)(s-2)}\\
+ &=&\frac{A}{s}+\frac{B}{s-1}+\frac{C}{s-2}
+ \end{eqnarray*}
+% 
+ O teorema das frações parciais garante que existem constantes $A$, $B$ e $C$ tais que:
+ \begin{eqnarray}\label{eq_or_fp}\frac{s^2-6s+4}{s(s-1)(s-2)}
+ &=&\frac{A}{s}+\frac{B}{s-1}+\frac{C}{s-2}
+ \end{eqnarray}
+ para todo $s$ complexo.
+
+ 
+Primeiro multiplicamos (\ref{eq_or_fp}) por $s$:
+\begin{eqnarray*}\frac{s^2-6s+4}{(s-1)(s-2)}
+ &=&A+\frac{Bs}{s-1}+\frac{Cs}{s-2}
+ \end{eqnarray*}
+Substituindo $s$ por $0$, temos:
+\begin{eqnarray*}\frac{4}{(-1)(-2)}
+ =A~~~\Longrightarrow ~~ A=2
+ \end{eqnarray*}
+
+ 
+Agora multiplicamos a expressão (\ref{eq_or_fp}) por $s-1$:
+% 
+ \begin{eqnarray*}\frac{s^2-6s+4}{s(s-2)}
+ &=&\frac{A(s-1)}{s}+{B}+\frac{C(s-1)}{s-2}
+ \end{eqnarray*}
+
+ Substituindo $s$ por 1, temos:
+
+  \begin{eqnarray*}\frac{1-6+4}{1(1-2)}
+ =B~~~\Longrightarrow ~~B = 1
+ \end{eqnarray*}
+
+ Finalmente multiplicamos (\ref{eq_or_fp}) por $s-2$:
+ % 
+ 
+ \begin{eqnarray*}\frac{s^2-6s+4}{s(s-1)}
+ &=&\frac{A(s-2)}{s}+\frac{B(s-2)}{s-1}+{C}
+ \end{eqnarray*}
+E substuimos por $s=2$:
+
+ \begin{eqnarray*}\frac{4-12+4}{2(2-1)}
+ ={C}~~~\Longrightarrow ~~C = -2
+ \end{eqnarray*}
+
+ 
+ \begin{eqnarray}F(s)&=&\frac{s^2-6s+4}{s(s-1)(s-2)}\\
+ &=&\frac{2}{s}+\frac{1}{s-1}-\frac{2}{s-2}
+ \end{eqnarray}
+ 
+ Olhanda na tabela, encontramos:
+ $$f(t)=2+e^t-2e^{2t},~~t\geq 0$$
+ Tabela com item 1 e item 7 com $a=1$ e $a=2$.
+ 
+ {\bf Obs:}
+ 
+ $$F(s)=\frac{s}{(s^2+1)(s-2)^3}=\frac{A+Bs}{s^2+1}+\frac{C}{(s-2)}+\frac{D}{(s-2)^2}+\frac{E}{(s-2)^3}$$
+ % 
+  \section{Propriedade de translação no eixo s}
+% 
+  Se $F(s)$ é a transformada de Laplace de $f(t)$ definida para $s>s_0$, então $e^{at}f(t)$ é a transformada inversa de $F(s-a)$, isto é
+  \begin{equation*}
+  \mathcal{L}\left\{e^{at}f(t)\right\} =F(s-a),\qquad s>s_0+a
+  \end{equation*}
+  A demostração vem da aplicação da definição da transformada de Laplace $F(s-a)$:
+ \begin{eqnarray*}
+   F(s-a)&=&\int_0^\infty f(t)e^{-(s-a)t}dt\\
+  &=&\int_0^\infty f(t)e^{at}e^{-st}dt\\
+&=&\int_0^\infty \left(f(t)e^{at}\right)e^{-st}dt\\
+    &=&\mathcal{L}\left\{e^{at}f(t)\right\}
+   \end{eqnarray*}
+
+{\bf Exemplo:}
+$$\mathcal{L}\left\{t^2\right\}=\frac{2}{s^3}$$
+   
+$$\mathcal{L}\left\{t^2e^{at}\right\}=\frac{2}{(s-a)^3}$$
+   
+   %  
+  \section{Oscilador harmônico}
+%  %https://www.ufrgs.br/reamat/TransformadasIntegrais/livro-tl/apdtedtd-aplicax00e7x00e3o_oscilador_harmx00f4nico.html
+$$F(s)=\frac{1}{ms^2+\gamma s+ \kappa}$$
+
+
+Caso $m=1$, $\gamma=0$, $\kappa =4$:
+
+$$F(s)=\frac{1}{s^2+ 4}=\frac{1}{s^2+ 2^2}$$
+
+$$f(t)=\frac{1}{2}\sin(2t)$$
+
+Caso $m=1$, $\gamma=2$, $\kappa =5$:
+
+\begin{eqnarray*}F(s)&=&\frac{1}{s^2+2 s+ 5}\\
+&=&\frac{1}{\underbrace{(s+1)^2}_{s^2+2s+1}+4}\\
+&=&\frac{1}{(s+1)^2+2^2}\\
+&=&G(s+1)
+ \end{eqnarray*}
+onde $G(s)=\frac{1}{s^2+2^2}$
+ 
+ Como $$g(t)=\mathcal{L}^{-1}\{G(s)\}=\frac{1}{2}\sin(2t)$$ $$f(t)=\frac{1}{2}e^{-t}\sin(2t)$$
+Onde usamos o produto notável: $$(s+a)^2=s^2+2as+a^2.$$
+ 
+ Caso $m=1$, $\gamma=3$, $\kappa=2$:
+\begin{eqnarray*}F(s)&=&\frac{1}{s^2+3 s+ 2}\\
+F(s)&=&\frac{1}{(s+1)(s+2)}\\
+ \end{eqnarray*}
+
+ Usando a tabela, encontramos:
+ $$f(t)=e^{-t}-e^{-2t}$$
+ 
+ Pergunta: Quantas vezes $f(t)$ para por zero para $t\geq 0$.
+ $$f(t)=e^{-t}-e^{-2t}=0$$
+ $$e^{-t}(1-e^{-t})=0$$
+  Assim $f(t)=0$ se e somente se $e^{-t}=1$, i.e., $t=0$.
+  \end{document}
+  
