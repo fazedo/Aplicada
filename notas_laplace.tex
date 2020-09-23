@@ -273,5 +273,149 @@ F(s)&=&\frac{1}{(s+1)(s+2)}\\
  $$f(t)=e^{-t}-e^{-2t}=0$$
  $$e^{-t}(1-e^{-t})=0$$
   Assim $f(t)=0$ se e somente se $e^{-t}=1$, i.e., $t=0$.
+  
+  
+  \chapter{23 de setembro}
+  \section{Exemplo de cálculo de transformada de Laplace usando função de Heaviside}
+  
+ Representar algebricamente em termos da função de Heaviside a função dada no gráfico da figura \ref{fig_Heaviside_4}.
+\begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{figs/figura_8}\end{center}
+\caption{\label{fig_Heaviside_4}}
+\end{figure} 
+ Observe que podemos representar $f(t)$ da seguinte forma:
+ \begin{equation}
+  f(t)=\left\{ \begin{array}{ll} 0, &t<1\\2,&1<t<3\\-3,& 3<t<5\\0,&t>5. \end{array}\right.
+ \end{equation}
+ Para representar em termos da função de Heaviside, olhe para o gráfico pensando em dois pulsos: $2(u(t-1)-u(t-3))$ e $-3(u(t-3)-u(t-5))$. A soma deles é a função desejada:
+ \begin{equation}
+ f(t)=2(u(t-1)-u(t-3))-3(u(t-3)-u(t-5)).
+ \end{equation}
+
+ \begin{equation}
+ f(t)=2u(t-1)-5u(t-3)+3u(t-5).
+ \end{equation}
+ \begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{figs/figura_8}\end{center}
+\caption{\label{fig_Heaviside_4}}
+\end{figure} 
+ $$F(s)=\frac{2e^{s}-5e^{-3s}+3e^{-5s}}{s}$$
+onde usamos que
+$$\mathcal{L}\{u(t-a)\}=\frac{e^{-as}}{s}$$
+O que vamos provar agora.  
+ \section{Transformada de Laplace da Heaviside}
+% 
+ $$f(t)=u(t-a), ~~a>0$$
+% 
+ \begin{eqnarray*}
+  F(s)&=&\int_0^\infty f(t)e^{-st}dt\\
+  &=&\int_0^\infty u(t-a)e^{-st}dt\\
+&=&\int_0^a \underbrace{u(t-a)}_{0}e^{-st}dt + \int_a^\infty \underbrace{u(t-a)}_{1}e^{-st}dt\\
+&=& \int_a^\infty e^{-st}dt\\
+&=&\left.\frac{e^{-st}}{-s}\right|_{t=a}^\infty\\
+&=&\frac{e^{-as}}{s},~~s>0
+\end{eqnarray*}
+% 
+ \section{Propriedade do deslocamento no tempo}
+% 
+   Se $F(s)$ é a transformada de $f(t)$, então $f(t-a)u(t-a)$ é a transformada inversa de $e^{-as}F(s)$, isto é
+ \begin{equation}
+ \mathcal{L}\left\{u(t-a)f(t-a)\right\} =e^{-as}F(s),\qquad a>0
+ \end{equation}
+ ou
+ \begin{equation}{\label{eq_trans_t_inv}}
+ \mathcal{L}^{-1} \left\{e^{-as}F(s)\right\} =u(t-a)f(t-a),\qquad a>0.
+ \end{equation} 
+%  
+ Dem: Aplicamos a definição da transformada de Laplace e obtemos:
+  \begin{eqnarray*}
+  \mathcal{L}\left\{u(t-a)f(t-a)\right\}&=&\int_0^\infty u(t-a)f(t-a)e^{-st}dt\\
+  &=&\int_0^a \underbrace{u(t-a)}_{0}f(t-a)e^{-st}dt+\int_a^\infty \underbrace{u(t-a)}_{1}f(t-a)e^{-st}dt\\
+  &=&\int_a^\infty f(t-a)e^{-st}dt,
+  \end{eqnarray*}
+  pois $u(t-a)$ é zero no intervalo $[0,a)$ e um no intervalo $(a,\infty)$. Depois usamos a mudança de variável $v=t-a$ na última integral:
+  \begin{equation*}
+  \int_a^\infty f(t-a)e^{-st}dt=\int_0^\infty f(v)e^{-s(v+a)}dv=e^{-as}\int_0^\infty f(v)e^{-sv}dv.
+  \end{equation*}
+  Logo,
+  \begin{equation}
+  \mathcal{L}\left\{u(t-a)f(t-a)\right\}=e^{-as}\mathcal{L}\left\{f(t)\right\}=e^{-as}F(s).
+  \end{equation}
+% 
+  Observe que tomando $f(t)=1$ na propriedade do deslocamento, temos:
+  \begin{equation}{\label{Heaviside_trans_1}}
+  \mathcal{L}\left\{1~\!u(t-a)\right\} =\frac{e^{-as}}{s},\qquad a>0
+  \end{equation}
+  que coincide com a fórmula da transformada de Laplace da Heaviside. %
+  Quando $a=0$ na equação acima, recaímos no item 1 da tabela de transformadas.
+ 
+  
+
+{\bf Exemplo} Aplicando diretamente a propriedade do deslocamento em $t$ e usando que $\mathcal{L}\{t^2\}=\frac{2}{s^3}$, calculamos a transformada inversa de Laplace de $e^{-3s}\frac{2}{s^3}$:
+  \begin{equation}
+  \mathcal{L}^{-1}\left\{e^{-3s}\frac{2}{s^3}\right\}=u(t-3)(t-3)^2.
+  \end{equation}
+Cuidado:
+  \begin{equation}
+  u(t-3)(t-3)^2 \neq u(t-3)t^2.
+  \end{equation}
+
+  %  
+%  
+%   
+   {\bf Exemplo:}
+   Vamos calcular a transformada inversa de Laplace da função
+  \begin{equation}
+  F(s)=e^{-s}\frac{1}{(s+1)^2-1}.
+  \end{equation}
+{\bf Obs:} As raizes do denominador são:
+$$(s+1)^2-1=0$$
+  $$(s+1)^2=1$$
+  $$(s+1) = \pm 1$$
+  $$s = -1\pm 1$$
+  
+    Primeiro calculamos a transformada de $\frac{1}{(s+1)^2-1}$ usando a propriedade.
+   \begin{eqnarray*}
+   \mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2-1}\right\}&=&e^{-t}\sinh(t)\\
+   &=&e^{-t}\left(\frac{e^{t}-e^{-t}}{2}\right)\\
+   &=&\frac{1-2e^{-2t}}{2}
+ \end{eqnarray*}
+  Depois usamos a propriedade  para concluir
+  \begin{equation}
+  \mathcal{L}^{-1}\left\{e^{-s}\frac{1}{(s+1)^2-1}\right\}=u(t-1)\mathcal{L}^{-1}\left\{\frac{1}{(s+1)^2-1}\right\}
+  _{t\to t-1}=u(t-1)e^{-(t-1)}\sinh(t-1).
+   \end{equation}
+% % 
+%   
+%   
+%   
+ \section{A propriedade da transformada de Laplace da integral de uma função}
+  Se $F(s)$ é a transformada de Laplace de uma função contínua por partes $f(t)$, então $\int_0^tf(\tau)d\tau$ é a transformada inversa de $\frac{1}{s}F(s)$, isto é
+ \begin{equation}{\label{eq_trans_int}}
+ \mathcal{L}\left\{\int_0^tf(\tau)d\tau\right\} =\frac{1}{s}F(s),
+ \end{equation}
+ ou
+ \begin{equation}{\label{eq_trans_int_inv}}
+ \mathcal{L}^{-1} \left\{\frac{1}{s}F(s)\right\} =\int_0^tf(\tau)d\tau.
+ \end{equation} 
+% 
+Dem: Seja $g(t)=\int_0^tf(\tau)d\tau$. Então $g'(t)=f(t)$. Aplicamos a propriedade da transformada da derivada  e temos:
+ \begin{equation}
+ \mathcal{L}\{g'(t)\}=s\mathcal{L}\{g(t)\}-g(0).
+ \end{equation}
+ Usando o fato que $g(0)=0$, temos
+ \begin{eqnarray*}
+ \mathcal{L}\left\{\int_0^tf(\tau)d\tau\right\}&=&\mathcal{L}\left\{g(t)\right\}\\
+ &=&\frac{1}{s}\mathcal{L}\{g'(t)\}\\
+ &=&\frac{1}{s}\mathcal{L}\{f(t)\}\\
+ &=&\frac{1}{s}F(s).
+ \end{eqnarray*}
+% 
+% 
+  
   \end{document}
   
