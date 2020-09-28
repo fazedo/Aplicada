@@ -516,99 +516,231 @@ Dem: Seja $g(t)=\int_0^tf(\tau)d\tau$. Então $g'(t)=f(t)$. Aplicamos a propried
 
  
  
- % 
+ \chapter{Aula do dia 28/09}
+  
+
+
+\section{Circuito RLC}{\label{sec_circ_2}}
+Ver \url{https://colab.research.google.com/drive/1R3rCOc8zv70rSwCf7W30yQlleP6J2Mf2}
+
+Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
+\begin{equation}
+V(t)=V_0\left(u(t-a)-u(t-b)\right).
+\end{equation}
+\begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{figs/figura_7_RLC}\end{center}
+\caption{\label{fig_circ_2}}
+\end{figure} 
+ O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
+ \begin{equation}{\label{modelo_corrente}}
+ Li'(t)+ Ri(t)+\frac{1}{C}q(t)=V_0\left(u(t-a)-u(t-b)\right),
+ \end{equation}
+ onde $q(t)$ é a carga no capacitor, $\frac{1}{C}q(t)$ é a tensão no capacitor de capacitância $C$, $Ri(t)$ é a tensão no resistor de resistência $R$ e $Li'(t)$ é a tensão no indutor de indutância $L$. Considere as condições iniciais $i(0)=0$ e $q(0)=0$.
+ Dado que $\frac{dq(t)}{dt}=i(t)$, derivamos a equação do circutio para obter a seguinte equação diferencial:
+ \begin{equation}{\label{modelo_corrente_2}}
+ Li''(t)+ Ri'(t)+\frac{1}{C}i(t)=V_0\left(\delta(t-a)-\delta(t-b)\right),
+ \end{equation}
+ onde usamos que a derivada da função de Heaviside é a função delta de Dirac. As condições iniciais para a equação (\ref{modelo_corrente_2}) são $i'(0)=0$ e $i(0)=0$. Com o objetivo de resolver a problema de valor inicial, aplicamos a transformada de Laplace para obter a equação subsidiária
+ \begin{equation*}
+ Ls^2I(s)+ RsI(s)+\frac{1}{C}I(s)=V_0\left(e^{-as}-e^{-bs}\right),
+ \end{equation*}
+ que tem solução
 % 
-% \section{Circuto RLC}
+% 
+ \begin{eqnarray*}
+ I(s)&=&\frac{V_0\left(e^{-as}-e^{-bs}\right)}{Ls^2+Rs+\frac{1}{C}}\\
+ &=&\frac{1}{L}\frac{V_0\left(e^{-as}-e^{-bs}\right)}{\left(s+\frac{R}{2L}\right)^2-\left(\frac{R}{2L}\right)^2+\frac{1}{LC}}\\
+ &=&\frac{V_0}{L}\left[\frac{e^{-as}}{\left(s+\frac{R}{2L}\right)^2+\eta}-\frac{e^{-bs}}{\left(s+\frac{R}{2L}\right)^2+\eta}\right]
+ \end{eqnarray*}
+ onde
+ \begin{equation}
+ \eta=\frac{1}{LC}-\left(\frac{R}{2L}\right)^2.
+ \end{equation}
+ Vamos exemplificar os casos subamortecido, superamortecido e criticamente amortecido tomando $V_0=10V$, $a=1$ e $b=5$:
+ \begin{itemize}
+  \item Caso subamortecido ($\eta>0$): escolhemos o caso onde $L=1\ \!$H, $C=\frac{1}{10}\ \!$F e $R=2\Omega$. Nesse caso
+  \begin{equation}
+  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2+9}-\frac{e^{-5s}}{\left(s+1\right)^2+9}\right].
+  \end{equation}
+  Logo,
+  \begin{equation}
+  i(t)=\frac{10}{3}\left(u(t-1)e^{-(t-1)}\sin\left(3 (t-1)\right)-u(t-5) e^{-(t-5)}\sin\left(3 (t-5)\right)\right).
+  \end{equation}
+  O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_1}.
+ \begin{figure}[!ht]
+ \begin{center}
+% 
+ \includegraphics{figs/figura_8}\end{center}
+ \caption{\label{fig_circ_RCL_1}}
+ \end{figure}
+  \item Caso superamortecido ($\eta<0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=4\Omega$. Nesse caso
+  \begin{equation}
+  I(s)=10\left[\frac{e^{-s}}{\left(s+2\right)^2-3 }-\frac{e^{-5s}}{\left(s+2\right)^2-3}\right].
+  \end{equation}
+  Logo,
+  \begin{eqnarray*}
+  i(t)&=&10\left(u(t-1)\frac{e^{-2(t-1)}}{ \sqrt{3}}\sinh\left(\sqrt{3} (t-1)\right)-u(t-5)\frac{e^{-2(t-5)}}{\sqrt{3} }\sinh\left(\sqrt{3}  (t-5)\right)\right)\\
+  &=&\frac{5}{\sqrt{3}}u(t-1)\left(e^{\left(\sqrt{3}-2\right) (t-1)}-e^{-\left(\sqrt{3}+2\right) (t-1)}\right)+\\
+  &+&\frac{5}{\sqrt{3}}u(t-5)\left(e^{\left(\sqrt{3}-2\right) (t-5)}-e^{-\left(\sqrt{3}+2\right) (t-5)}\right)
+  \end{eqnarray*}
+  O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_2}.
+ \begin{figure}[!ht]
+ \begin{center}
+ 
+ \includegraphics{figs/figura_9}\end{center}
+ \caption{\label{fig_circ_RCL_2}}
+ \end{figure}
+ \item Caso criticamente amortecido ($\eta=0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=2\Omega$. Nesse caso
+  \begin{equation}
+  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2}-\frac{e^{-5s}}{\left(s+1\right)^2}\right].
+  \end{equation}
+  Logo,
+  \begin{equation}
+  i(t)=10\left(u(t-1)e^{-(t-1)} (t-1)-u(t-5)e^{-(t-5)} (t-5)\right).
+  \end{equation}
+O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_3}.
+ \begin{figure}[!ht]
+ \begin{center}
+ \includegraphics{figs/figura_10}\end{center}
+ \caption{\label{fig_circ_RCL_3}}
+ \end{figure}
+ \end{itemize}
 % 
 % 
-% \section{Aplicação: circuito RLC}{\label{sec_circ_2}}
-% Ver \url{https://colab.research.google.com/drive/1R3rCOc8zv70rSwCf7W30yQlleP6J2Mf2}
+ \section{Exemplo}
+ Resolva o PVI $\displaystyle \left\{
+                               \begin{array}{ll}
+                                 y'' + 3y'+2y = \delta(t-5) - u(t-10)\\
+                                 y(0) = 0, \quad y'(0)=1/2
+                                 \end{array}
+                             \right.$
+ 
+ \begin{enumerate}
+  \item Aplicar a transformada de Laplace e substituir as condições iniciais
+  $$
+  s^2 Y(s)-sy(0)-y'(0)+3(sY(s)-y(0))+2Y(s)=e^{-5s}-\frac{e^{-10s}}{s}.
+  $$
+ 
+  $$
+  s^2 Y(s)-\frac{1}{2}+3sY(s)+2Y(s)=e^{-5s}-\frac{e^{-10s}}{s}.
+  $$
+ 
+  \item Resolver o problema algébrico
+  
+  $$
+  (s^2+3s+2) Y(s)=\frac{1}{2}+e^{-5s}-\frac{e^{-10s}}{s}.
+  $$
+ 
+   $$
+   Y(s)=\frac{1}{2(s^2+3s+2)}+\frac{e^{-5s}}{(s^2+3s+2)}-\frac{e^{-10s}}{s(s^2+3s+2)}.
+  $$
+ 
+  \item Calcular a transformada inversa.
+  \subitem Primeiro termo
+ $$
+ \frac{1}{2(s^2+3s+2)}=\frac{1}{2(s+1)}-\frac{1}{2(s+2)} 
+ $$
+ $$
+ \mathcal{L}^{-1}\left\{\frac{1}{2(s^2+3s+2)}\right\}=\frac{1}{2}e^{-t}-\frac{1}{2}e^{-2t}.
+ $$
+ \subitem Segundo termo
+ $$
+ \frac{e^{-5s}}{(s^2+3s+2)}=\frac{e^{-5s}}{(s+1)}-\frac{e^{-5s}}{(s+2)}
+  $$
+ $$
+ \mathcal{L}^{-1}\left\{\frac{e^{-5s}}{(s^2+3s+2)}\right\}=u(t-5)\left(e^{-(t-5)}-e^{-2(t-5)}\right).
+ $$
+   \subitem Terceiro termo
+ $$
+ \frac{1}{s(s^2+3s+2)}=\frac{1}{2s}-\frac{1}{(s+1)}+\frac{1}{2(s+2)}
+ $$
+ $$
+ \mathcal{L}^{-1}\left\{\frac{1}{s(s^2+3s+2)}\right\}=\frac{1}{2}-e^{-t}+\frac{e^{-2t}}{2}
+ $$
+ $$
+ \mathcal{L}^{-1}\left\{\frac{e^{-10s}}{s(s^2+3s+2)}\right\}=u(t-10)\left(\frac{1}{2}-e^{-(t-10)}+\frac{e^{-2(t-10)}}{2}\right)
+ $$
+ 
+ 
+ Solução:
+ $$
+ y(t)=\frac{1}{2}e^{-t}-\frac{1}{2}e^{-2t}+u(t-5)\left(e^{-(t-5)}-e^{-2(t-5)}\right)+u(t-10)\left(\frac{1}{2}-e^{-(t-10)}+\frac{e^{-2(t-10)}}{2}\right).
+ $$
+\end{enumerate}
+%                             
+%                             
+%                             
+% \section{Cálculo da deflexão em vigas sujeitas a cargas concentradas}
 % 
-% Considere o circuito Resistor/Capacitor/Indutor representado na figura \ref{fig_circ_2} com uma tensão $V(t)$ aplicada do tipo pulso,
+% Considere uma viga elástica horizontal de comprimento $L$ sob a ação de forças verticais. Colocamos o eixo horizontal $x$ com origem no extremo a esquerda da viga e, portanto, $x=L$ é o outro extremo. Supomos que a viga está sujeita a uma carga $W(x)$ que provoca uma deflexão em cada ponto $x\in[0,L]$. A modelo para esse fenômeno é dado pela equação de Euler-Bernoulli:
 % \begin{equation}
-% V(t)=V_0\left(u(t-a)-u(t-b)\right).
+% \label{eq}\frac{d^4}{dx^4}y(x)=\frac{1}{EI}W(x).
 % \end{equation}
-% \begin{figure}[!ht]
-% \begin{center}
-% 
-% \includegraphics{figs/figura_7_RLC}\end{center}
-% \caption{\label{fig_circ_2}}
-% \end{figure} 
-% O modelo para a corrente $i(t)$ obedece a lei de Kirchoff:
-% \begin{equation}{\label{modelo_corrente}}
-% Li'(t)+ Ri(t)+\frac{1}{C}q(t)=V_0\left(u(t-a)-u(t-b)\right),
-% \end{equation}
-% onde $q(t)$ é a carga no capacitor, $\frac{1}{C}q(t)$ é a tensão no capacitor de capacitância $C$, $Ri(t)$ é a tensão no resistor de resistência $R$ e $Li'(t)$ é a tensão no indutor de indutância $L$. Considere as condições iniciais $i(0)=0$ e $q(0)=0$.
-% Dado que $\frac{dq(t)}{dt}=i(t)$, derivamos a equação do circutio para obter a seguinte equação diferencial:
-% \begin{equation}{\label{modelo_corrente_2}}
-% Li''(t)+ Ri'(t)+\frac{1}{C}i(t)=V_0\left(\delta(t-a)-\delta(t-b)\right),
-% \end{equation}
-% onde usamos que a derivada da função de Heaviside é a função delta de Dirac. As condições iniciais para a equação (\ref{modelo_corrente_2}) são $i'(0)=0$ e $i(0)=0$. Com o objetivo de resolver a problema de valor inicial, aplicamos a transformada de Laplace para obter a equação subsidiária
-% \begin{equation*}
-% Ls^2I(s)+ RsI(s)+\frac{1}{C}I(s)=V_0\left(e^{-as}-e^{-bs}\right),
-% \end{equation*}
-% que tem solução
+% onde $E$ é o módulo de Young, $I$ é o momento de inércia da viga.
 % 
 % 
+% 
+% Consideraremos aqui uma viga engastada, ou seja: \begin{equation}y(0)=y'(0)=y(L)=y'(L)=0.\end{equation}
+% A carga está concentrada na posição $x=\frac{L}{3}$ e tem intensidade $P_0$, sendo modelada pela seguinte expressão:
+% \begin{equation}W(x)=P_0\delta\left(x-\frac{L}{3}\right).\end{equation}
+% Aplicando a transformada de Laplace em (\ref{eq}) e usando o fato que $\mathcal{L}\left(\delta\left(x-\frac{L}{3}\right)\right)=e^{-\frac{L}{3}s}$, obtemos
+% \begin{equation}s^4Y(s)-s^3y(0)-s^2y'(0)-sy''(0)-y'''(0)=\frac{P_0}{EI}e^{-\frac{L}{3}s}\end{equation}
+% Substituimos $y(0)=y'(0)=0$, $y''(0)=C_1$ e $y'''(0)=C_2$ onde $C_1$ e $C_2$ são constantes a determinar:
+% \begin{equation}s^4Y(s)-sC_1-C_2=\frac{P_0}{EI}e^{-\frac{L}{3}s}\end{equation}
+% finalmente:
+% \begin{equation}Y(s)=\frac{C_1}{s^3}+\frac{C_2}{s^4}+\frac{P_0}{EI}\frac{e^{-\frac{L}{3}s}}{s^4}\end{equation}
+% e recuperamos a solução do domínio $x$ através da transformada inversa de Laplace:
+% \begin{equation}y(x)=\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!}u(x-L/3).\end{equation}
+% A expressão para $y(x)$ pode ser escrita como função definida por partes na forma:
+% \begin{equation}y(x)=\left\{\begin{array}{ll}\frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3,&0\leq x\leq\frac{L}{3} \\ \frac{C_1}{2!}x^2+\frac{C_2}{3!}x^3+\frac{P_0}{EI}\frac{(x-L/3)^3}{3!},&\frac{L}{3}<x\leq L .\end{array}\right.\end{equation}
+% Para calcular o valor das constantes $C_1$ e $C_2$ calculamos  $y(L)$ e $y'(L)$ usando a segunda parte da função $y(x)$:
 % \begin{eqnarray*}
-% I(s)&=&\frac{V_0\left(e^{-as}-e^{-bs}\right)}{Ls^2+Rs+\frac{1}{C}}\\
-% &=&\frac{1}{L}\frac{V_0\left(e^{-as}-e^{-bs}\right)}{\left(s+\frac{R}{2L}\right)^2-\left(\frac{R}{2L}\right)^2+\frac{1}{LC}}\\
-% &=&\frac{V_0}{L}\left[\frac{e^{-as}}{\left(s+\frac{R}{2L}\right)^2+\eta}-\frac{e^{-bs}}{\left(s+\frac{R}{2L}\right)^2+\eta}\right]
+% 0=y(L)&=&\frac{C_1}{2}L^2+\frac{C_2}{6}L^3+\frac{4}{81}\frac{P_0}{EI}L^3\\
+% 0=y'(L)&=&C_1 L+\frac{C_2}{2}L^2+\frac{2}{9}\frac{P_0}{EI}L^2
 % \end{eqnarray*}
-% onde
-% \begin{equation}
-% \eta=\frac{1}{LC}-\left(\frac{R}{2L}\right)^2.
+% Colocando na forma matricial:
+% \begin{equation}\left[\begin{array}{cc}
+% \frac{L^2}{2} & \frac{L^3}{6}\\
+% L & \frac{L^2}{2}\\
+% \end{array}
+% \right]\left[\begin{array}{c}
+% C_1\\
+% C_2\end{array}
+% \right]=\left[\begin{array}{c}
+% -\frac{4}{81}\frac{P_0}{EI}L^3\\
+% -\frac{2}{9}\frac{P_0}{EI}L^2\end{array}.
+% \right]
 % \end{equation}
-% Vamos exemplificar os casos subamortecido, superamortecido e criticamente amortecido tomando $V_0=10V$, $a=1$ e $b=5$:
-% \begin{itemize}
-%  \item Caso subamortecido ($\eta>0$): escolhemos o caso onde $L=1\ \!$H, $C=\frac{1}{10}\ \!$F e $R=2\Omega$. Nesse caso
-%  \begin{equation}
-%  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2+9}-\frac{e^{-5s}}{\left(s+1\right)^2+9}\right].
-%  \end{equation}
-%  Logo,
-%  \begin{equation}
-%  i(t)=\frac{10}{3}\left(u(t-1)e^{-(t-1)}\sin\left(3 (t-1)\right)-u(t-5) e^{-(t-5)}\sin\left(3 (t-5)\right)\right).
-%  \end{equation}
-%  O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_1}.
+%  Invertemos a matriz do sistema para obter as constantes $C_1$ e $C_2$:
+% \begin{equation}\left[\begin{array}{c}
+% C_1\\
+% C_2\end{array}
+% \right]=
+% \frac{12}{L^4}
+% \left[\begin{array}{cc}
+% \frac{L^2}{2} & -\frac{L^3}{6}\\
+% -L & \frac{L^2}{2}\\
+% \end{array}
+% \right]\left[\begin{array}{c}
+% -\frac{4}{81}\frac{P_0}{EI}L^3\\
+% -\frac{2}{9}\frac{P_0}{EI}L^2\end{array}
+% \right],
+% \end{equation}
+% o que resulta em $C_1=\frac{4P_0 L}{27EI}$ e $C_2=-\frac{20P_0 }{27EI}$. A figura \ref{viga} apresenta o gráfico da função $y(x)$ quando $L=5$ e $\frac{P_0}{EI}=1$.
 % \begin{figure}[!ht]
 % \begin{center}
 % 
-% \includegraphics{figs/figura_8}\end{center}
-% \caption{\label{fig_circ_RCL_1}}
+% \includegraphics{figs/figura_11}\end{center}
+% \caption{\label{viga}}
 % \end{figure}
-%  \item Caso superamortecido ($\eta<0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=4\Omega$. Nesse caso
-%  \begin{equation}
-%  I(s)=10\left[\frac{e^{-s}}{\left(s+2\right)^2-3 }-\frac{e^{-5s}}{\left(s+2\right)^2-3}\right].
-%  \end{equation}
-%  Logo,
-%  \begin{eqnarray*}
-%  i(t)&=&10\left(u(t-1)\frac{e^{-2(t-1)}}{ \sqrt{3}}\sinh\left(\sqrt{3} (t-1)\right)-u(t-5)\frac{e^{-2(t-5)}}{\sqrt{3} }\sinh\left(\sqrt{3}  (t-5)\right)\right)\\
-%  &=&\frac{5}{\sqrt{3}}u(t-1)\left(e^{\left(\sqrt{3}-2\right) (t-1)}-e^{-\left(\sqrt{3}+2\right) (t-1)}\right)+\\
-%  &+&\frac{5}{\sqrt{3}}u(t-5)\left(e^{\left(\sqrt{3}-2\right) (t-5)}-e^{-\left(\sqrt{3}+2\right) (t-5)}\right)
-%  \end{eqnarray*}
-%  O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_2}.
-% \begin{figure}[!ht]
-% \begin{center}
-% 
-% \includegraphics{figs/figura_9}\end{center}
-% \caption{\label{fig_circ_RCL_2}}
-% \end{figure}
-% \item Caso criticamente amortecido ($\eta=0$): escolhemos o caso onde $L=1\ \!$H, $C=1\ \!$F e $R=2\Omega$. Nesse caso
-%  \begin{equation}
-%  I(s)=10\left[\frac{e^{-s}}{\left(s+1\right)^2}-\frac{e^{-5s}}{\left(s+1\right)^2}\right].
-%  \end{equation}
-%  Logo,
-%  \begin{equation}
-%  i(t)=10\left(u(t-1)e^{-(t-1)} (t-1)-u(t-5)e^{-(t-5)} (t-5)\right).
-%  \end{equation}
-% O gráfico da corrente é apresentado na figura \ref{fig_circ_RCL_3}.
-% \begin{figure}[!ht]
-% \begin{center}
-% \includegraphics{figs/figura_10}\end{center}
-% \caption{\label{fig_circ_RCL_3}}
-% \end{figure}
-% \end{itemize}
-% 
-%   
+
+
+
+
+
+                            
+                            
 \end{document}
   
