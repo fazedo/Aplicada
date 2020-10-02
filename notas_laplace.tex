@@ -1113,12 +1113,12 @@ onde usamos a soma de uma série geométrica de razão $e^{-sT}$.
  
 {\bf Exemplo} Observe o cálculo da transformada da função $f(t)=\cos(wt)$ sabendo que
 \begin{equation}
-\int \cos(wt)e^{-st}dt=\frac{e^{-st}\left(w\sen(wt)-s\cos(wt)\right)}{s^2+w^2}+\ \!\hbox{Constante}
+\int \cos(wt)e^{-st}dt=\frac{e^{-st}\left(w\sin(wt)-s\cos(wt)\right)}{s^2+w^2}+\ \!\hbox{Constante}
 \end{equation}
 e usando a propriedade \ref{prop_fun_per}:
 \begin{eqnarray*} 
 \mathcal{L}\{\cos(wt)\}&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\int_0^{\frac{2\pi }{w}}\cos(wt)e^{-st}dt\\
-&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\left[\frac{e^{-st}\left(w\sen(wt)-s\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{2\pi }{w}}\\
+&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\left[\frac{e^{-st}\left(w\sin(wt)-s\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{2\pi }{w}}\\
 &=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\frac{s-se^{-s\frac{2\pi }{w}}}{s^2+w^2}\\
 &=&\frac{s}{s^2+w^2}.
 \end{eqnarray*}
@@ -1128,7 +1128,7 @@ e usando a propriedade \ref{prop_fun_per}:
  \begin{figure}[!ht]
 \begin{center}
 
-\includegraphics{cap_especiais_coef_var/pics/figura_1}\end{center}
+\includegraphics{figs/especiais_figura_1}\end{center}
 \caption{\label{fig_onda_quadrada}}
 \end{figure}
 Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} colocando $T=2a$
@@ -1142,39 +1142,39 @@ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} col
 Multiplicando por $e^{\frac{as}{2}}$, podemos escrever a expressão em termos de funções hiperbólicas:
 \begin{eqnarray*}
 \mathcal{L}\{f(t)\}&=&\frac{1}{s} \frac{e^{\frac{as}{2}}-e^{-\frac{as}{2}}}{e^{\frac{as}{2}}+e^{-\frac{as}{2}})}\\
-&=&\frac{1}{s} \frac{\senh\left(\frac{as}{2}\right)}{\cosh\left(\frac{as}{2}\right)}\\
+&=&\frac{1}{s} \frac{\sinh\left(\frac{as}{2}\right)}{\cosh\left(\frac{as}{2}\right)}\\
 &=&\frac{1}{s} \tanh\left(\frac{as}{2}\right).
 \end{eqnarray*}
 
-% 
-% \begin{ex}A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é chamada de {\bf onda triangular} de perído $2a$.
-%  \begin{figure}[!ht]
-% \begin{center}
-% 
-% \includegraphics{cap_especiais_coef_var/pics/figura_2}\end{center}
-% \caption{\label{fig_onda_triangular}}
-% \end{figure}
-% Para calcular a transformada de Laplace, observe que:
-% \begin{itemize}
-%  \item[a)] A função $g(t)$ representada na figura \ref{fig_onda_triangular} tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
-%  \item[b)] A propriedade \ref{prop_der} nos dá
-%  \begin{equation}
-%  \mathcal{L}\{g(t)\}=\frac{1}{s}\mathcal{L}\{g'(t)\}+\frac{1}{s}g(0).
-%  \end{equation}
-% \end{itemize}
-% Logo,
-% \begin{eqnarray*}
-% \mathcal{L}\{\hbox{onda triangular}\}&=&\frac{1}{as}\mathcal{L}\{\hbox{onda quadrada}\}+\frac{1}{s}\hbox{(onda triangular na origem)},
-% \end{eqnarray*}
-% e, portanto, usando o fato que a onda triangular vale zero na origem e o resultado do exemplo \ref{ex_onda_quadrada}, temos
-% \begin{eqnarray*}
-% \mathcal{L}\{g(t)\}&=&\frac{1}{as}\frac{1}{s} \tanh\left(\frac{as}{2}\right)\\
-% &=&\frac{1}{as^2} \tanh\left(\frac{as}{2}\right).
-% \end{eqnarray*}
-% \end{ex}
-% \begin{ex} A função $h(t)$ dada por
+ 
+A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é chamada de {\bf onda triangular} de perído $2a$.
+\begin{figure}[!ht]
+ \begin{center}
+ 
+ \includegraphics{figs/especiais_figura_2}\end{center}
+ \caption{\label{fig_onda_triangular}}
+ \end{figure}
+ Para calcular a transformada de Laplace, observe que:
+ \begin{itemize}
+  \item[a)] A função $g(t)$ representada na figura \ref{fig_onda_triangular} tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
+  \item[b)] A propriedade \ref{prop_der} nos dá
+  \begin{equation}
+  \mathcal{L}\{g(t)\}=\frac{1}{s}\mathcal{L}\{g'(t)\}+\frac{1}{s}g(0).
+  \end{equation}
+ \end{itemize}
+ Logo,
+ \begin{eqnarray*}
+ \mathcal{L}\{\hbox{onda triangular}\}&=&\frac{1}{as}\mathcal{L}\{\hbox{onda quadrada}\}+\frac{1}{s}\hbox{(onda triangular na origem)},
+ \end{eqnarray*}
+ e, portanto, usando o fato que a onda triangular vale zero na origem e o resultado do exemplo \ref{ex_onda_quadrada}, temos
+ \begin{eqnarray*}
+ \mathcal{L}\{g(t)\}&=&\frac{1}{as}\frac{1}{s} \tanh\left(\frac{as}{2}\right)\\
+ &=&\frac{1}{as^2} \tanh\left(\frac{as}{2}\right).
+ \end{eqnarray*}
+
+%{\bf Exemplo} A função $h(t)$ dada por
 % \begin{equation}
-% h(t)=\left\{\begin{array}{ll}\sen(wt),&0<t<\frac{\pi}{w}\\0,& \frac{\pi}{w}<t<\frac{2\pi}{w}, \end{array}\right.,
+% h(t)=\left\{\begin{array}{ll}\sin(wt),&0<t<\frac{\pi}{w}\\0,& \frac{\pi}{w}<t<\frac{2\pi}{w}, \end{array}\right.,
 % \end{equation}
 % $h\left(t+\frac{2\pi}{w}\right)=h(t)$, é chamada de {\bf retificador de meia onda} de período $\frac{2\pi}{w}$. A figura \ref{fig_ret_meia_onda} apresenta o gráfico da função $h(t)$.
 %  \begin{figure}[!ht]
@@ -1186,15 +1186,15 @@ Multiplicando por $e^{\frac{as}{2}}$, podemos escrever a expressão em termos de
 % Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{2\pi}{w}$
 % \begin{eqnarray*}
 % \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
-% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
-% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sin(wt)e^{-st}dt\\
+% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sin(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
 % &=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
 % &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
 % \end{eqnarray*}
 % \end{ex}
 % \begin{ex} A função $p(t)$ dada por
 % \begin{equation}
-% p(t)=|\sen(wt)|
+% p(t)=|\sin(wt)|
 % \end{equation}
 % é chamada de {\bf retificador de onda completa} de período $\frac{\pi}{w}$. A figura \ref{fig_ret_onda_completa} apresenta o gráfico da função $p(t)$.
 %  \begin{figure}[!ht]
@@ -1205,8 +1205,8 @@ Multiplicando por $e^{\frac{as}{2}}$, podemos escrever a expressão em termos de
 % \end{figure}
 % Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{\pi}{w}$
 % \begin{eqnarray*}
-% \mathcal{L}\{p(t)\}&=& \frac{1}{1-e^{-s\frac{\pi}{w}}}\int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
-% &=& \frac{1}{1-e^{-s\frac{\pi}{w}}} \left[-\frac{e^{-st}\left(\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+% \mathcal{L}\{p(t)\}&=& \frac{1}{1-e^{-s\frac{\pi}{w}}}\int_0^{\frac{\pi}{w}}\sin(wt)e^{-st}dt\\
+% &=& \frac{1}{1-e^{-s\frac{\pi}{w}}} \left[-\frac{e^{-st}\left(\sin(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
 % &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
 % &=&  \frac{w}{s^2+w^2}\frac{e^{\frac{s\pi}{2w}}+e^{-\frac{s\pi}{2w}}}{e^{\frac{s\pi}{2w}}-e^{-\frac{s\pi}{2w}}}\\
 % &=&  \frac{w}{s^2+w^2}\coth\left( \frac{\pi s}{2w}\right)
