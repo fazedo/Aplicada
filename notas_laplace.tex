@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{url}
 
 %opening
@@ -856,6 +857,383 @@ Ou seja, existe uma pequena região de transição entre $0$ e $\varepsilon$ ond
  \end{figure}
  
 
+ \chapter{2 de outubro}
+ 
+ 
+\section{Propriedade da convolução}
+Dada duas funções contínuas por partes em $[0,\infty]$, a convolução  de $f$ e $g$ denotada por $f*g$ é definida pela integral
+\begin{equation}{\label{def_conv}}
+ (f*g)(t)=\int_0^t f(\tau)g(t-\tau)d\tau.
+\end{equation}
+
+{\label{ex_conv_1}}Dadas $f(t)=e^t$ e $g(t)=\cos(t)$, vamos calcular $f*g$:
+\begin{eqnarray*}
+ (f*g)(t)&=&\int_0^t e^{\tau} \cos(t-\tau)d\tau\\
+ &=&\left. \frac{1}{2}e^\tau\left(\cos(t-\tau)-\sin(t-\tau)  \right)\right|_0^t\\
+ &=& \frac{1}{2}\left(e^t-\cos(t)+\sin(t)  \right).
+\end{eqnarray*}
+onde usamos que $\int  e^{\tau} \cos(t-\tau)d\tau=\frac{1}{2}e^\tau \left(\cos(t-\tau)-\sin(t-\tau)  \right)$+ constante.
+
+
+{\label{prop_conv}}(Propriedade da convolução) Se $F(s)=\mathcal{L}\{f(t)\}$ e $G(s)=\mathcal{L}\{g(t)\}$, então
+\begin{equation}{\label{eq_prop_conv}}
+ \mathcal{L}\{(f*g)(t)\}=F(s)G(s).
+\end{equation}
+ou
+\begin{equation}{\label{eq_inv_prop_conv}}
+ \mathcal{L}^{-1}\{F(s)G(s)\}=(f*g)(t).
+\end{equation}
+
+
+ 
+Dem:
+Partimos da definição das transformadas:
+\begin{equation}
+F(s)=\mathcal{L}\{f(t) \}=\int_0^\infty f(t)e^{-st}dt
+\end{equation}
+e
+\begin{equation}
+G(s)=\mathcal{L}\{g(\tau) \}=\int_0^\infty g(\tau)e^{-s\tau}d\tau.
+\end{equation}
+Logo,
+\begin{eqnarray*}
+ F(s)G(s)&=&\int_0^\infty f(t)e^{-st}dt\int_0^\infty g(\tau)e^{-s\tau}d\tau\\
+&=&\int_0^\infty f(t) \int_0^\infty g(\tau)e^{-s(t+\tau)} d\tau dt\\
+\end{eqnarray*}
+Mantemos $t$ fixo e fazemos a mudança de variável $v=t+\tau$ para obter:
+\begin{eqnarray*}
+ F(s)G(s)=\int_0^\infty f(t) \int_t^\infty g(v-t)e^{-sv}dv dt\\
+\end{eqnarray*}
+Agora, vamos mudar a ordem de integração na região que é a metade inferior do primeiro quadrante: em vez de variar $v$ em $[t,\infty]$ depois $t$ em $[0,\infty]$, primeiro vamos variar $t$ em $[0,v]$, depois $v$ em $[0,\infty]$, ou seja,
+\begin{eqnarray*}
+ F(s)G(s)&=&\int_0^\infty  \int_0^v f(t) g(v-t)e^{-sv} dt dv\\
+ &=&\int_0^\infty \left( \int_0^v f(t) g(v-t)dt\right)e^{-sv}  dv\\
+ &=&\int_0^\infty (f*g)e^{-sv}  dv\\
+   &=&\mathcal{L}\{f*g\}
+\end{eqnarray*}
+
+
+{\bf Exemplo} Vamos calcular a transformada inversa de $\frac{s}{(s-1)(s^2+1)}$. Primeiro observamos que a expressão pode ser escrita como um produto de duas funções tabelas:
+\begin{equation}
+\frac{s}{(s-1)(s^2+1)}=\frac{1}{s-1}\frac{s}{s^2+1},
+\end{equation}
+ onde $\mathcal{L}^{-1}\left\{\frac{1}{s-1}\right\}=e^t$ e $\mathcal{L}^{-1}\left\{\frac{s}{s^2+1}\right\}=\cos(t)$. Usando a propriedade \ref{prop_conv} da convolução, temos
+ \begin{equation}
+ \mathcal{L}^{-1}\left\{\frac{1}{s-1}\frac{s}{s^2+1}\right\}=\int_0^t e^\tau \cos(t-\tau)d\tau.
+ \end{equation}
+ A convolução acima foi calculada no exemplo \ref{ex_conv_1}, logo
+\begin{equation}
+ \mathcal{L}^{-1}\left\{\frac{1}{s-1}\frac{s}{s^2+1}\right\}= \frac{1}{2}\left(e^t-\cos(t)+\sin(t)  \right).
+ \end{equation}
+ 
+ 
+ 
+ A propriedade  da convolução pode ser útil para resolver equações integrais, como veremos no próximo exemplo.
+
+ {\bf Exemplo:} Vamos resolver a seguinte equação integral:
+ \begin{equation}
+ y(t)=4+9\int_0^t y(\tau)(t-\tau)d\tau.
+ \end{equation}
+ Aplicamos a transformada de Laplace e usamos a propriedade \ref{prop_conv} da convolução com $f(t)=y(t)$ e $g(t)=t$ para obter:
+ \begin{equation}
+ \mathcal{L}\{y(t)\}=\frac{4}{s}+9\mathcal{L}\{y(t)\}\mathcal{L}\{t\}
+ \end{equation}
+ ou seja,
+ \begin{equation}
+ Y(s)=\frac{4}{s}+9Y(s)\frac{1}{s^2}.
+ \end{equation}
+ Logo,
+ \begin{equation}
+ Y(s)=\frac{s^2}{s^2-9}\frac{4}{s}=\frac{4s}{s^2-9}.
+ \end{equation}
+ Portanto,
+ \begin{equation}
+ y(t)=4\cosh(3t)
+ \end{equation}
+
+
+ \section{}
+ 
+Nesse capítulo discutiremos a transformada de Laplace envolvendo funções especiais, tais como função de Bessel, função Gama e funções Seno Integrado. Também, desenvolveremos ferramentas capaz de resolver alguns problemas de valor iniciais com coeficientes não constantes.
+Para iniciar as discussões vamos demonstrar o item 6 da tabela  no próximo exemplo.
+
+
+{\bf Exemplo: }Vamos calcular a transformada de Laplace da funçao $t^{k-1}$, dada por:
+\begin{equation}
+\mathcal{L}\{t^{k-1} \}=\int_0^\infty t^{k-1} e^{-st}dt.
+\end{equation}
+Fazemos a mudança de variável $x=st$ para obter:
+\begin{eqnarray*}
+ \mathcal{L}\{t^{k-1} \}&=&\int_0^\infty \frac{x^{k-1}}{s^{k-1}}e^{-x}\frac{dx}{s}\\
+ &=&\frac{1}{s^k}\int_0^\infty x^{k-1}e^{-x} dx.
+ \end{eqnarray*}
+A função que aparece acima é a multiplicação de $\frac{1}{s^k}$ por uma que não depende de $s$, chamada de função Gama e denotada por $\Gamma(k)$. Portanto, demonstramos o item 6 da tabela:
+\begin{equation}
+\mathcal{L}\{t^{k-1} \}=\frac{\Gamma(k)}{s^k},\qquad k>0,
+\end{equation}
+onde
+\begin{equation}
+\Gamma(k)=\int_0^\infty e^{-x}x^{k-1}dx.
+\end{equation}
+
+
+Observe que o item 3 da tabela é
+\begin{equation}
+\mathcal{L}\{t^{n-1}\}=\frac{(n-1)!}{s^n}, ~~  n\in \mathbb{N}.
+\end{equation}
+Isso nos indica que, para que os itens 3 e 6 sejam consistentes, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$. De fato, primeiro observe que, se $k=(n+1)\in\mathbb{N}$, temos:
+\begin{equation}
+\Gamma(n+1)=\int_0^\infty e^{-x}x^{n}dx=\left[-e^{-x}x^{n}\right]_0^\infty-\int_0^\infty (-e^{-x})nx^{n-1}dx=n\int_0^\infty e^{-x}x^{n-1}dx=n\Gamma(n).
+\end{equation}
+Como 
+\begin{equation}
+\Gamma(1)=\int_0^\infty e^{-x}dx=\left[-e^{-x}\right]_0^\infty=1,
+\end{equation}
+temos
+\begin{equation}
+\Gamma(2)=1,\qquad \Gamma(3)=2\cdot 1=2!,\qquad \Gamma(4)=3\Gamma(3)=3\cdot 2!=3!,\cdots
+\end{equation}
+Logo, $\Gamma(n+1)=n!$ se $n\in\mathbb{N}$.
+
+{\bf Exemplo: } Os itens 4 e 5 da tabela são casos particulares do item 6:
+ \begin{equation}
+ \mathcal{L}\{t^{-\frac{1}{2}}\}=\frac{\Gamma\left(\frac{1}{2}\right)}{s^{\frac{1}{2}}}
+ \end{equation}
+e
+ \begin{equation}
+ \mathcal{L}\{t^{\frac{1}{2}}\}=\frac{\Gamma\left(\frac{3}{2}\right)}{s^{\frac{3}{2}}}.
+ \end{equation}
+ Basta calcular os valores de $\Gamma\left(\frac{1}{2}\right)$ e $\Gamma\left(\frac{3}{2}\right)$ para completar a demonstração. Começamos com $\Gamma\left(\frac{1}{2}\right)$:
+ \begin{equation}
+ \Gamma\left(\frac{1}{2}\right)=\int_0^\infty e^{-x}x^{-\frac{1}{2}}dx=\int_0^\infty \frac{e^{-x}}{\sqrt{x}}dx.
+ \end{equation}
+ Fazendo a mudança de variáveis $x=t^{2}$, obtemos $dx=2tdt$ e
+\begin{equation}\Gamma\left(\frac{1}{2}\right)=2\int_{0}^{\infty}e^{-t^2}dt
+\end{equation}
+Utilizando a técnica de Liouville, definimos:
+\begin{equation}
+I=\int_{0}^{\infty}e^{-t^2}dt
+\end{equation}
+Logo
+\begin{equation}
+I^2=\int_{0}^{\infty}e^{-x^2}dx\int_{0}^{\infty}e^{-y^2}dy=\int_{0}^{\infty}\int_{0}^{\infty}e^{-(x^2+y^2)}dx dy
+\end{equation}
+A última integral é uma integral dupla que pode ser calculada em coordenadas polares fazendo $r^2=x^2+y^2$ e $dxdy=rdrd\theta$:
+\begin{equation}
+I^2=\int_{0}^{\frac{\pi}{2}}\int_{0}^{\infty}e^{-r^2}rdr d{\theta}=\frac{\pi}{2}\left[-\frac{e^{-r^2}}{2}\right]_0^\infty=\frac{\pi}{4}
+\end{equation}
+Assim,
+\begin{equation}
+I^2=\frac{\pi}{4}\Rightarrow I=\frac{\sqrt{\pi}}{2}
+\end{equation}
+e
+\begin{equation}
+\Gamma\left(\frac{1}{2}\right)=2\int_{0}^{\infty}e^{-t^2}dt=2I=\sqrt{\pi}.
+\end{equation}
+Agora, usando a propriedade da função Gama que $\Gamma(k+1)=k\Gamma(k)$, temos:
+\begin{equation}
+\Gamma\left(\frac{3}{2}\right)=\frac{1}{2}\Gamma\left(\frac{1}{2}\right)=\frac{\sqrt{\pi}}{2}.
+\end{equation}
+Portanto, os itens 4 e 5 da tabela são válidos:
+\begin{equation}
+ \mathcal{L}\{t^{-\frac{1}{2}}\}=\frac{\sqrt{\pi}}{\sqrt{s}}
+\end{equation}
+e
+\begin{equation}
+ \mathcal{L}\{t^{\frac{1}{2}}\}=\frac{\sqrt{\pi}}{2s^{\frac{3}{2}}}.
+\end{equation}
+ 
+ {\bf Exemplo: }Vamos calcular a transformada de Laplace da função $\ln(t)$ (item 38 da tabela). Com esse objetivo, usamos a transformada de Laplace de $t^k$ dada no item 6 da tabela:
+\begin{equation}
+\int_0^\infty t^ke^{-st}dt=\frac{\Gamma(k+1)}{s^{k+1}}.
+\end{equation}
+Agora, como o integrando do lado esquerdo é uma função contínua e tem derivada parcial com respeito a $k$ contínua podemos diferenciar ambos os lados com respeito ao parâmetro $k$ usando a regra de Leibniz
+\begin{eqnarray*}
+\frac{d}{dk}\left(\int_0^\infty t^ke^{-st}dt\right)&=&\frac{d}{dk}\left(\frac{\Gamma(k+1)}{s^{k+1}}\right)\\
+&\Downarrow&\\
+\int_0^\infty t^k \ln(t) e^{-st}dt&=&\frac{s^{k+1}\Gamma'(k+1)-\Gamma(k+1)s^{k+1}\ln(s)}{s^{2(k+1)}}
+\end{eqnarray*}
+Agora, fazemos $k\to 0$ para obter
+\begin{equation}
+\int_0^\infty \ln(t) e^{-st}dt=\frac{s^{1}\Gamma'(1)-\Gamma(1)s^{1}\ln(s)}{s^{2}},
+\end{equation}
+ou seja,
+\begin{equation}
+\int_0^\infty \ln(t) e^{-st}dt=\frac{\Gamma'(1)-\ln(s)}{s},
+\end{equation}
+já que $\Gamma(1)=1$. Do lado esquerdo aparece a transformada da função $\ln(t)$ e do lado direito $\Gamma'(1)$. Então calculamos
+\begin{equation}
+\Gamma'(k)=\int_0^\infty x^{k-1}\ln(x) e^{-x}dx
+\end{equation}
+e
+\begin{equation}
+\Gamma'(1)=\int_0^\infty \ln(x) e^{-x} dx=-\gamma
+\end{equation}
+where $\gamma$ é a constante de Euler - Mascheroni,
+\begin{equation}
+\gamma=0.57721566490153286060651209008240243104215933593992\cdots.
+\end{equation}
+Finalmente, concluímos
+\begin{equation}
+\mathcal{L}\{\ln(t)\}=\frac{-\gamma-\ln(s)}{s}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Transformada de Laplace de funções periódicas}
+Nesta seção apresentaremos uma propriedade da transformada de Laplace de funções periódicas e calcularemos algumas delas.
+
+ Seja $f(t)$ uma função contínua por partes e periódica de período $T$. Então sua transformada de Laplace é da forma
+\begin{equation}
+\mathcal{L}\{f(t)\}=\frac{1}{1-e^{-sT}}\int_0^Tf(t)e^{-st}dt.
+\end{equation}
+
+
+Dem: Aplicamos a definição e separamos a integral nos períodos da função $f(t)$ para obter:
+\begin{eqnarray*}
+ \mathcal{L}\{f(t)\}&=&\int_0^\infty f(t)e^{-st}dt \\
+ &=&\int_0^T f(t)e^{-st}dt+\int_T^{2T} f(t)e^{-st}dt+\int_{3T}^{4T} f(t)e^{-st}dt+\cdots\\
+ &=&\sum_{n=0}^\infty \int_{nT}^{(n+1)T} f(t)e^{-st}dt.
+\end{eqnarray*}
+Fazemos a mudança de variável $\tau=t-nT$ e obtemos
+ \begin{eqnarray*}
+ \mathcal{L}\{f(t)\}&=&\sum_{n=0}^\infty \int_{0}^{T} f(\tau+nT)e^{-s(\tau+nT)}d\tau\\
+ &=&\sum_{n=0}^\infty e^{-snT} \int_{0}^{T} f(\tau+nT)e^{-s\tau}d\tau.
+ \end{eqnarray*}
+ Usando o fato que a função é periódica, ou seja, $f(\tau)=f(\tau+nT)$, temos:
+ \begin{eqnarray*}
+  \mathcal{L}\{f(t)\}&=&\sum_{n=0}^\infty e^{-snT} \int_{0}^{T} f(\tau)e^{-s\tau}d\tau\\
+ &=&\int_{0}^{T} f(\tau)e^{-s\tau}d\tau\left[\sum_{n=0}^\infty \left(e^{-sT}\right)^n \right]\\
+ &=&\int_{0}^{T} f(\tau)e^{-s\tau}d\tau\left[\frac{1}{1-e^{-sT}} \right]\\
+ &=&\frac{1}{1-e^{-sT}}\int_{0}^{T} f(\tau)e^{-s\tau}d\tau,
+\end{eqnarray*}
+onde usamos a soma de uma série geométrica de razão $e^{-sT}$.
+ 
+ 
+{\bf Exemplo} Observe o cálculo da transformada da função $f(t)=\cos(wt)$ sabendo que
+\begin{equation}
+\int \cos(wt)e^{-st}dt=\frac{e^{-st}\left(w\sen(wt)-s\cos(wt)\right)}{s^2+w^2}+\ \!\hbox{Constante}
+\end{equation}
+e usando a propriedade \ref{prop_fun_per}:
+\begin{eqnarray*} 
+\mathcal{L}\{\cos(wt)\}&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\int_0^{\frac{2\pi }{w}}\cos(wt)e^{-st}dt\\
+&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\left[\frac{e^{-st}\left(w\sen(wt)-s\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{2\pi }{w}}\\
+&=&\frac{1}{1-e^{-s\frac{2\pi }{w}}}\frac{s-se^{-s\frac{2\pi }{w}}}{s^2+w^2}\\
+&=&\frac{s}{s^2+w^2}.
+\end{eqnarray*}
+
+
+{\bf Exemplo} A função $f(t)$ apresentada no gráfico da figura \ref{fig_onda_quadrada} é chamada de {\bf onda quadrada} de período $2a$.
+ \begin{figure}[!ht]
+\begin{center}
+
+\includegraphics{cap_especiais_coef_var/pics/figura_1}\end{center}
+\caption{\label{fig_onda_quadrada}}
+\end{figure}
+Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} colocando $T=2a$
+\begin{eqnarray*}
+\mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-2sa}}\int_0^{2a}f(t)e^{-st}dt\\
+&=& \frac{1}{1-e^{-2sa}}\left(\int_0^{a}e^{-st}dt-\int_a^{2a}e^{-st}dt\right)\\
+&=& \frac{1}{1-e^{-2sa}}\left(\frac{1-2e^{-as}+e^{-2as}}{s}\right)\\
+&=& \frac{1}{(1-e^{-sa})(1+e^{-sa})}\left(\frac{(1-e^{-as})^2}{s}\right)\\
+&=&\frac{1}{s} \frac{1-e^{-as}}{1+e^{-sa}}.\\
+\end{eqnarray*}
+Multiplicando por $e^{\frac{as}{2}}$, podemos escrever a expressão em termos de funções hiperbólicas:
+\begin{eqnarray*}
+\mathcal{L}\{f(t)\}&=&\frac{1}{s} \frac{e^{\frac{as}{2}}-e^{-\frac{as}{2}}}{e^{\frac{as}{2}}+e^{-\frac{as}{2}})}\\
+&=&\frac{1}{s} \frac{\senh\left(\frac{as}{2}\right)}{\cosh\left(\frac{as}{2}\right)}\\
+&=&\frac{1}{s} \tanh\left(\frac{as}{2}\right).
+\end{eqnarray*}
+
+% 
+% \begin{ex}A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é chamada de {\bf onda triangular} de perído $2a$.
+%  \begin{figure}[!ht]
+% \begin{center}
+% 
+% \includegraphics{cap_especiais_coef_var/pics/figura_2}\end{center}
+% \caption{\label{fig_onda_triangular}}
+% \end{figure}
+% Para calcular a transformada de Laplace, observe que:
+% \begin{itemize}
+%  \item[a)] A função $g(t)$ representada na figura \ref{fig_onda_triangular} tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
+%  \item[b)] A propriedade \ref{prop_der} nos dá
+%  \begin{equation}
+%  \mathcal{L}\{g(t)\}=\frac{1}{s}\mathcal{L}\{g'(t)\}+\frac{1}{s}g(0).
+%  \end{equation}
+% \end{itemize}
+% Logo,
+% \begin{eqnarray*}
+% \mathcal{L}\{\hbox{onda triangular}\}&=&\frac{1}{as}\mathcal{L}\{\hbox{onda quadrada}\}+\frac{1}{s}\hbox{(onda triangular na origem)},
+% \end{eqnarray*}
+% e, portanto, usando o fato que a onda triangular vale zero na origem e o resultado do exemplo \ref{ex_onda_quadrada}, temos
+% \begin{eqnarray*}
+% \mathcal{L}\{g(t)\}&=&\frac{1}{as}\frac{1}{s} \tanh\left(\frac{as}{2}\right)\\
+% &=&\frac{1}{as^2} \tanh\left(\frac{as}{2}\right).
+% \end{eqnarray*}
+% \end{ex}
+% \begin{ex} A função $h(t)$ dada por
+% \begin{equation}
+% h(t)=\left\{\begin{array}{ll}\sen(wt),&0<t<\frac{\pi}{w}\\0,& \frac{\pi}{w}<t<\frac{2\pi}{w}, \end{array}\right.,
+% \end{equation}
+% $h\left(t+\frac{2\pi}{w}\right)=h(t)$, é chamada de {\bf retificador de meia onda} de período $\frac{2\pi}{w}$. A figura \ref{fig_ret_meia_onda} apresenta o gráfico da função $h(t)$.
+%  \begin{figure}[!ht]
+% \begin{center}
+% 
+% \includegraphics{cap_especiais_coef_var/pics/figura_3}\end{center}
+% \caption{\label{fig_ret_meia_onda}}
+% \end{figure}
+% Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{2\pi}{w}$
+% \begin{eqnarray*}
+% \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
+% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
+% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+% &=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
+% &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
+% \end{eqnarray*}
+% \end{ex}
+% \begin{ex} A função $p(t)$ dada por
+% \begin{equation}
+% p(t)=|\sen(wt)|
+% \end{equation}
+% é chamada de {\bf retificador de onda completa} de período $\frac{\pi}{w}$. A figura \ref{fig_ret_onda_completa} apresenta o gráfico da função $p(t)$.
+%  \begin{figure}[!ht]
+% \begin{center}
+% 
+% \includegraphics{cap_especiais_coef_var/pics/figura_4}\end{center}
+% \caption{\label{fig_ret_onda_completa}}
+% \end{figure}
+% Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{\pi}{w}$
+% \begin{eqnarray*}
+% \mathcal{L}\{p(t)\}&=& \frac{1}{1-e^{-s\frac{\pi}{w}}}\int_0^{\frac{\pi}{w}}\sen(wt)e^{-st}dt\\
+% &=& \frac{1}{1-e^{-s\frac{\pi}{w}}} \left[-\frac{e^{-st}\left(\sen(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+% &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
+% &=&  \frac{w}{s^2+w^2}\frac{e^{\frac{s\pi}{2w}}+e^{-\frac{s\pi}{2w}}}{e^{\frac{s\pi}{2w}}-e^{-\frac{s\pi}{2w}}}\\
+% &=&  \frac{w}{s^2+w^2}\coth\left( \frac{\pi s}{2w}\right)
+% \end{eqnarray*}
+% \end{ex}
+% \begin{ex} A função $q(t)$ dada por
+% \begin{equation}
+% \left\{\begin{array}{ll}q(t)=\frac{t}{a},&0\leq t<a\\ q\left(t+a\right)=q(t), & \end{array}\right.
+% \end{equation}
+% é chamada de {\bf onda dente de serra} de período $T=a$. A figura \ref{fig_dente_de_serra} apresenta o gráfico da função $q(t)$.
+%  \begin{figure}[!ht]
+% \begin{center}
+% 
+% \includegraphics{cap_especiais_coef_var/pics/figura_5}\end{center}
+% \caption{\label{fig_dente_de_serra}}
+% \end{figure}
+% Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=a$:
+% \begin{eqnarray*}
+% \mathcal{L}\{q(t)\}&=& \frac{1}{1-e^{-sa}} \int_0^{a} \frac{t}{a} e^{-st}dt\\
+% &=&\frac{1}{1-e^{-sa}}\frac{1}{a}\left[ -\frac{e^{-s t} (1+s t)}{s^2}\right]_0^a\\
+% &=&\frac{1}{1-e^{-sa}}\frac{1-e^{-sa}(1+as)}{s^2a} \\
+% &=&\frac{1}{1-e^{-sa}}\left(\frac{1-e^{-sa}-e^{-sa} as)}{s^2a} \right)\\
+% &=&\frac{1}{as^2}-\frac{e^{-sa} }{s\left(1-e^{-sa}\right)}.
+% \end{eqnarray*}
+% \end{ex}
+% 
+% 
 % % 
 % % 
 % % 
