@@ -1147,7 +1147,7 @@ Multiplicando por $e^{\frac{as}{2}}$, podemos escrever a expressão em termos de
 \end{eqnarray*}
 
  
-A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é chamada de {\bf onda triangular} de perído $2a$.
+A função $g(t)$ apresentada no gráfico da figura  é chamada de {\bf onda triangular} de perído $2a$.
 \begin{figure}[!ht]
  \begin{center}
  
@@ -1156,8 +1156,8 @@ A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é 
  \end{figure}
  Para calcular a transformada de Laplace, observe que:
  \begin{itemize}
-  \item[a)] A função $g(t)$ representada na figura \ref{fig_onda_triangular} tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
-  \item[b)] A propriedade \ref{prop_der} nos dá
+  \item[a)] A função $g(t)$ representada na figura  tem como derivada uma onda quadrada. De fato, no intervalo $[0,a]$, a derivada é $\frac{1}{a}$ e no intervalo $[a,2a]$ a derivada é $-\frac{1}{a}$. Esse padrão se repete periodicamente. Logo, a derivada da onda triangular é a onda quadrada multiplicada por $\frac{1}{a}$.
+  \item[b)] Temos:
   \begin{equation}
   \mathcal{L}\{g(t)\}=\frac{1}{s}\mathcal{L}\{g'(t)\}+\frac{1}{s}g(0).
   \end{equation}
@@ -1166,72 +1166,140 @@ A função $g(t)$ apresentada no gráficoda figura \ref{fig_onda_triangular} é 
  \begin{eqnarray*}
  \mathcal{L}\{\hbox{onda triangular}\}&=&\frac{1}{as}\mathcal{L}\{\hbox{onda quadrada}\}+\frac{1}{s}\hbox{(onda triangular na origem)},
  \end{eqnarray*}
- e, portanto, usando o fato que a onda triangular vale zero na origem e o resultado do exemplo \ref{ex_onda_quadrada}, temos
+ e, portanto, usando o fato que a onda triangular vale zero na origem e o resultado do exemplo, temos
  \begin{eqnarray*}
  \mathcal{L}\{g(t)\}&=&\frac{1}{as}\frac{1}{s} \tanh\left(\frac{as}{2}\right)\\
  &=&\frac{1}{as^2} \tanh\left(\frac{as}{2}\right).
  \end{eqnarray*}
 
-%{\bf Exemplo} A função $h(t)$ dada por
-% \begin{equation}
-% h(t)=\left\{\begin{array}{ll}\sin(wt),&0<t<\frac{\pi}{w}\\0,& \frac{\pi}{w}<t<\frac{2\pi}{w}, \end{array}\right.,
-% \end{equation}
-% $h\left(t+\frac{2\pi}{w}\right)=h(t)$, é chamada de {\bf retificador de meia onda} de período $\frac{2\pi}{w}$. A figura \ref{fig_ret_meia_onda} apresenta o gráfico da função $h(t)$.
-%  \begin{figure}[!ht]
-% \begin{center}
+{\bf Exemplo} A função $h(t)$ dada por
+\begin{equation}
+h(t)=\left\{\begin{array}{ll}\sin(wt),&0<t<\frac{\pi}{w}\\0,& \frac{\pi}{w}<t<\frac{2\pi}{w}, \end{array}\right.,
+\end{equation}
+$h\left(t+\frac{2\pi}{w}\right)=h(t)$, é chamada de {\bf retificador de meia onda} de período $\frac{2\pi}{w}$. A figura \ref{fig_ret_meia_onda} apresenta o gráfico da função $h(t)$.
+  \begin{figure}[!ht]
+ \begin{center}
+  \includegraphics{figs/especiais_figura_3}
+  \end{center}
+  \caption{\label{fig_ret_meia_onda}}
+ \end{figure}
+
+Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{2\pi}{w}$
+\begin{eqnarray*}
+\mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
+&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sin(wt)e^{-st}dt\\
+&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sin(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+&=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
+&=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
+\end{eqnarray*}
+
+{\bf Exemplo:} A função $p(t)$ dada por
+\begin{equation}
+p(t)=|\sin(wt)|
+\end{equation}
+ é chamada de {\bf retificador de onda completa} de período $\frac{\pi}{w}$. A figura \ref{fig_ret_onda_completa} apresenta o gráfico da função $p(t)$.
+  \begin{figure}[!ht]
+ \begin{center}
 % 
-% \includegraphics{cap_especiais_coef_var/pics/figura_3}\end{center}
-% \caption{\label{fig_ret_meia_onda}}
-% \end{figure}
-% Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{2\pi}{w}$
-% \begin{eqnarray*}
-% \mathcal{L}\{f(t)\}&=& \frac{1}{1-e^{-s\frac{2\pi}{w}}}\int_0^{\frac{2\pi}{w}}f(t)e^{-st}dt\\
-% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \int_0^{\frac{\pi}{w}}\sin(wt)e^{-st}dt\\
-% &=& \frac{1}{1-e^{-s\frac{2\pi}{w}}} \left[-\frac{e^{-st}\left(s\sin(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
-% &=& \frac{1}{(1-e^{-\frac{s\pi}{w}})(1+e^{-\frac{s\pi}{w}})} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
-% &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w}{s^2+w^2}
-% \end{eqnarray*}
-% \end{ex}
-% \begin{ex} A função $p(t)$ dada por
-% \begin{equation}
-% p(t)=|\sin(wt)|
-% \end{equation}
-% é chamada de {\bf retificador de onda completa} de período $\frac{\pi}{w}$. A figura \ref{fig_ret_onda_completa} apresenta o gráfico da função $p(t)$.
-%  \begin{figure}[!ht]
-% \begin{center}
-% 
-% \includegraphics{cap_especiais_coef_var/pics/figura_4}\end{center}
-% \caption{\label{fig_ret_onda_completa}}
-% \end{figure}
-% Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{\pi}{w}$
-% \begin{eqnarray*}
-% \mathcal{L}\{p(t)\}&=& \frac{1}{1-e^{-s\frac{\pi}{w}}}\int_0^{\frac{\pi}{w}}\sin(wt)e^{-st}dt\\
-% &=& \frac{1}{1-e^{-s\frac{\pi}{w}}} \left[-\frac{e^{-st}\left(\sin(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
-% &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
-% &=&  \frac{w}{s^2+w^2}\frac{e^{\frac{s\pi}{2w}}+e^{-\frac{s\pi}{2w}}}{e^{\frac{s\pi}{2w}}-e^{-\frac{s\pi}{2w}}}\\
-% &=&  \frac{w}{s^2+w^2}\coth\left( \frac{\pi s}{2w}\right)
-% \end{eqnarray*}
-% \end{ex}
-% \begin{ex} A função $q(t)$ dada por
-% \begin{equation}
-% \left\{\begin{array}{ll}q(t)=\frac{t}{a},&0\leq t<a\\ q\left(t+a\right)=q(t), & \end{array}\right.
-% \end{equation}
-% é chamada de {\bf onda dente de serra} de período $T=a$. A figura \ref{fig_dente_de_serra} apresenta o gráfico da função $q(t)$.
-%  \begin{figure}[!ht]
-% \begin{center}
-% 
-% \includegraphics{cap_especiais_coef_var/pics/figura_5}\end{center}
-% \caption{\label{fig_dente_de_serra}}
-% \end{figure}
-% Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=a$:
-% \begin{eqnarray*}
-% \mathcal{L}\{q(t)\}&=& \frac{1}{1-e^{-sa}} \int_0^{a} \frac{t}{a} e^{-st}dt\\
-% &=&\frac{1}{1-e^{-sa}}\frac{1}{a}\left[ -\frac{e^{-s t} (1+s t)}{s^2}\right]_0^a\\
-% &=&\frac{1}{1-e^{-sa}}\frac{1-e^{-sa}(1+as)}{s^2a} \\
-% &=&\frac{1}{1-e^{-sa}}\left(\frac{1-e^{-sa}-e^{-sa} as)}{s^2a} \right)\\
-% &=&\frac{1}{as^2}-\frac{e^{-sa} }{s\left(1-e^{-sa}\right)}.
-% \end{eqnarray*}
-% \end{ex}
+ \includegraphics{figs/especiais_figura_4}\end{center}
+ \caption{\label{fig_ret_onda_completa}}
+ \end{figure}
+ Calculamos a transformada de Laplace usando a propriedade \ref{prop_fun_per} com $T=\frac{\pi}{w}$
+ \begin{eqnarray*}
+ \mathcal{L}\{p(t)\}&=& \frac{1}{1-e^{-s\frac{\pi}{w}}}\int_0^{\frac{\pi}{w}}\sin(wt)e^{-st}dt\\
+ &=& \frac{1}{1-e^{-s\frac{\pi}{w}}} \left[-\frac{e^{-st}\left(\sin(wt)+w\cos(wt)\right)}{s^2+w^2}\right]_0^{\frac{\pi}{w}}\\
+ &=& \frac{1}{1-e^{-\frac{s\pi}{w}}} \frac{w(1+e^{-\frac{s\pi}{w}})}{s^2+w^2}\\
+ &=&  \frac{w}{s^2+w^2}\frac{e^{\frac{s\pi}{2w}}+e^{-\frac{s\pi}{2w}}}{e^{\frac{s\pi}{2w}}-e^{-\frac{s\pi}{2w}}}\\
+ &=&  \frac{w}{s^2+w^2}\coth\left( \frac{\pi s}{2w}\right)
+ \end{eqnarray*}
+
+{\bf Exemplo:} A função $q(t)$ dada por
+ \begin{equation}
+ \left\{\begin{array}{ll}q(t)=\frac{t}{a},&0\leq t<a\\ q\left(t+a\right)=q(t), & \end{array}\right.
+ \end{equation}
+ é chamada de {\bf onda dente de serra} de período $T=a$. A figura \ref{fig_dente_de_serra} apresenta o gráfico da função $q(t)$.
+  \begin{figure}[!ht]
+ \begin{center}
+ \includegraphics{figs/especiais_figura_5}
+ \end{center}
+ \caption{\label{fig_dente_de_serra}}
+ \end{figure}
+ Calculamos a transformada de Laplace usando a propriedade  com $T=a$:
+ \begin{eqnarray*}
+ \mathcal{L}\{q(t)\}&=& \frac{1}{1-e^{-sa}} \int_0^{a} \frac{t}{a} e^{-st}dt\\
+ &=&\frac{1}{1-e^{-sa}}\frac{1}{a}\left[ -\frac{e^{-s t} (1+s t)}{s^2}\right]_0^a\\
+ &=&\frac{1}{1-e^{-sa}}\frac{1-e^{-sa}(1+as)}{s^2a} \\
+ &=&\frac{1}{1-e^{-sa}}\left(\frac{1-e^{-sa}-e^{-sa} as)}{s^2a} \right)\\
+ &=&\frac{1}{as^2}-\frac{e^{-sa} }{s\left(1-e^{-sa}\right)}.
+ \end{eqnarray*}
+
+
+ \section{Propriedades do Valor Inicial e Final}
+ Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
+\begin{equation}
+\lim_{t\to\infty}f(t)=L,
+\end{equation}
+então
+\begin{equation}
+\lim_{s\to 0^+} sF(s)=L.
+\end{equation}
+
+Dem: Usamos a definição de transformada de Laplace para escrever
+\begin{eqnarray*}
+sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
+&=&s\int_0^a f(t)e^{-st}dt+s\int_a^\infty f(t)e^{-st}dt.\\
+\end{eqnarray*}
+Observe que a primeira parcela do lado direito tende a zero independentemente do valor de $a$. Porém, para $a$ suficientemente grande, $f(t)$ se aproxima de $L$, pois $\displaystyle \lim_{t\to\infty}f(t)=L$, ou seja,
+\begin{eqnarray*}
+s\int_a^\infty f(t)e^{-st}dt &\approx &s\int_a^\infty L e^{-st}dt.\\
+&\approx &s\frac{L}{-s}\left[ e^{-st}\right]_a^\infty=Le^{-as}
+\end{eqnarray*}
+Como $e^{-as}\to 1$ quando $s\to 0$, então
+\begin{equation}
+\lim_{s\to 0^+} sF(s)=L.
+\end{equation} 
+
+
+
+
+Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
+\begin{equation}
+\lim_{t\to 0^+}f(t)=L,
+\end{equation}
+então
+\begin{equation}
+\lim_{s\to \infty} sF(s)=L.
+\end{equation}
+
+Dem: Usamos a definição de transformada de Laplace para escrever
+\begin{eqnarray*}
+sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
+&=&s\int_0^a f(t)e^{-st}dt+s\int_a^b f(t)e^{-st}dt+s\int_b^\infty f(t)e^{-st}dt.\\
+\end{eqnarray*}
+Observe que a segunda parcela do lado direito tende a zero quando $s\to \infty$ independentemente do valor de $a$ e $b$, pois o fato da função ser de ordem exponencial e contínua por partes implica em $f(t)$ limitada em $[a,b]$, ou seja, $|f(t)|<M$ e, portanto,
+\begin{eqnarray*}
+\left|s\int_a^b f(t)e^{-st}dt\right|&\leq & s\int_a^b |f(t)|e^{-st}dt\\
+&\leq & Ms\int_a^b e^{-st}dt\\
+&\leq & \left.Ms\frac{1}{-s} e^{-st}\right|_a^b=M(e^{-sa}-e^{-sb}).
+\end{eqnarray*}
+Também, a terceira parcela tende a zero se $b$ for suficientemente grande, pois existem $c$ e $M>0$ tal que $|f(t)|<Me^{ct}$ para $t>b$ e, portanto,
+\begin{eqnarray*}
+\left|s\int_b^\infty f(t)e^{-st}dt\right|&\leq & s\int_b^\infty |f(t)|e^{-st}dt\\
+&\leq & s\int_b^\infty Me^{-(s-c)t}dt\\
+&\leq & \left.Ms\frac{1}{c-s} e^{-(s-c)t}\right|_b^\infty=\frac{Ms}{s-c}(e^{-(s-c)b}).
+\end{eqnarray*}
+Porém, para $a$ suficientemente pequeno, $f(t)$ se aproxima de $L$, pois $\displaystyle \lim_{t\to 0}f(t)=L$, ou seja,
+\begin{eqnarray*}
+s\int_0^a f(t)e^{-st}dt &\approx &s\int_0^a L e^{-st}dt.\\
+&\approx &s\frac{L}{-s}\left[ e^{-st}\right]_0^a=L\left(1-e^{-as}\right)
+\end{eqnarray*}
+Como $e^{-as}\to 0$ quando $s\to \infty$, então
+\begin{equation}
+\lim_{s\to \infty} sF(s)=L.
+\end{equation} 
+
+\section{Sistemas}
+%O problema do forno.
 % 
 % 
 % % 
