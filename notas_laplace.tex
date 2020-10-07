@@ -1298,14 +1298,423 @@ Como $e^{-as}\to 0$ quando $s\to \infty$, então
 \lim_{s\to \infty} sF(s)=L.
 \end{equation} 
 
-\section{Sistemas}
+%\section{Sistemas}
 %O problema do forno.
+
+\section{Séries de potência na Transformada inversa}
+ Em algumas situações, é conveniente expandir em séries de potência um termo de uma função para calcular sua transformada inversa. Vejamos alguns exemplos.
+
+ {\bf Exemplo:} Vamos calcular a transformada inversa da função $F(s)=\frac{1}{(s+1)(1-e^{-s})}$, usando o fato que
+ \begin{equation}\frac{1}{1-e^{-s}}=1+e^{-s}+e^{-2s}+e^{-3s}+\cdots.\end{equation}
+ E, portanto, temos:
+  \begin{equation} F(s)= \frac{1}{s+1}\left[1+e^{-s}+e^{-2s}+e^{-3s}+\cdots \right]
+  \end{equation}
+  Como, pelo item 7 da tabela de transformadas $\mathcal{L}^{-1}\left\{\frac{1}{s+1}\right\}=e^{-t}.$
+ Aplicando a propriedade do deslocamento no eixo $t$, temos:
+  \begin{equation} f(t)= e^{-t}+ u(t-1) e^{-(t-1)}+ u(t-2) e^{-(t-2)}+ u(t-3) e^{-(t-3)}+\cdots.
+  \end{equation}
+ O gráfico desta função é apresentado na figura \ref{fig_exp_iterada}.
+  \begin{figure}[!ht]
+ \begin{center}
+% 
+ \includegraphics{figs/especiais_figura_6}\end{center}
+ \caption{\label{fig_exp_iterada}}
+ \end{figure}
+
+{\bf Exemplo:} Vamos calcular a transformada inversa da função $F(s)=\frac{e^{-s}}{s^2}\frac{\left(1-e^{-s}\right)^2}{1-e^{-3s}}$, usando o fato que
+ \begin{equation}\frac{1}{1-e^{-3s}}=1+e^{-3s}+e^{-6s}+e^{-9s}+\cdots.\end{equation}
+ Agora observamos que se $g(t)=\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}$, então:
+ \begin{eqnarray*}
+  g(t)&=&\mathcal{L}^{-1}\left\{\frac{e^{-s}{\left(1-e^{-s}\right)^2} }{s^2} \right\}=\mathcal{L}^{-1}\left\{\frac{e^{-s}\left(1-2e^{-s}+e^{-2s}\right) }{s^2} \right\}\\
+  &=&\mathcal{L}^{-1}\left\{\frac{e^{-s}-2e^{-2s}+e^{-3s}}{s^2} \right\} = u(t-1) (t-1) + u(t-2) (4-2t) + u(t-3) (2t-4)
+ \end{eqnarray*}
+ Desta forma, pela propriedade do deslocamento em $t$, podemos escrever
+ \begin{eqnarray*}
+ f(t)&=&g(t)+u(t-3)g(t-3)+u(t-6)g(t-6)+u(t-9)g(t-9)+\cdots\\
+ &=&g(t)+g(t-3)+g(t-6)+g(t-9)+\cdots= \sum_{k=0}^\infty g(t-3k)
+ \end{eqnarray*}
+ o que implica
+ \begin{equation}f(t)= \sum_{k=0}^\infty g(t-3k)=\sum_{k=0}^\infty\left[u(t-1-3k) (t-1-3k) + u(t-2-3k) (4-2t+6k) + u(t-3-3k) (2t-4-6k)\right]\end{equation}
+ O gráfico desta função é apresentado na figura \ref{fig_trian_periodica}.
+  \begin{figure}[!ht]
+ \begin{center}
+  \includegraphics{figs/especiais_figura_7}\end{center}
+ \caption{\label{fig_trian_periodica}}
+ \end{figure}
+
+\section{Transformada de Laplace de funções envolvendo expansão em séries de potências}
+ Nesta seção, vamos calcular a transformada de Laplace usando a série de potências das funções e a linearidade da transformada.
+{\bf Exemplo:} Vamos calcular $\mathcal{L}\{J_0(at)\}$ (item 31 da tabela , onde $J_0(at)$ é a função de Bessel de ordem zero dada por
+ \begin{equation}
+ J_0(at)=1-\left(\frac{at}{2}\right)^2+\frac{1}{(2!)^2}\left(\frac{at}{2}\right)^4-\frac{1}{(3!)^2}\left(\frac{at}{2}\right)^6+\cdots.
+ \end{equation}
+ Aplicando o item 3 da tabela, temos:
+ \begin{eqnarray*}
+ \mathcal{L}\left\{J_0(at)\right\}&=&\mathcal{L}\left\{1\right\}-\left(\frac{a}{2}\right)^2\mathcal{L}\left\{t^2\right\}+\frac{1}{(2!)^2}\left(\frac{a}{2}\right)^4\mathcal{L}\left\{t^4\right\}-\frac{1}{(3!)^2}\left(\frac{a}{2}\right)^6\mathcal{L}\left\{t^6\right\}+\cdots\\
+ &=&\frac{1}{s}-\left(\frac{a}{2}\right)^2\frac{2!}{s^3}+\frac{1}{(2!)^2}\left(\frac{a}{2}\right)^4\frac{4!}{s^5}-\frac{1}{(3!)^2}\left(\frac{a}{2}\right)^6\frac{6!}{s^7}+\cdots\\
+ &=&\frac{1}{s}\left[1-\frac{1}{2}\left(\frac{a}{s}\right)^2+\frac{1}{2}\cdot \frac{3}{2}\cdot \frac{1}{2!}\left(\frac{a}{s}\right)^4-\frac{1}{2}\cdot\frac{3}{2}\cdot \frac{5}{2}\cdot\frac{1}{3!} \left(\frac{a}{s}\right)^6+\cdots\right]
+ \end{eqnarray*}
+ A série acima está apresentada no item 10 da tabela de séries de potências, onde usamos $m=-\frac{1}{2}$ e $x=\left(\frac{a}{s}\right)^2$. Logo,
+ \begin{eqnarray*}
+ \mathcal{L}\left\{J_0(at)\right\}&=&\frac{1}{s}\left(1+\left(\frac{a}{s}\right)^2\right)^{-\frac{1}{2}}
+ \end{eqnarray*}
+
+{\bf Exemplo} Novamente usamos séries de potências para calcular $\mathcal{L}\{J_0(2\sqrt{kt})\}$, $k>0$ (item 34 da tabela . Aplicando o item 3 da tabela, temos:
+\begin{eqnarray*}
+\mathcal{L}\left\{J_0(2\sqrt{kt})\right\}&=&\mathcal{L}\left\{1-\left(\frac{2\sqrt{kt}}{2}\right)^2+\frac{1}{(2!)^2}\left(\frac{2\sqrt{kt}}{2}\right)^4-\frac{1}{(3!)^2}\left(\frac{2\sqrt{kt}}{2}\right)^6+\cdots\right\}\\
+&=&\mathcal{L}\left\{1\right\}-k\mathcal{L}\left\{t\right\}+\frac{k^2}{(2!)^2}\mathcal{L}\left\{t^2\right\}-\frac{k^3}{(3!)^2}\mathcal{L}\left\{t^3\right\}+\cdots\\
+&=&\frac{1}{s}-\frac{k}{s^2}+\frac{k^2}{(2!)^2}\frac{2!}{s^3}-\frac{k^3}{(3!)^2}\frac{3!}{s^4}+\cdots\\
+&=&\frac{1}{s}\left[1-\left(\frac{k}{s}\right)^1+\frac{1}{2!}\left(\frac{k}{s}\right)^2-\frac{1}{3!}\left(\frac{k}{s}\right)^3+\cdots\right]\\
+&=&\frac{1}{s}\left[1+\left(-\frac{k}{s}\right)^1+\frac{1}{2!}\left(-\frac{k}{s}\right)^2+\frac{1}{3!}\left(-\frac{k}{s}\right)^3+\cdots\right]
+\end{eqnarray*}
+A série acima está apresentada no item 3 da tabela \ref{series_de_potencias}, onde usamos $x=-\frac{k}{s}$. Logo,
+\begin{eqnarray*}
+\mathcal{L}\left\{J_0(2\sqrt{kt})\right\}&=&\frac{1}{s}e^{-\frac{k}{s}}
+\end{eqnarray*}
+
+\section{Propriedade da derivada da Transformada de Laplace}
+
+\section{A derivada da transformada de Laplace}
+% 
+ Se $F(s)=\mathcal{L}\{f(t)\}$, então
+ \begin{equation}
+ \frac{d}{ds}F(s)=-\mathcal{L}\{tf(t)\}.
+ \end{equation} 
+% 
+ Usando a definição de transformada de Laplace, temos
+ \begin{eqnarray*}
+ \frac{d}{ds}F(s)&=&\frac{d}{ds}\int_0^\infty f(t) e^{-st}dt\\
+ &=&\int_0^\infty f(t) \frac{d}{ds}\left(e^{-st}\right)dt\\
+ &=&\int_0^\infty f(t) (-t)e^{-st}dt\\
+ &=&-\int_0^\infty tf(t) e^{-st}dt\\
+ &=&-\mathcal{L}\{tf(t)\}.
+ \end{eqnarray*}
 % 
 % 
-% % 
-% % 
-% % 
-% %                             
-% %                             
+ {\bf Exemplo:}Para calcular $\mathcal{L}\{t\cos(wt)\}$, usamos a propriedade:
+ \begin{eqnarray*}
+ \mathcal{L}\{t\cos(wt)\}&=&-\frac{d}{ds}\mathcal{L}\{\cos(wt)\}\\
+ &=&-\frac{d}{ds}\left(\frac{s}{s^2+w^2}\right)\\
+ &=&-\frac{-s^2+w^2}{(s^2+w^2)^2}\\
+ &=&\frac{s^2-w^2}{(s^2+w^2)^2}\\
+ \end{eqnarray*}
+ 
+ 
+ 
+ \section{Equações diferenciais com coeficientes não constantes}
+ A propriedade  da derivada da transformada de Laplace tem uma aplicação importante na solução de equações diferenciais com coeficientes variáveis.
+
+ {\bf Exemplo}Vamos resolver o seguinte problema de valor inicial
+ \begin{eqnarray*}
+ ty''(t)+y'(t)+9ty(t)&=&0\\
+ y(0)&=&5\\
+% y'(0)&=&0.
+ \end{eqnarray*}
+Usando a  Transformada de Laplace
+  Começamos aplicando a transformada de Laplace na equação diferencial
+ \begin{equation}
+ \mathcal{L}\{ty''(t)\}+\mathcal{L}\{y'(t)\}+9\mathcal{L}\{ty(t)\}=0.
+ \end{equation}
+ Depois aplicamos a propriedade :
+ \begin{equation}
+ -\frac{d}{ds}\mathcal{L}\{y''(t)\}+\mathcal{L}\{y'(t)\}-9\frac{d}{ds}\mathcal{L}\{y(t)\}=0.
+ \end{equation}
+  Em seguida aplicamos a propriedade da derivada para obter a seguinte equação subsidiária
+ \begin{equation}
+ -\frac{d}{ds}\left(s^2Y(s)-5s\right)+sY(s)-5-9\frac{d}{ds}Y(s)=0,
+ \end{equation}
+ onde usamos que $y(0)=5$, $y'(0)=0$ e $Y(s)=\mathcal{L}\{y(t)\}$. Agora resolvemos as derivadas e obtemos uma equação diferencial mais simples para $Y(s)$:
+ \begin{equation}
+ -s^2Y'(s)-2sY(s)+sY(s)-9Y'(s)=0,
+ \end{equation}
+ ou seja,
+ \begin{equation}
+ \frac{Y'(s)}{Y(s)}=-\frac{s}{s^2+9}.
+ \end{equation}
+ Logo,
+ \begin{equation}
+ \ln(Y(s))=-\frac{1}{2}\ln(s^2+9)+C,
+ \end{equation}
+ onde $C$ é uma constante de integração. Então
+ \begin{equation}
+ Y(s)=K(s^2+9)^{-\frac{1}{2}}=\frac{K}{\sqrt{s^2+9}},
+ \end{equation}
+ onde $K=e^{C}$. Pelo item 31 da tabela, temos
+ \begin{equation}
+ y(t)=KJ_0(3t).
+ \end{equation}
+ Como $J_0(0)=1$, usamos que $y(0)=5$ para obter $K=5$. Portanto,
+ \begin{equation}
+ y(t)=5J_0(3t).
+ \end{equation}
+ Observe que a solução satisfaz $y'(0)=0$, porém essa condição não é necessária. De fato, existe uma solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
+
+{\bf Exemplo} Vamos resolver a equação de Laguerre dada por
+ \begin{equation}
+ ty''(t)+(1-t)y'(t)+2y(t)=0,
+ \end{equation}
+ com as condições iniciais $y(0)=1$ e $y'(0)=-2$. Primeiro aplicamos a transformada de Laplace nessa equação:
+ \begin{equation}
+ \mathcal{L}\{ty''(t)\}+\mathcal{L}\{y'(t)\}-\mathcal{L}\{ty'(t)\}+2\mathcal{L}\{y(t)\}=0.
+ \end{equation}
+ Depois usamos a propriedade da derivada da transformada:
+ \begin{equation}
+ -\frac{d}{ds}\mathcal{L}\{y''(t)\}+\mathcal{L}\{y'(t)\}+\frac{d}{ds}\mathcal{L}\{y'(t)\}+2\mathcal{L}\{y(t)\}=0.
+ \end{equation}
+Continuamos usando a propriedade \ref{prop_der} para obter:
+ \begin{equation}
+ -\frac{d}{ds}\left(s^2Y(s)-sy(0)-y'(0)\right)+sY(s)-y(0)+\frac{d}{ds}\left(sY(s)-y(0)\right)+2Y(s)=0,
+ \end{equation}
+ onde $Y(s)=\mathcal{L}\{y(t)\}$. Aplicando as derivadas chegamos na seguinte equação diferencial para $Y(s)$:
+ \begin{equation}
+ -s^2Y'(s)-2sY(s)+y(0)+sY'(s)+Y(s)+sY(s)-y(0)+2Y(s)=0.
+ \end{equation}
+ ou seja,
+ \begin{equation}
+ Y'(s)\left(-s^2+s\right)+Y(s)\left(-s+3\right)=0.
+ \end{equation}
+ Logo,
+ \begin{equation}
+ \frac{Y'(s)}{Y(s)}=-\frac{3-s}{s(1-s)}.
+ \end{equation}
+ Usamos o método de separação de variáveis para resolver a equação diferencial, temos:
+ \begin{equation}
+ \ln(Y(s))=-\int \frac{3-s}{s(1-s)} ds +C
+ \end{equation}
+ onde $C$ é uma constante de integração. A antiderivada do lado direito pode ser obtida pelo método de frações parciais:
+ \begin{eqnarray*}
+ \frac{-3+s}{s(1-s)}=-\frac{3}{s}-\frac{2}{1-s}.
+ \end{eqnarray*}
+ Isso nos dá
+ \begin{equation}
+ \ln(Y(s))=-3\ln(s)+2\ln|1-s|+C=\ln\left(\frac{(1-s)^2}{s^3} \right)+C
+ \end{equation}
+ ou
+ \begin{equation}
+ Y(s)=K\frac{(1-s)^2}{s^3}=\frac{K}{s^3}-\frac{2K}{s^2}+\frac{K}{s}
+ \end{equation}
+ onde $K=e^C$. A transformada inversa fornece uma expressão para $y(t)$:
+ \begin{equation}
+ y(t)=K\left(\frac{t^2}{2}-2t+1\right).
+ \end{equation}
+ Usando o fato que $y(0)=1$, temos $K=1$ e
+ \begin{equation}
+ y(t)=\frac{t^2}{2}-2t+1.
+ \end{equation}
+ Observe que, apesar da condição para a derivada ser satisfeita, isto é,
+ \begin{equation}
+ y'(0)=0-2=-2,
+ \end{equation}
+ não usamos-a para calcular a solução. De fato, o problema possui um singularidade na origem que não é percebida pela transformada de Laplace. A solução linearmente independente dessa, que não possui transformada de Laplace, pode ser encontrada pelo método das séries de potência.
+% \end{ex}
+
+
+\section{Propriedade da integral da transformada de Laplace}
+ Se $F(s)$ é a transformada de Laplace de $f(t)$ e a função
+e o limite
+\begin{equation}
+\lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau
+\end{equation}
+existe, então
+\begin{equation}
+\int_s^\infty F(v)dv =\mathcal{L}\left\{\frac{f(t)}{t}\right\}.
+\end{equation}
+{\bf Dem:} Usamos a definição de transformada de Laplace para escrever
+\begin{eqnarray*}
+\int_s^\infty F(v)dv&=&\int_s^\infty\left(\int_0^\infty f(t)e^{-vt}dt\right)dv\\
+&=&\int_0^\infty f(t)\left(\int_s^\infty e^{-vt} dv \right)dt\\
+&=&\int_0^\infty f(t)\left[\frac{ e^{-vt}}{-t} \right]_s^\infty dt\\
+&=&\int_0^\infty \frac{f(t)}{t} e^{-st}  dt\\
+&=&\mathcal{L}\left\{ \frac{f(t)}{t} \right\}.
+\end{eqnarray*}
+Observe que a existência do limite $\lim_{t\to 0^+}\int_{t}^1\frac{f(\tau)}{\tau}d\tau$ é fundamental para a existência da Transformada de Laplace e para os procedimentos analíticos acima.
+
+{\bf Exemplo:} Vamos mostrar o item 29 da tabela \ref{tab_trans_Lap_2}:
+ \begin{equation}
+ \mathcal{L}\left\{\frac{1}{2\sqrt{\pi t^3}}\left(e^{bt}-e^{at}\right)\right\}=\sqrt{s-a}-\sqrt{s-b}.
+ \end{equation}
+ Para isso vamos usar o item 4, a saber,
+ \begin{equation}{\label{eq_item_4}}
+ \mathcal{L}\left\{\frac{1}{\sqrt{\pi t}}\right\}=\frac{1}{\sqrt{s}}.
+ \end{equation}
+ Aplicamos a propriedade \ref{prop_trans_s} da translação no eixo $s$ na equação (\ref{eq_item_4}) para obter:
+ \begin{equation*}
+ \mathcal{L}\left\{\frac{1}{\sqrt{\pi t}}e^{at}\right\}=\frac{1}{\sqrt{s-a}}.
+ \end{equation*}
+ Finalmente, usando a propriedade \ref{prop_int_transf} da integral da transformada, obtemos:
+ \begin{eqnarray*}
+ \mathcal{L}\left\{\frac{1}{2\sqrt{\pi t^3}}\left(e^{bt}-e^{at}\right)\right\}&=&\frac{1}{2}\mathcal{L}\left\{\frac{1}{t}\left(\frac{1}{\sqrt{\pi t}}e^{bt}-\frac{1}{\sqrt{\pi t}}e^{at}\right)\right\}\\
+ &=&\frac{1}{2}\int_s^\infty\left(   \frac{1}{\sqrt{v-b}}-  \frac{1}{\sqrt{v-a}}\right)dv\\
+ &=&\frac{1}{2}\int_s^\infty  \left( \left(v-b\right)^{-\frac{1}{2}}-  \left(v-a\right)^{-\frac{1}{2}}\right)dv\\
+ &=&\left. -\left(v-b\right)^{\frac{1}{2}}+ \left(v-a\right)^{\frac{1}{2}}\right|_s^\infty\\
+ &=&\sqrt{s-a}-\sqrt{s-b}.
+ \end{eqnarray*}
+ Observe que aqui usamos o seguinte limite no infinito
+ \begin{eqnarray*}
+ \lim_{v\to\infty}\left( \sqrt{v-b}- \sqrt{v-a}\right)&=&\lim_{v\to\infty}\frac{\left(\sqrt{v-b}- \sqrt{v-a}\right)\left(\sqrt{v-b}+ \sqrt{v-a}\right)}{\left(\sqrt{v-b}+ \sqrt{v-a}\right)}\\
+ &=&\lim_{v\to\infty}\frac{\left((v-b)- (v-a)\right)}{\left(\sqrt{v-b}+ \sqrt{v-a}\right)}\\
+ &=&\lim_{v\to\infty}\frac{\left(a-b\right)}{\left(\sqrt{v-b}+ \sqrt{v-a}\right)}\\
+ &=&0.
+ \end{eqnarray*}
+
+{\bf Exemplo:} Vamos mostrar o item 39 da tabela:
+ \begin{equation}
+ \mathcal{L}\left\{\frac{1}{t}\left(e^{bt}-e^{at}\right)\right\}=\ln\left(\frac{s-a}{s-b}\right).
+ \end{equation}
+ Para isso vamos usar o item 7, a saber,
+ \begin{equation*}
+ \mathcal{L}\left\{e^{at}\right\}=\frac{1}{s-a}.
+ \end{equation*}
+ Usando a propriedade \ref{prop_int_transf} da integral da transformada, obtemos:
+ \begin{eqnarray*}
+ \mathcal{L}\left\{\frac{1}{t}\left(e^{bt}-e^{at}\right)\right\}&=&\int_s^\infty \left(\frac{1}{v-b}-\frac{1}{v-a}\right)dv\\
+ &=& \left.\left(\ln(v-b)-\ln(v-a)\right)\right|_s^\infty\\
+ &=& \left(\ln(s-a)-\ln(s-b)\right)\\
+ &=&\ln\left(\frac{s-a}{s-b}\right)
+ \end{eqnarray*}
+ Na penúltima igualdade usamos o seguinte limite no infinito:
+ \begin{eqnarray*}
+ \lim_{v\to\infty} \left(\ln(v-b)-\ln(v-a)\right)&=&\lim_{v\to\infty} \ln\left(\frac{v-b}{v-a}\right)\\
+ &=& \ln\left(\lim_{v\to\infty}\left(\frac{v-b}{v-a}\right)\right)\\
+ &=& \ln\left(1\right)\\
+ &=&0.
+ \end{eqnarray*}
+ Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
+
+{\bf Exemplo:} 
+Vamos mostrar o item 40 da tabela:
+ \begin{equation}
+ \mathcal{L}\left\{\frac{2}{t}\left(1-\cos(wt)\right)\right\}=\ln\left(\frac{s^2+w^2}{s^2}\right).
+ \end{equation}
+ Para isso vamos usamos o fato que
+ \begin{equation*}
+ \mathcal{L}\left(1-\cos(wt)\right)=\frac{1}{s}-\frac{s}{s^2+w^2}.
+ \end{equation*}
+ Usando a propriedade \ref{prop_int_transf} da integral da transformada, obtemos:
+ \begin{eqnarray*}
+ \mathcal{L}\left\{\frac{2}{t}\left(1-\cos(wt)\right)\right\}&=&2\int_s^\infty \left(\frac{1}{v}-\frac{v}{v^2+w^2}\right)dv\\
+ &=& \left.2\left(\ln(v)-\frac{1}{2}\ln(v^2+w^2)\right)\right|_s^\infty\\
+ &=& \left.\left(2\ln(v)-\ln(v^2+w^2)\right)\right|_s^\infty\\
+ &=&\left.\ln\left(\frac{v^2}{v^2+w^2}\right)\right|_s^\infty\\
+ &=&-\ln\left(\frac{s^2}{s^2+w^2}\right)\\
+ &=&\ln\left(\frac{s^2+w^2}{s^2}\right)
+ \end{eqnarray*}
+  Na penúltima igualdade usamos o seguinte limite no infinito:
+  \begin{eqnarray*}
+  \lim_{v\to\infty} \ln\left(\frac{v^2}{v^2+w^2}\right)&=& \ln\left(\lim_{v\to\infty}\left(\frac{v^2}{v^2+w^2}\right)\right)\\
+  &=& \ln\left(1\right)\\
+  &=&0.
+  \end{eqnarray*}
+  Observe que a troca do limite com o logarítmo é possível visto que $\ln(x)$ é contínua para $x>0$.
+%  
+  {\bf Exemplo:} Vamos demonstrar o item 42 da tabela :
+  \begin{equation}
+  \mathcal{L}\left\{\frac{1}{t}\sin(wt)\right\}=\arctan\left(\frac{w}{s}\right).
+  \end{equation}
+  Para isso vamos usamos o fato que
+ \begin{equation*}
+ \mathcal{L}\{\sin(wt)\}=\frac{w}{s^2+w^2}.
+ \end{equation*}
+ Usando a propriedade \ref{prop_int_transf} da integral da transformada, obtemos:
+ \begin{eqnarray*}
+ \mathcal{L}\left\{\frac{1}{t}\sin(wt)\right\}&=&\int_s^\infty \left(\frac{w}{v^2+w^2}\right)dv\\
+ &=& \left.\arctan\left(\frac{v}{w}\right)\right|_s^\infty\\
+ &=&\lim_{v\to\infty}\arctan\left(\frac{v}{w}\right)-\arctan\left(\frac{s}{w}\right)\\
+ &=&\frac{\pi}{2}-\arctan\left(\frac{s}{w}\right)\\
+ \end{eqnarray*}
+ Usando o fato que $\tan\left(\frac{\pi}{2}-\theta\right)=\cot(\theta)$, temos que
+ \begin{eqnarray*}
+ \mathcal{L}\left\{\frac{1}{t}\sin(wt)\right\}=\cot^{-1}\left(\frac{s}{w}\right).
+ \end{eqnarray*}
+  Também, se $\gamma=\cot^{-1}\left(\frac{s}{w}\right)$, então $\cot\gamma=\frac{s}{w}$. Logo, $\frac{1}{\tan\gamma}=\frac{s}{w}$ e, portanto, $\tan\gamma=\frac{w}{s}$. Assim, podemos escrever a transformada de Laplace da seguinte forma:
+  \begin{eqnarray*}
+  \mathcal{L}\left\{\frac{1}{t}\sin(wt)\right\}=\arctan\left(\frac{w}{s}\right)
+  \end{eqnarray*}
+
+{\bf Exemplo:} Vamos agora mostrar o item 43 da tabela:
+ \begin{equation}
+ \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\frac{1}{s}\cot^{-1}(s),
+ \end{equation}
+ onde $\hbox{Si}\ \!(t)$ é função integral seno dada por:
+ \begin{equation}
+ \hbox{Si}\ \!(t)=\int_0^t\frac{\sin(x)}{x}dx.
+ \end{equation}
+Primeiro aplicamos a propriedade \ref{prop_trans_int} para obter
+ \begin{equation}
+ \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\mathcal{L}\left\{\int_0^t\frac{\sin(x)}{x}dx\right\}=\frac{1}{s}\mathcal{L}\left\{\frac{\sin(t)}{t}\right\}.
+ \end{equation}
+ Em seguida usamos o resultado do exemplo \ref{ex_sint_t} (ou item 42 da tabela e temos:
+ \begin{equation}
+ \mathcal{L}\left\{\hbox{Si}\ \!(t)\right\}=\frac{1}{s}\arctan\left(\frac{1}{s}\right)=\frac{1}{s}\cot^{-1}\left(s\right).
+ \end{equation}
+
+% 
+ \section{Propriedades do Valor Final}
+Se $F(s)$ é a transformada de Laplace de $f(t)$ e 
+ \begin{equation}
+ \lim_{t\to\infty}f(t)=L,
+ \end{equation}
+ então
+ \begin{equation}
+ \lim_{s\to 0^+} sF(s)=L.
+ \end{equation}
+
+ {\bf Dem:}
+Usamos a definição de transformada de Laplace para escrever
+\begin{eqnarray*}
+sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
+&=&s\int_0^a f(t)e^{-st}dt+s\int_a^\infty f(t)e^{-st}dt.\\
+\end{eqnarray*}
+Observe que a primeira parcela do lado direito tende a zero independentemente do valor de $a$. Porém, para $a$ suficientemente grande, $f(t)$ se aproxima de $L$, pois $\displaystyle \lim_{t\to\infty}f(t)=L$, ou seja,
+\begin{eqnarray*}
+s\int_a^\infty f(t)e^{-st}dt &\approx &s\int_a^\infty L e^{-st}dt.\\
+&\approx &s\frac{L}{-s}\left[ e^{-st}\right]_a^\infty=Le^{-as}
+\end{eqnarray*}
+Como $e^{-as}\to 1$ quando $s\to 0$, então
+\begin{equation}
+\lim_{s\to 0^+} sF(s)=L.
+\end{equation} 
+
+\section{Propriedades do Valor Inicial}
+
+Se $F(s)$ é a transformada de Laplace de uma função $f(t)$ de ordem exponencial $c$ e 
+ \begin{equation}
+ \lim_{t\to 0^+}f(t)=L,
+ \end{equation}
+ então
+ \begin{equation}
+ \lim_{s\to \infty} sF(s)=L.
+ \end{equation}
+
+{\bf Dem:} Usamos a definição de transformada de Laplace para escrever
+ \begin{eqnarray*}
+ sF(s)&=&s\int_0^\infty f(t)e^{-st}dt\\
+ &=&s\int_0^a f(t)e^{-st}dt+s\int_a^b f(t)e^{-st}dt+s\int_b^\infty f(t)e^{-st}dt.\\
+ \end{eqnarray*}
+ Observe que a segunda parcela do lado direito tende a zero quando $s\to \infty$ independentemente do valor de $a$ e $b$, pois o fato da função ser de ordem exponencial e contínua por partes implica em $f(t)$ limitada em $[a,b]$, ou seja, $|f(t)|<M$ e, portanto,
+ \begin{eqnarray*}
+ \left|s\int_a^b f(t)e^{-st}dt\right|&\leq & s\int_a^b |f(t)|e^{-st}dt\\
+ &\leq & Ms\int_a^b e^{-st}dt\\
+ &\leq & \left.Ms\frac{1}{-s} e^{-st}\right|_a^b=M(e^{-sa}-e^{-sb}).
+ \end{eqnarray*}
+ Também, a terceira parcela tende a zero se $b$ for suficientemente grande, pois existem $c$ e $M>0$ tal que $|f(t)|<Me^{ct}$ para $t>b$ e, portanto,
+ \begin{eqnarray*}
+ \left|s\int_b^\infty f(t)e^{-st}dt\right|&\leq & s\int_b^\infty |f(t)|e^{-st}dt\\
+ &\leq & s\int_b^\infty Me^{-(s-c)t}dt\\
+ &\leq & \left.Ms\frac{1}{c-s} e^{-(s-c)t}\right|_b^\infty=\frac{Ms}{s-c}(e^{-(s-c)b}).
+ \end{eqnarray*}
+ Porém, para $a$ suficientemente pequeno, $f(t)$ se aproxima de $L$, pois $\displaystyle \lim_{t\to 0}f(t)=L$, ou seja,
+ \begin{eqnarray*}
+ s\int_0^a f(t)e^{-st}dt &\approx &s\int_0^a L e^{-st}dt.\\
+ &\approx &s\frac{L}{-s}\left[ e^{-st}\right]_0^a=L\left(1-e^{-as}\right)
+ \end{eqnarray*}
+ Como $e^{-as}\to 0$ quando $s\to \infty$, então
+ \begin{equation}
+ \lim_{s\to \infty} sF(s)=L.
+ \end{equation} 
+
+
+ 
+
 \end{document}
   
