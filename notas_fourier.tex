@@ -20,46 +20,61 @@ Uma função $f:\mathbb{R}\to \mathbb{R}$ (ou $f:\mathbb{R}\to \mathbb{C}$ ) é 
 $$f(t+T)=f(t),~~ \forall t\in \mathbb{R}.$$
 
 Aqui $T$ é chamado período e a função é dita $T$-periódica.
-{\bf Exemplos:} Você conhece?
+
+{\bf Exemplos:} Você conhece? $\cos(t), \sin(t)$.
 
 % 
-%  {\bf Observação:} Se $f(t)$ é $T$-periódica, $\alpha f(t)$ também é.
-% 
-% {\bf Observação:} Se $T$ é período de uma função $f(t)$ então todo múltiplo inteiro de $T$ também é período:
-% $$f(t+nT)=f(t).$$
-% 
-% {\bf Perguntas:} A soma de funções periódicas é periódica?
-% 
-% {\bf Resposta:} Se $f(t)$ tem período $T_1$ e g(t) tem período $T_2$ e $\frac{T_1}{T_2}=\frac{n}{m}$, isto é, $mT_1 = nT_2$, então $f(t)+g(t)$ é periódica.
-% {\bf Dem:} Construtiva com $T=...$
-% 
-% 
-% {\bf Definição:} Se $f(t)$ é periódica e existe $T_f$ o menor período, então $T_f$ é chamado de período fundamente e $w_f:=\frac{2\pi}{T_f}$ é a frequência angular fundamental.
+{\bf Observação:} Se $f(t)$ é $T$-periódica, $\alpha f(t)$ também é.
 
-%{\bf Pergunta:} Existem funções periódicas sem período fundamental?
+{\bf Observação:} Se $T$ é período de uma função $f(t)$ então todo múltiplo inteiro de $T$ também é período:
+ $$f(t+nT)=f(t).$$
 % 
-% \subsection{Polinômios trigonométricos e séries trigonométricas}
-% Seja $T>0$, definimos polinômio trigonomético de grau $N$ uma função do tipo:
-% \begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^N \left[a_n \cos(w_n t) + b_n \sen(w_nt)\right] \end{equation}
-% onde $w_n=\frac{2\pi n}{T}$.
-% 
-%  Seja $T>0$, definimos série trigonométrica toda função do tipo:
-% \begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\right] \end{equation}
-% onde $w_n=\frac{2\pi n}{T}$.
-% 
-% {\bf Exemplo:}
-%  Mostre que $T$ é um período para séries e  polinômios trigonométricos acima definidos.
 
-%  \subsection{Relações de ortogonalidade}
-% \begin{eqnarray*}
-% \int_{0}^T \sen\left(\frac{2\pi nt}{T}\right) \sen\left(\frac{2\pi mt}{T}\right)dt&=&\left\{
-% \begin{array}{ll}0, &n\neq m\\ \frac{T}{2}, &n=m\neq 0 \end{array} \right.\label{rel_ort_ss}\\
-% \int_{0}^T \cos\left(\frac{2\pi nt}{T}\right) \cos\left(\frac{2\pi mt}{T}\right)dt&=&\left\{
-% \begin{array}{ll}0, &n\neq m\\ \frac{T}{2}, &n=m\neq 0\\ T,&n=m=0 \end{array} \right.\label{rel_ort_cc}\\
-% \int_{0}^T \cos\left(\frac{2\pi nt}{T}\right) \sen\left(\frac{2\pi mt}{T}\right)dt&=&0\label{rel_ort_sc}\label{rel_ort_cs}
-% \end{eqnarray*}
+{\bf Perguntas:} A soma de funções periódicas é periódica?
+
+{\bf Resposta:} Se $f(t)$ tem período $T_1$ e g(t) tem período $T_2$ e $\frac{T_1}{T_2}=\frac{n}{m}$, isto é, $mT_1 = nT_2$, então $f(t)+g(t)$ é periódica. Aqui $n$ e $m$ são inteiros positivos.
+{\bf Dem:} Construtiva com $T=mT_1$:
+$$f(t+T)+g(t+T)=f(t+nT_1)+g(t+mT_2)=f(t)+g(t)$$
+% 
+
+ {\bf Definição:} Se $f(t)$ é periódica e existe $T_f$ o menor período, então $T_f$ é chamado de período fundamental e $w_f:=\frac{2\pi}{T_f}$ é a frequência angular fundamental.
+
+{\bf Pergunta:} Existem funções periódicas sem período fundamental?
+$$f(t)=1$$
+% 
+\subsection{Polinômios trigonométricos e séries trigonométricas}
+ Seja $T>0$, definimos polinômio trigonomético de grau $N$ uma função do tipo:
+ \begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^N \left[a_n \cos(w_n t) + b_n \sen(w_nt)\right] \end{equation}
+ onde $w_n=\frac{2\pi n}{T}$.
+% 
+
+  Seja $T>0$, definimos série trigonométrica toda função do tipo:
+\begin{equation}f(t)=\frac{a_0}{2}+ \sum_{n=1}^\infty \left[a_n \cos(w_n t) + b_n \sen(w_n t)\right] \end{equation}
+ onde $w_n=\frac{2\pi n}{T}$.
+
+
+ {\bf Exemplo:}
+  Mostre que $T$ é um período para séries e  polinômios trigonométricos acima definidos.
+
+ \subsection{Relações de ortogonalidade}
+ \begin{eqnarray*}
+ \int_{0}^T \sen\left(\frac{2\pi nt}{T}\right) \sen\left(\frac{2\pi mt}{T}\right)dt&=&\left\{
+ \begin{array}{ll}0, &n\neq m\\ \frac{T}{2}, &n=m\neq 0 \end{array} \right.\label{rel_ort_ss}\\
+ \int_{0}^T \cos\left(\frac{2\pi nt}{T}\right) \cos\left(\frac{2\pi mt}{T}\right)dt&=&\left\{
+ \begin{array}{ll}0, &n\neq m\\ \frac{T}{2}, &n=m\neq 0\\ T,&n=m=0 \end{array} \right.\label{rel_ort_cc}\\
+ \int_{0}^T \cos\left(\frac{2\pi nt}{T}\right) \sen\left(\frac{2\pi mt}{T}\right)dt&=&0\label{rel_ort_sc}\label{rel_ort_cs}
+ \end{eqnarray*}
 
 \subsection{Forma harmônica}
+$$A\cos(wt-\phi)=A\left[\cos(wt)\cos(\phi)+\sin(wt)\sin(\phi)\right]$$
+
+$$A\cos(wt-\phi)=A\cos(wt)\cos(\phi)+A\sin(wt)\sin(\phi)$$
+
+$$A_n\cos(w_nt-\phi_n)=\underbrace{A\cos(\phi_n)}_{a_n}\cos(w_nt)+\underbrace{A\sin(\phi_n)}_{b_n}\sin(w_nt)$$
+
+$$f(t)=A_0+\sum_{n=1}^\infty A_n\cos(w_nt-\phi_n)$$
+
+{\bf Obs:} Para qualquer par $a_n$ e $b_n$, existem $A_n$ e $\phi_n$ que satisfazem a identidade e $A_n>0,~~\forall n>0$.
 \subsection{Forma complexa}
 \subsection{Diagramas de espectro}
 
