@@ -256,7 +256,7 @@ Demonstre a observação .
 
 
 
-
+ \chapter{21 de outubro}
 \subsection{Diagramas de espectro}
 
 
@@ -288,7 +288,7 @@ Diagramas espectro são representações gráficas dos coeficientes de Fourier $
  \end{figure}
 
  
-{\bf Exemplo:} As primeiras raias do digrama de espectro da função a seguir: 
+{\bf Exemplo:} As primeiras raias do diagrama de espectro da função a seguir: 
  \begin{equation}
  g(t)=\cdots+\frac{2i}{5\pi}e^{-5i\pi t}+\frac{2i}{3\pi}e^{-3i\pi t}+\frac{2i}{\pi}e^{-i\pi t}-\frac{2i}{\pi}e^{i\pi t}-\frac{2i}{3\pi}e^{3i\pi t}-\frac{2i}{5\pi}e^{5i\pi t}-\cdots,
  \end{equation}
@@ -298,5 +298,148 @@ Diagramas espectro são representações gráficas dos coeficientes de Fourier $
  \includegraphics{figs/cap_diagramas_espectro_figura_5}
  \end{figure}
 
+
+ {\bf Exemplos:}
  
+ $$f(t)=\sum_{n=1}^\infty \frac{1}{n^2}\cos(nt)$$
+ 
+ $$g(t)=\sum_{n=1}^\infty \frac{1}{n^2}\sin(nt)$$
+ 
+ 
+ \section{Propriedades das Séries de Fourier}
+ 
+Define-se a potência média de um função periódica $f(t)$ como
+\begin{equation}\overline{P}_f=\frac{1}{T}\int_0^T |f(t)|^2dt
+\end{equation}
+
+ A potência média da função $f(t)=A\cos(wt)$ é dada por
+ \begin{eqnarray*}
+ \overline{P}_f&=&\frac{1}{T}\int_0^T |f(t)|^2dt\\
+ &=&\frac{1}{T}\int_0^{T} A^2\cos\left(\frac{2\pi}{T} t\right)^2dt\\
+ &=&\frac{A^2}{T}\int_0^{T} \left(\frac{\cos\left(\frac{4\pi}{T} t\right)+1}{2}  \right)dt\\
+ &=&\frac{A^2}{2}
+ \end{eqnarray*}
+  onde se usou que $w=\frac{2\pi}{T}$ e identidade trigonométrica dada por:
+ \begin{equation}\cos^2(x)=\left(\frac{e^{ix}+e^{-ix}}{2}\right)^2=\frac{e^{2ix}+2+e^{-2ix}}{4}=\frac{\cos(2x)+1}{2}.\end{equation}
+
+{\bf Exemplo:} Seja $V(t)=A\cos(wt)$ uma fonte de tensão com frequência $w=60$\ \!\!Hz $=120\pi$\ \!\!rad/s ligado a um resistor de resistência $R\Omega$. A potência no resistor é
+ \begin{equation}
+ P(t)=\frac{V(t)^2}{R}
+ \end{equation}
+ e a potência média $P_m$ é
+ \begin{equation}
+ P_m=\frac{1}{T}\int_0^TP(t)dt=\frac{1}{T}\int_0^T\frac{V(t)^2}{R}dt,
+ \end{equation}
+ onde $T=\frac{1}{60}s$. Por outro lado, a potência média é calculada em termos da tensão média por
+ \begin{equation}
+ P_m=\frac{V_m^2}{R},
+ \end{equation}
+ ou seja,
+ \begin{equation}{\label{valor_RMS}}
+ V_m^2=\frac{1}{T}\int_0^T V(t)^2 dt.
+ \end{equation}
+ O exemplo  nos dá o valor da potência média do sinal $V(t)=A\cos(wt)$. Logo,
+ \begin{equation}
+ V_m=\frac{A}{\sqrt{2}}.
+ \end{equation}
+ Se $V_m=127V$, então a amplitude do sinal é aproximadamente $A\approx 180$.
+
+ 
+{\bf Observação:}
+Na expressão (\ref{valor_RMS}), $V_m$ também é chamado de valor RMS do sinal $v(t)$ (Root mean square):
+ \begin{equation}
+ V_{RMS}=\sqrt{\frac{1}{T}\int_0^T V(t)^2 dt}.
+ \end{equation}
+
+ {\bf Teorema de Parseval} Seja $f(t)$ uma função periódica representável por uma série de Fourier, então vale a seguinte identidade.
+ \begin{equation}\label{teo_parseval} 
+ \frac{1}{T}\int_0^T |f(t)|^2dt=\sum_{n=-\infty}^\infty |C_n|^2.
+  \end{equation}
+
+{\bf Dem:}
+ \begin{eqnarray*}
+  \frac{1}{T}\int_0^T |f(t)|^2dt&=&\frac{1}{T}\int_0^T f(t)\overline{f(t)}dt
+ \end{eqnarray*}
+  Como $\displaystyle f(t)=\sum_{n=-\infty}^\infty C_n e^{iw_n t}$, temos
+  \begin{eqnarray*}
+   \overline{f(t)}&=&\overline{\sum_{n=-\infty}^\infty C_n e^{iw_n t}}
+   =\sum_{n=-\infty}^\infty \overline{C_n}~ \overline{e^{iw_n t}}
+   =\sum_{n=-\infty}^\infty \overline{C_n} e^{-iw_n t}
+  \end{eqnarray*}
+ Substituindo esta expressão para $\overline{f(t)}$ na definição de potência média, temos:
+ \begin{eqnarray*}
+  \frac{1}{T}\int_0^T |f(t)|^2dt&=&\frac{1}{T}\int_0^T f(t)\overline{f(t)}dt=\frac{1}{T}\int_0^Tf(t)\left[\sum_{n=-\infty}^\infty \overline{C_n} e^{-iw_n t}\right] dt\\
+  &=&\frac{1}{T}\sum_{n=-\infty}^\infty\left[\overline{C_n}\int_0^Tf(t)e^{-iw_nt}dt\right]
+  \end{eqnarray*}
+  Como $C_n=\frac{1}{T}\int_0^Tf(t)e^{-iw_nt}dt$, temos:
+ \begin{eqnarray*}
+  \frac{1}{T}\int_0^T |f(t)|^2dt&=&\sum_{n=-\infty}^\infty\overline{C_n}C_n = \sum_{n=-\infty}^\infty|C_n|^2
+  \end{eqnarray*}
+
+
+
+
+
+
+
+ 
+ {\bf Exemplo}
+Seja $g(t)$ um função dada no exemplo \ref{ex_quadrada}, isto é,
+ \begin{eqnarray*}
+ g(t)&=&-1, \ \ -1< t<0\\
+ g(t)&=&0, \ \ t=0\ \hbox{ou}\ t=1\\
+ g(t)&=&1, \ \ 0< t<1\\
+ g(t+2)&=&g(t),\ \ \forall t\in\mathbb{R}.
+ \end{eqnarray*}
+ \begin{figure}[!ht]
+ \begin{center}
+ \includegraphics{figs/cap_propriedades_series_figura_1}\end{center}
+ \end{figure}
+ Vimos no exemplo \ref{ex_quadrada} que sua expansão em série de Fourier é da forma:
+ \begin{equation}
+ g(t)=\frac{4}{\pi}\left(\sen(\pi t)+\frac{1}{3}\sen(3\pi t)+\frac{1}{5}\sen(5\pi t)+\cdots\right).
+ \end{equation}
+ Calcularemos agora a potência média desta função através de sua representação no tempo e depois em frequência:
+ \begin{eqnarray*}
+  \overline{P_f}=\frac{1}{T}\int_0^T |g(t)|^2dt=\frac{1}{2}\int_0^2 |g(t)|^2dt=\frac{1}{2}\int_0^2 1dt=1
+ \end{eqnarray*}
+ Alternativamente, temos pelo Teorema de Parseval:
+ \begin{eqnarray*}
+  \overline{P_f}=\sum_{n=-\infty}^\infty |C_n|^2=\sum_{n=-\infty}^\infty \left|\frac{a_n-ib_n}{2}\right|^2=\frac{1}{4}\sum_{n=-\infty}^\infty |b_n|^2
+ \end{eqnarray*}
+ Como $b_{-n}=b_n$, temos que $|b_{-n}|=|b_n|$ e ainda temos que $b_0=0$, portanto: 
+ \begin{eqnarray*}
+  \overline{P_f}=\frac{1}{2}\sum_{n=1}^\infty |b_n|^2 = \frac{1}{2}\left(\frac{4}{\pi}\right)^2\left(1 + \frac{1}{3^2}+ \frac{1}{5^2}+ \frac{1}{7^2}+\cdots\right)
+ \end{eqnarray*}
+ temos:
+ \begin{eqnarray*}
+  \overline{P_f}=\frac{1}{2}\left(\frac{4}{\pi}\right)^2\frac{\pi^2}{8}=1
+ \end{eqnarray*}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ \section{Passagem do discreto para o contínuo}
+ 
+ \section{Exemplos de transformadas de Fourier}
+ 
+ 
+\subsection{Função tenda}
+
+$$f(t)=e^{-a|t|}$$
+
+\begin{eqnarray*}
+ \mathcal{F}\{f(t)\}&=&
+\end{eqnarray*}
+
+
 \end{document}
