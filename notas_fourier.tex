@@ -430,16 +430,44 @@ Seja $g(t)$ um função dada no exemplo \ref{ex_quadrada}, isto é,
  
  \section{Passagem do discreto para o contínuo}
  
+ \chapter{23 de outubro}
  \section{Exemplos de transformadas de Fourier}
  
  
-\subsection{Função tenda}
+ 
+\subsection{Função tenda assimétrica}
 
-$$f(t)=e^{-a|t|}$$
+ \begin{equation}f(t)=\left\{\begin{array}{cc}e^{at}&\hbox{se}\ t<0\\
+ e^{-bt}&\hbox{se}\ t>0
+ \end{array}\right.
+ \end{equation}
+ onde $a$ e $b$ são constantes positivas. A figura  mostra o gráfico de $f(t)$ para $a=1$ e $b=3$.
+ \begin{figure}[!ht]
+ \begin{center}
+ \includegraphics{figs/cap_transformada_de_fourier_figura_7}\end{center}
+ \caption{\label{fig_trans_1} Gráfico de $f(t)=e^{t}$, se $t<0$ ou $f(t)=e^{-3t}$ se $t>0$.  }
+ \end{figure}
+ A transformada de Fourier de $f(t)$ é calculada da seguinte forma:
+ \begin{eqnarray*}
+ F(w)=\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-i w t}dt\\
+ &=&\int_{-\infty}^0 e^{at} e^{-i w t}dt+\int_{0}^\infty e^{-bt} e^{-i w t}dt\\
+ &=&\int_{-\infty}^0 e^{at} \left(\cos(wt)-i\sen(wt)\right)dt+\int_{0}^\infty e^{-bt} \left(\cos(wt)-i\sen(wt)\right)dt\\
+ &=&\int_{0}^\infty e^{-at} \left(\cos(wt)+i\sen(wt)\right)dt+\int_{0}^\infty e^{-bt} \left(\cos(wt)-i\sen(wt)\right)dt\\
+ &=&\frac{a}{a^2+w^2}+\frac{iw}{a^2+w^2}+\frac{b}{b^2+w^2}-\frac{iw}{b^2+w^2}\\
+ &=&\frac{a}{a^2+w^2}+\frac{b}{b^2+w^2}+i\left(\frac{w}{a^2+w^2}-\frac{w}{b^2+w^2}\right)
+ \end{eqnarray*}
+ onde se usou os itens 1 e 2 da tabela de integrais definidas.
 
-\begin{eqnarray*}
- \mathcal{F}\{f(t)\}&=&
-\end{eqnarray*}
+ {\bf O que acontece quando $a=b$?}
+ % 
+% 
+ \subsection{Delta de Dirac}
+ 
+ Calculamos a transformada de Fourier do delta de Dirac $\delta(t-a)$, $a\in\mathbb{R}$ da seguinte forma:
+ \begin{eqnarray*}
+ F(w)=\mathcal{F}\{\delta(t-a)\}&=&\int_{-\infty}^\infty \delta(t-a) e^{-i w t}dt\\
+ &=&e^{-i w a}
+ \end{eqnarray*}
 
-
+ \chapter{23 de outubro}
 \end{document}
