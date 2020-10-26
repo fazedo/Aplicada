@@ -717,190 +717,218 @@ Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
  &=&\frac{a}{(w-w_0)^2+a^2}+\frac{a}{(w+w_0)^2+a^2}
  \end{eqnarray*}
 
- \chapter{26 de outubro - Propriedades}
-%\section{Teorema da convolução}
-%\label{prop_teo_conv} Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
-% \begin{itemize}
-% \item[a)] (Convolução no tempo)
-% \begin{equation}\mathcal{F}\{(f_1*f_2)(t)\}=F_1(w)F_2(w),\end{equation}
-% \item[b)] (Convolução na frequência)
-% \begin{equation}(F_1*F_2)(w)=2\pi\mathcal{F}\{f_1(t)f_2(t)\}\end{equation}
-% ou 
-% \begin{equation}\mathcal{F}^{-1}\{(F_1*F_2)(w)\}=2\pi f_1(t)f_2(t),\end{equation}
-% \end{itemize}
-% onde $*$ indica a convolução de duas funções:
-% \begin{equation}
-% (f_1*f_2)(t)=\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)d\tau
-% \end{equation}
-% \end{teo}
-% \begin{proof}
-% \begin{itemize}
-% \item[a)] Usando as definições de transformada de Fourier e convolução de duas funções, temos:
-% \begin{eqnarray}
-% \nonumber \mathcal{F}\{(f_1*f_2)(t)\}&=&\int_{-\infty}^\infty (f_1*f_2)(t)e^{-iwt}dt\\
-% \nonumber &=&\int_{-\infty}^\infty \left(\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)d\tau\right)e^{-iwt}dt\\
-% &=&\int_{-\infty}^\infty \left[f_1(\tau) \int_{-\infty}^\infty f_2(t-\tau)e^{-iwt}dt\right]d\tau  {\label{eq_teo_conv}}
-% \end{eqnarray}
-% Uma das integrais pode ser calculada fazendo uma mudança de variável:
-% \begin{eqnarray}
-% \nonumber \int_{-\infty}^\infty f_2(t-\tau)e^{-iwt}dt&=&\int_{-\infty}^\infty f_2(s)e^{-iw(s+\tau)}ds \\
-% \nonumber &=&e^{-iw\tau}\int_{-\infty}^\infty f_2(s)e^{-iws}ds \\
-% &=&e^{-iw\tau}F_2(w) {\label{eq_teo_conv_1}}
-% \end{eqnarray}
-% Substituindo a equação (\ref{eq_teo_conv_1}) na equação (\ref{eq_teo_conv}), temos
-% \begin{eqnarray*}
-% \mathcal{F}\{(f_1*f_2)(t)\}&=&\int_{-\infty}^\infty \left[f_1(\tau) \int_{-\infty}^\infty f_2(t-\tau)e^{-iwt}dt\right]d\tau\\
-% &=&\int_{-\infty}^\infty \left[f_1(\tau) e^{-iw\tau}F_2(w)\right]d\tau\\
-% &=&F_2(w)\int_{-\infty}^\infty \left[f_1(\tau) e^{-iw\tau}\right]d\tau\\
-% &=&F_1(w)F_2(w)
-% \end{eqnarray*}
-% \item[b)] Analogamente, usando as definições, temos:
-% \begin{eqnarray}
-% \nonumber\mathcal{F}^{-1}\{(F_1*F_2)(w)\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty (F_1*F_2)(w)e^{iwt}dw\\
-% \nonumber &=&\frac{1}{2\pi}\int_{-\infty}^\infty \left(\int_{-\infty}^\infty F_1(v)F_2(w-v)dv \right)e^{iwt}dw\\
-% &=&\frac{1}{2\pi}\int_{-\infty}^\infty\left[ F_1(v) \int_{-\infty}^\infty F_2(w-v)e^{iwt}dw \right]dv {\label{eq_teo_conv_2}}
-% \end{eqnarray}
-% Também,
-% \begin{eqnarray}
-% \nonumber \int_{-\infty}^\infty F_2(w-v)e^{iwt}dw&=&\int_{-\infty}^\infty F_2(y)e^{i(y+v)t}dy \\
-% \nonumber &=&e^{ivt}\int_{-\infty}^\infty F_2(y)e^{iyt}dy \\
-% &=&2\pi e^{ivt}f_2(t) {\label{eq_teo_conv_3}}
-% \end{eqnarray}
-% Substituindo a equação (\ref{eq_teo_conv_3}) na equação (\ref{eq_teo_conv_2}), temos
-% \begin{eqnarray*}
-% \mathcal{F}^{-1}\{(F_1*F_2)(w)\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty\left[ F_1(v) \int_{-\infty}^\infty F_2(w-v)e^{iwt}dw \right]dv\\
-% &=&\frac{1}{2\pi}\int_{-\infty}^\infty  F_1(v) e^{ivt} 2\pi f_2(t) dv\\
-% &=&f_2(t)\int_{-\infty}^\infty F_1(v) e^{ivt} dv\\
-% &=&2\pi f_1(t)f_2(t)
-% \end{eqnarray*}
-% \end{itemize}
-% \end{proof}
-% \begin{ex}Considere as funções $f(t)=te^{-t^2}$ e $g(t)=e^{-a|t|}$, $a>0$ e suas respectivas transformadas de Fourier $F(w)=-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}$ e $G(w)=\frac{2a}{w^2+a^2}$. A transformada de Fourier da função 
-% \begin{equation}
-% h(t)=\int_{-\infty}^\infty f(t-\tau)g(\tau)d\tau=\int_{-\infty}^\infty (t-\tau)e^{-(t-\tau)^2}e^{-a|\tau|}d\tau
-% \end{equation}
-% é calculada usando o teorema da convolução e é dada por
-% \begin{equation}
-% H(w)=F(w)G(w)=-iwa\frac{\sqrt{\pi}}{w^2+a^2}e^{-\frac{w^2}{4}}
-% \end{equation}
-% \end{ex}
-% \begin{teo}[Conjugação] \label{prop_conj}Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
-% \begin{equation}
-% \overline{F(w)}=F(-w)
-% \end{equation}
-% \end{teo}
-% \begin{proof}
-% De fato,
-% \begin{eqnarray*}
-% \overline{F(w)}&=&\overline{\int_{-\infty}^\infty f(t)e^{-iwt}dt}\\
-% &=&\int_{-\infty}^\infty f(t)\overline{e^{-iwt}}dt,\quad \hbox{pois}\ \ \overline{f(t)}=f(t) \\
-% &=&\int_{-\infty}^\infty f(t)e^{iwt}dt\\
-% &=&\int_{-\infty}^\infty f(t)e^{-i(-w)t}dt\\
-% &=&F(-w)
-% \end{eqnarray*}
-% \end{proof}
-% \begin{obs} Se $f(t)$ não é uma função real, esta propriedade não se aplica.
-% \end{obs}
-% \begin{ex}Considere as funções $f(t)=te^{-t^2}$ e sua transformada de Fourier $F(w)=-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}$. Então,
-% \begin{equation}
-% F(-w)=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}
-% \end{equation}
-% e
-% \begin{equation}
-% \overline{F(w)}=\overline{-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}}=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}.
-% \end{equation}
-% \end{ex}
-% \begin{teo}[Inversão temporal]\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então \begin{equation}\mathcal{F}\left\{f(-t)\right\}=F(-w).\end{equation}
-% \end{teo}
-% \begin{proof}
-% \begin{eqnarray*}
-% \mathcal{F}\left\{f(-t)\right\}=\int_{-\infty}^\infty f(-t) e^{-iwt}dt
-% \end{eqnarray*}
-% procedemos com a mudança de variáveis $\tau=-t$:
-% \begin{eqnarray*}
-% \mathcal{F}\left\{f(-t)\right\}&=&\int_{-\infty}^\infty f(-t) e^{-iwt}dt\\
-% &=&\int_{\infty}^{-\infty} f(\tau) e^{iw\tau}(-d\tau) \\
-% &=&\int_{-\infty}^{\infty} f(\tau) e^{iw\tau}d\tau \\
-% &=&\int_{-\infty}^{\infty} f(\tau) e^{-i(-w)\tau}d\tau \\
-% &=&F(-w)
-% \end{eqnarray*}
-% \end{proof}
-% \begin{teo}[Simetria ou dualidade]\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
-% \begin{equation}
-% f(-w)=\frac{1}{2\pi}\mathcal{F}\{F(t)\}
-% \end{equation}
-% \end{teo}
-% \begin{proof} Da definição de transformada de Fourier, temos
-% \begin{equation}
-% f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(w)e^{iwt}dw
-% \end{equation}
-% Podemos trocas $t$ e $w$ e calcular $f(w)$ em função de $F(t)$:
-% \begin{equation}
-% f(w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{itw}dt.
-% \end{equation}
-% Ou seja, 
-% \begin{equation}
-% f(-w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{-itw}dt=\frac{1}{2\pi}\mathcal{F}\{F(t)\}.
-% \end{equation}
-% \end{proof}
-% \begin{teo}[Mudança de escala]\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
-% \begin{equation}
-% \mathcal{F}\{f(at)\}=\frac{1}{|a|}F\left(\frac{w}{a}\right),~~ \forall a\neq 0.
-% \end{equation}
-% \end{teo}
-% \begin{proof} Da definição de transformada de Fourier, temos
-% \begin{equation}
-% \mathcal{F}\{f(at)\}=\int_{-\infty}^{\infty} f(at)e^{-iwt}dt
-% \end{equation}
-% Fazendo a mudança $\tau= at$, distinguindo dois casos: $a>0$ e $a<0$.
-% Para o caso $a>0$, temos:
-% \begin{eqnarray*}
-% \mathcal{F}\{f(at)\}&=&\int_{-\infty}^{\infty} f(at)e^{-iwt}dt\\
-% &=&\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}\frac{d\tau}{a}\\
-% &=&\frac{1}{a}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau
-% \end{eqnarray*}
-% Para o caso $a<0$, temos:
-% \begin{eqnarray*}
-% \mathcal{F}\{f(at)\}&=&\int_{-\infty}^{\infty} f(at)e^{-iwt}dt\\
-% &=&\int_{\infty}^{-\infty} f(\tau)e^{-\frac{iw\tau}{a}}\frac{d\tau}{a}\\
-% &=&-\frac{1}{a}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau
-% \end{eqnarray*}
-% Em ambos os casos, temos:
-% \begin{eqnarray*}
-% \mathcal{F}\{f(at)\}&=&\frac{1}{|a|}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau\\
-% &=&\frac{1}{|a|}F\left(\frac{w}{a}\right)
-% \end{eqnarray*}
-% \end{proof}
-% \begin{obs} A propriedade da inversão temporal (propriedade \ref{prop_inv_temp}) é um caso particular desta propriedade quando $a=-1$.
-% \end{obs}
-% \subsection*{Exercícios}
-% \begin{exer}O diagrama de magnitudes da transformada de Fourier $F(w)$ de uma função $f(t)$ é dado na figura (\ref{fig_graf_1}). Esboce o diagrama de magnitudes da transformada de Fourier da função $f'(t)$. 
-% \begin{figure}[!ht]
-% \begin{center}
-% \includegraphics{cap_propriedades_transformada/pics/figura_1}\end{center}
-% \caption{\label{fig_graf_1}}
-% \end{figure}
-% \end{exer}
-% \begin{exer}Faça o diagrama de espectro da transformada de Fourier do exemplo \ref{ex_desloc_tempo} da página \pageref{ex_desloc_tempo}.
-% \end{exer}
-% \begin{resp}Ver figura abaixo.
-% \begin{center}
-% \includegraphics{cap_propriedades_transformada/pics/figura_11}
-% \includegraphics{cap_propriedades_transformada/pics/figura_12}\end{center}
-% \end{resp}
-% \begin{exer} Em geral não é verdade que módulo da soma é igual a soma dos módulos, isto é, $|x+y|=|x|+|y|$, $x,y\in\mathbb{C}$.
-% \begin{itemize}
-% \item[a)] Encontre um caso particular onde $|x+y|=|x|+|y|$ com $|x|\neq 0$ e $|y|\neq 0$.
-% \item[b)] Encontre um caso particular onde $|x+y|=0$ com $|x|\neq 0$ e $|y|\neq 0$. Mostre que, nesse caso, $x=-y$.
-% \item[c)] Encontre um caso particular onde $|x+y|=1$ com $|x|=|y|=1$.
-% \item[d)] Mostre que $|x+y|=|x|+|y|$ sempre que $xy=0$.
-% \end{itemize}
-% Observe que não é possível, em geral, conhecer o diagrama de magnitudes da soma de duas funções, $F(w)$ e $G(w)$, conhecendo apenas seus diagramas de magnitudes. As fases precisam ser levadas em conta. Um exceção é quando, para todos $w$, ou $F(w)=0$ ou $G(w)=0$.
-% \end{exer}
-% \begin{exer}{\label{ex_mod_sin}}Mostre que, dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então
-% \begin{equation}
-% \mathcal{F}\left\{f(t)\sen(w_0t) \right\}=\frac{i}{2}F(w+w_0)-\frac{i}{2 }F(w-w_0),
-% \end{equation}
-% para $w_0\in\mathbb{R}$.
-% \end{exer}
+ \chapter{26 de outubro - Propriedades (continuação)}
+\section{Teorema da convolução}
+Dadas duas funções $f_1(t)$ e $f_2(t)$ com suas respectivas transformadas de Fourier, $F_1(w)$ e $F_2(w)$, então
+ \begin{itemize}
+ \item[a)] (Convolução no tempo)
+ \begin{equation}\mathcal{F}\{(f_1*f_2)(t)\}=F_1(w)F_2(w),\end{equation}
+ \item[b)] (Convolução na frequência)
+ \begin{equation}(F_1*F_2)(w)=2\pi\mathcal{F}\{f_1(t)f_2(t)\}\end{equation}
+ ou 
+ \begin{equation}\mathcal{F}^{-1}\{(F_1*F_2)(w)\}=2\pi f_1(t)f_2(t),\end{equation}
+ \end{itemize}
+ onde $*$ indica a convolução de duas funções:
+ \begin{equation}
+ (f_1*f_2)(t)=\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)d\tau
+ \end{equation}
+
+ {\bf Observe} a definição de convolução.
+ 
+{\bf Dem:}
+ \begin{itemize}
+ \item[a)] Usando as definições de transformada de Fourier e convolução de duas funções, temos:
+ \begin{eqnarray}
+ \nonumber \mathcal{F}\{(f_1*f_2)(t)\}&=&\int_{-\infty}^\infty (f_1*f_2)(t)e^{-iwt}dt\\
+ \nonumber &=&\int_{-\infty}^\infty \left(\int_{-\infty}^\infty f_1(\tau)f_2(t-\tau)d\tau\right)e^{-iwt}dt\\
+ &=&\int_{-\infty}^\infty \left[f_1(\tau) \int_{-\infty}^\infty f_2(t-\tau)e^{-iwt}dt\right]d\tau  {\label{eq_teo_conv}}
+ \end{eqnarray}
+ Uma das integrais pode ser calculada fazendo uma mudança de variável:
+ \begin{eqnarray}
+ \nonumber \int_{-\infty}^\infty f_2(t-\tau)e^{-iwt}dt&=&\int_{-\infty}^\infty f_2(s)e^{-iw(s+\tau)}ds \\
+ \nonumber &=&e^{-iw\tau}\int_{-\infty}^\infty f_2(s)e^{-iws}ds \\
+ &=&e^{-iw\tau}F_2(w) {\label{eq_teo_conv_1}}
+ \end{eqnarray}
+ Substituindo a equação (\ref{eq_teo_conv_1}) na equação (\ref{eq_teo_conv}), temos
+ \begin{eqnarray*}
+ \mathcal{F}\{(f_1*f_2)(t)\}&=&\int_{-\infty}^\infty \left[f_1(\tau) \int_{-\infty}^\infty f_2(t-\tau)e^{-iwt}dt\right]d\tau\\
+ &=&\int_{-\infty}^\infty \left[f_1(\tau) e^{-iw\tau}F_2(w)\right]d\tau\\
+ &=&F_2(w)\int_{-\infty}^\infty \left[f_1(\tau) e^{-iw\tau}\right]d\tau\\
+ &=&F_1(w)F_2(w)
+ \end{eqnarray*}
+ \item[b)] Analogamente, usando as definições, temos:
+ \begin{eqnarray}
+ \nonumber\mathcal{F}^{-1}\{(F_1*F_2)(w)\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty (F_1*F_2)(w)e^{iwt}dw\\
+ \nonumber &=&\frac{1}{2\pi}\int_{-\infty}^\infty \left(\int_{-\infty}^\infty F_1(v)F_2(w-v)dv \right)e^{iwt}dw\\
+ &=&\frac{1}{2\pi}\int_{-\infty}^\infty\left[ F_1(v) \int_{-\infty}^\infty F_2(w-v)e^{iwt}dw \right]dv {\label{eq_teo_conv_2}}
+ \end{eqnarray}
+ Também,
+ \begin{eqnarray}
+ \nonumber \int_{-\infty}^\infty F_2(w-v)e^{iwt}dw&=&\int_{-\infty}^\infty F_2(y)e^{i(y+v)t}dy \\
+ \nonumber &=&e^{ivt}\int_{-\infty}^\infty F_2(y)e^{iyt}dy \\
+ &=&2\pi e^{ivt}f_2(t) {\label{eq_teo_conv_3}}
+ \end{eqnarray}
+ Substituindo a equação (\ref{eq_teo_conv_3}) na equação (\ref{eq_teo_conv_2}), temos
+ \begin{eqnarray*}
+ \mathcal{F}^{-1}\{(F_1*F_2)(w)\}&=&\frac{1}{2\pi}\int_{-\infty}^\infty\left[ F_1(v) \int_{-\infty}^\infty F_2(w-v)e^{iwt}dw \right]dv\\
+ &=&\frac{1}{2\pi}\int_{-\infty}^\infty  F_1(v) e^{ivt} 2\pi f_2(t) dv\\
+ &=&f_2(t)\int_{-\infty}^\infty F_1(v) e^{ivt} dv\\
+ &=&2\pi f_1(t)f_2(t)
+ \end{eqnarray*}
+ \end{itemize}
+\subsubsection{Exemplo}
+Considere as funções $f(t)=te^{-t^2}$ e $g(t)=e^{-a|t|}$, $a>0$ e suas respectivas transformadas de Fourier $F(w)=-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}$ e $G(w)=\frac{2a}{w^2+a^2}$. A transformada de Fourier da função 
+ \begin{equation}
+ h(t)=\int_{-\infty}^\infty f(t-\tau)g(\tau)d\tau=\int_{-\infty}^\infty (t-\tau)e^{-(t-\tau)^2}e^{-a|\tau|}d\tau
+ \end{equation}
+ é calculada usando o teorema da convolução e é dada por
+ \begin{equation}
+ H(w)=F(w)G(w)=-iwa\frac{\sqrt{\pi}}{w^2+a^2}e^{-\frac{w^2}{4}}
+ \end{equation}
+
+ \section{Conjugação}
+Dada uma função real $f(t)$ e sua transformada de Fourier $F(w)$, então
+ \begin{equation}
+ \overline{F(w)}=F(-w)
+ \end{equation}
+
+{\bf Dem.}
+ De fato,
+ \begin{eqnarray*}
+ \overline{F(w)}&=&\overline{\int_{-\infty}^\infty f(t)e^{-iwt}dt}\\
+ &=&\int_{-\infty}^\infty f(t)\overline{e^{-iwt}}dt,\quad \hbox{pois}\ \ \overline{f(t)}=f(t) \\
+ &=&\int_{-\infty}^\infty f(t)e^{iwt}dt\\
+ &=&\int_{-\infty}^\infty f(t)e^{-i(-w)t}dt\\
+ &=&F(-w)
+ \end{eqnarray*}
+
+{\bf obs} Se $f(t)$ não é uma função real, esta propriedade não se aplica.
+
+\subsection{Exemplo}
+Considere as funções $f(t)=te^{-t^2}$ e sua transformada de Fourier $F(w)=-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}$. Então,
+ \begin{equation}
+ F(-w)=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}
+ \end{equation}
+ e
+ \begin{equation}
+ \overline{F(w)}=\overline{-iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}}=iw\frac{\sqrt{\pi}}{2}e^{-\frac{w^2}{4}}.
+ \end{equation}
+
+ \section{Inversão temporal}
+\label{prop_inv_temp} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então \begin{equation}\mathcal{F}\left\{f(-t)\right\}=F(-w).\end{equation}
+
+{\bf Dem:}
+ \begin{eqnarray*}
+ \mathcal{F}\left\{f(-t)\right\}=\int_{-\infty}^\infty f(-t) e^{-iwt}dt
+ \end{eqnarray*}
+ procedemos com a mudança de variáveis $\tau=-t$:
+ \begin{eqnarray*}
+ \mathcal{F}\left\{f(-t)\right\}&=&\int_{-\infty}^\infty f(-t) e^{-iwt}dt\\
+ &=&\int_{\infty}^{-\infty} f(\tau) e^{iw\tau}(-d\tau) \\
+ &=&\int_{-\infty}^{\infty} f(\tau) e^{iw\tau}d\tau \\
+ &=&\int_{-\infty}^{\infty} f(\tau) e^{-i(-w)\tau}d\tau \\
+ &=&F(-w)
+ \end{eqnarray*}
+
+\section{Simetria ou dualidade}\label{prop_sim_dua} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
+ \begin{equation}
+ f(-w)=\frac{1}{2\pi}\mathcal{F}\{F(t)\}
+ \end{equation}
+
+{\bf Dem} Da definição de transformada de Fourier, temos
+ \begin{equation}
+ f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(w)e^{iwt}dw
+ \end{equation}
+ Podemos trocas $t$ e $w$ e calcular $f(w)$ em função de $F(t)$:
+ \begin{equation}
+ f(w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{itw}dt.
+ \end{equation}
+ Ou seja, 
+ \begin{equation}
+ f(-w)=\frac{1}{2\pi}\int_{-\infty}^{\infty} F(t)e^{-itw}dt=\frac{1}{2\pi}\mathcal{F}\{F(t)\}.
+ \end{equation}
+
+ \section{Mudança de escala}\label{prop_mud_esc} Dada uma função $f(t)$ e sua transformada de Fourier $F(w)$, então 
+ \begin{equation}
+ \mathcal{F}\{f(at)\}=\frac{1}{|a|}F\left(\frac{w}{a}\right),~~ \forall a\neq 0.
+ \end{equation}
+
+{\bf Dem:} Da definição de transformada de Fourier, temos
+ \begin{equation}
+ \mathcal{F}\{f(at)\}=\int_{-\infty}^{\infty} f(at)e^{-iwt}dt
+ \end{equation}
+ Fazendo a mudança $\tau= a t$, distinguindo dois casos: $a>0$ e $a<0$.
+ Para o caso $a>0$, temos:
+ \begin{eqnarray*}
+ \mathcal{F}\{f(at)\}&=&\int_{-\infty}^{\infty} f(at)e^{-iwt}dt\\
+ &=&\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}\frac{d\tau}{a}\\
+ &=&\frac{1}{a}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau
+ \end{eqnarray*}
+ Para o caso $a<0$, temos:
+ \begin{eqnarray*}
+ \mathcal{F}\{f(at)\}&=&\int_{-\infty}^{\infty} f(at)e^{-iwt}dt\\
+ &=&\int_{\infty}^{-\infty} f(\tau)e^{-\frac{iw\tau}{a}}\frac{d\tau}{a}\\
+ &=&-\frac{1}{a}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau
+ \end{eqnarray*}
+ Em ambos os casos, temos:
+ \begin{eqnarray*}
+ \mathcal{F}\{f(at)\}&=&\frac{1}{|a|}\int_{-\infty}^{\infty} f(\tau)e^{-\frac{iw\tau}{a}}d\tau\\
+ &=&\frac{1}{|a|}F\left(\frac{w}{a}\right)
+ \end{eqnarray*}
+
+ 
+{\bf Obs:} A propriedade da inversão temporal (propriedade \ref{prop_inv_temp}) é um caso particular desta propriedade quando $a=-1$.
+
+
+
+\section{O teorema de Parseval}
+\label{prop_teo_pars} Seja $f(t)$ uma função real ou complexa e $F(w)$ sua transformada de Fourier, então vale a identidade:
+\begin{equation}\int_{-\infty}^\infty |f(t)|^2dt = \frac{1}{2\pi} \int_{-\infty}^\infty |F(w)|^2dw\end{equation}
+
+
+{\bf Dem:}
+Partimos da representação de $f(t)$ em sua integral de Fourier:
+\begin{eqnarray*}
+f(t)=\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw
+\end{eqnarray*}
+e consequentemente:
+\begin{eqnarray*}
+\overline{f(t)}=\frac{1}{2\pi}\int_{-\infty}^\infty \overline{F(w)}e^{-iwt}dw
+\end{eqnarray*}
+e inserimos essa expressão na integral envolvida:
+\begin{eqnarray*}
+\int_{-\infty}^\infty |f(t)|^2dt &=&\int_{-\infty}^\infty f(t)\overline{f(t)} dt\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty f(t)\int_{-\infty}^\infty \overline{F(w)}e^{-iwt}dw dt\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty \int_{-\infty}^\infty f(t) \overline{F(w)}e^{-iwt}dw dt\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty \int_{-\infty}^\infty f(t) \overline{F(w)}e^{-iwt}dt dw\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty \overline{F(w)}\int_{-\infty}^\infty f(t) e^{-iwt}dt dw\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty \overline{F(w)}F(w) dw\\
+&=&\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2 dw
+\end{eqnarray*}
+
+{\bf Obs} Esta integral está associada ao conceito de energia total de um sinal. 
+
+\subsubsection{Exemplo}
+Considere a função $f(t)=e^{-a|t|}$, $a>0$, e sua transformada de Fourier $F(w)=\frac{2a}{w^2+a^2}$. A energia associada a essa função pode ser calculada de duas maneiras distintas:
+\begin{eqnarray*}
+\int_{-\infty}^\infty |f(t)|^2dt&=&\int_{-\infty}^\infty |e^{-a|t|}|^2dt\\
+&=&\int_{-\infty}^\infty e^{-2a|t|}dt\\
+&=&2\int_{0}^\infty e^{-2a t}dt\\
+&=&2\left[-\frac{1}{2a} e^{-2a t}\right]_{0}^\infty\\
+&=&\frac{1}{a}
+\end{eqnarray*}
+ou
+\begin{eqnarray*}
+\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw&=&\frac{1}{2\pi}\int_{-\infty}^\infty \left(\frac{2a}{w^2+a^2}\right)^2dw\\
+&=&\frac{4a^2}{\pi}\int_{0}^\infty \frac{1}{\left(w^2+a^2\right)^2}dw
+\end{eqnarray*}
+Usando o item 19 da tabela de integrais definidas \ref{tab_int_def} da página \pageref{tab_int_def} com $m=0$, temos:
+\begin{eqnarray*}
+\int_{0}^\infty \frac{1}{\left(w^2+a^2\right)^2}dw=\frac{\pi}{4a^3}.
+\end{eqnarray*}
+Portanto,
+\begin{eqnarray*}
+\frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw=\frac{4a^2}{\pi}\frac{\pi}{4a^3}=\frac{1}{a}.
+\end{eqnarray*}
+
  \end{document}
