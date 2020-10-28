@@ -931,4 +931,162 @@ Portanto,
 \frac{1}{2\pi}\int_{-\infty}^\infty |F(w)|^2dw=\frac{4a^2}{\pi}\frac{\pi}{4a^3}=\frac{1}{a}.
 \end{eqnarray*}
 
+
+\chapter{28 de outubro}
+
+EXEMPLOS.
+
+
+
+\section{Passagem do contínuo para o discreto}
+Nesta seção vamos calcular a transformada de Fourier de uma função periódica $f(t)$ que possui representação em série de Fourier. Para esse propósito, observe que, colocando $F(w)=2\pi \delta(w-w_0)$, temos 
+\begin{equation*}
+f(t)=\mathcal{F}^{-1}\{2\pi\delta(w-w_0)\}=\frac{2\pi}{2\pi}\int_{-\infty}^\infty \delta(w-w_0)e^{iwt}dw=e^{iw_0t}.
+\end{equation*}
+ou seja,
+\begin{equation}{\label{eq_prop_trans_01}}
+\mathcal{F}\{e^{iw_0t}\}=2\pi\delta(w-w_0).
+\end{equation}
+Agora, considere uma função $f(t)$ que possui representação em série de Fourier:
+\begin{equation}
+f(t)=\sum_{n=-\infty}^\infty C_n e^{iw_nt}.
+\end{equation}
+A definição de transformada de Fourier nos dá:
+\begin{eqnarray*}
+\mathcal{F}\{f(t)\}&=&\int_{-\infty}^\infty f(t) e^{-iwt}dt\\
+&=&\int_{-\infty}^\infty\left( \sum_{n=-\infty}^\infty C_n e^{iw_nt}\right) e^{-iwt}dt\\
+&=& \sum_{n=-\infty}^\infty C_n \left(\int_{-\infty}^\infty e^{iw_nt}e^{-iwt} dt \right)\\
+&=&2\pi \sum_{n=-\infty}^\infty C_n \delta(w-w_n) ,
+\end{eqnarray*}
+onde usamos a equação (\ref{eq_prop_trans_01}) na última passagem.
+
+{\bf Exemplo:} Dada a função $f(t)=\cos(w_0t)$, sua representação em série trigonométrica exponencial é
+ \begin{equation}
+ f(t)=\frac{1}{2}e^{w_0it}+\frac{1}{2}e^{-w_0it}.
+ \end{equation}
+ Logo, a sua transformada de Fourier $F(w)$ é dada por:
+ \begin{equation}
+ F(w)=\pi\delta(w-w_0)+\pi\delta(w+w_0)
+ \end{equation}
+
+{\bf Exemplo:} Considere a função não periódica $g(t)=e^{-a|t|}\cos(w_0 t)$, $a>0$. A transformada de Fourier de $g(t)$ é dada por $G(w)=\frac{a}{(w-w_0)^2+a^2}+\frac{a}{(w+w_0)^2+a^2}$  Observe que 
+ \begin{equation}
+ \lim_{a\to 0}g(t)=\lim_{a\to 0} e^{-a|t|}\cos(w_0 t)=\cos(w_0 t).
+ \end{equation}
+ Comparando com o exemplo \ref{ex_ant}, é esperado que $G(w)$ convirja para $F(w)$. De fato, observe que a área abaixo da curva é constante com respeito a $a$:
+ \begin{eqnarray*}
+ \int_{-\infty}^\infty G(w)dw&=&a\int_{-\infty}^\infty \left(\frac{1}{(w-w_0)^2+a^2}+\frac{1}{(w+w_0)^2+a^2}\right)dw\\
+ &=&a\left[\frac{1}{a}\tan^{-1}\left(\frac{w-w_0}{a}\right)+\frac{1}{a}\tan^{-1}\left(\frac{w+w_0}{a}\right)\right]_{-\infty}^\infty\\
+ &=&\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)+\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)=2\pi
+ \end{eqnarray*}
+ e a curva $G(w)$ converge para 0, exceto em $w=w_0$ e $w=-w_0$. Portanto o limite de $G(w)$ é $F(w)$. Os diagramas de magnitude de $F(w)$ e de $G(w)$ para alguns valores de $a>0$ e $w_0=1$ são apresentados na figura
+  \begin{figure}[!ht]
+  \begin{center}
+  \includegraphics{figs/cap_propriedades_transformada_figura_4}
+  \includegraphics{figs/cap_propriedades_transformada_figura_5}
+  \includegraphics{figs/cap_propriedades_transformada_figura_6}
+  \includegraphics{figs/cap_propriedades_transformada_figura_7}
+\end{center}
+ \caption{\label{diag_espec_05}}
+ \end{figure}
+ 
+% 
+% 
+ \section{Aplicação: Sinais Discretos}
+ Nessa seção vamos discutir sobre discretização de sinais, em especial, pretendemos responder com que frequência precisamos amostrar um sinal real para podermos reconstruí-lo. Vamos considerar que o espectro da função $f(t)$ é composto apenas por frequências inferiores a $w_c$, onde $w_c$ é chamado de frequência de corte. Mostraremos que se conhecermos apenas os valores de $f(t)$ para $t=kT$, $k\in\mathbb{Z}$, onde $T$ é o período de amostragem e $w_a:=\frac{2\pi }{T}>2w_c$  é a frequência de amostragem, então podemos reconstruir exatamente $f(t)$ em todos instantes de tempo.
+ Considere $f(t)$ uma função real, definiremos $f_T(t)$ uma versão discretizada deste sinal da seguinte forma:
+ \begin{equation}
+ f_T(t)=\sum_{k=-\infty}^\infty f(kT) \delta (t-kT),
+ \end{equation}
+ assim $f_T(t)$ é um trem de Dirac's cujas amplitudes coincidem com o valor da função $f(t)$ nos pontos de amostragem $kT$. Veja um exemplo na figura \ref{sinal_discreto}.
+ \begin{figure}[!ht]
+ \begin{center}
+ \includegraphics{figs/cap_propriedades_transformada_figura_8}\end{center}
+ \caption{\label{sinal_discreto}}
+ \end{figure}
+ A fim de calcularmos a transforma de Fourier de $f_T(t)$, observamos que:
+ \begin{eqnarray*}
+ f_T(t)&=&\sum_{k=-\infty}^\infty f(kT) \delta (t-kT)\\
+ &=&\sum_{k=-\infty}^\infty f(t) \delta (t-kT)\\
+ &=&f(t)\sum_{k=-\infty}^\infty \delta (t-kT)\\
+ &=&f(t)\delta_T(t)
+ \end{eqnarray*}
+ onde $\delta_T(t)=\sum_{k=-\infty}^\infty \delta (t-kT)$ é uma função periódica cuja série de Fourier é dada por:
+ \begin{equation}\delta_T(t)=\sum_{k=-\infty}^\infty \delta (t-kT)=\sum_{n=-\infty}^\infty C_n e^{iw_n t}\end{equation}
+ e
+ \begin{equation}C_n=\frac{1}{T}\int_{-T/2}^{T/2}\delta_T(t) e^{-iw_n t}dt=\frac{1}{T}\end{equation}
+ assim,
+ \begin{equation}\delta_T(t)=\frac{1}{T}\sum_{n=-\infty}^\infty  e^{iw_n t}\end{equation}
+ e, portanto:
+ \begin{eqnarray*}
+ f_T(t)&=&f(t)\delta_T(t)\\
+ &=& f(t)\frac{1}{T}\sum_{n=-\infty}^\infty  e^{iw_n t}\\
+ &=&\frac{1}{T}\sum_{n=-\infty}^\infty f(t) e^{iw_n t}
+ \end{eqnarray*}
+ e finalmente:
+ \begin{eqnarray*}
+ F_T(w)&=&\mathcal{F}\left\{f_T(t)\right\}\\
+ &=&\frac{1}{T}\mathcal{F}\left\{\sum_{n=-\infty}^\infty f(t) e^{iw_n t}\right\}\\
+ &=&\frac{1}{T}\sum_{n=-\infty}^\infty F(w-w_n)
+ \end{eqnarray*}
+ onde se usou a propriedade do deslocamento no eixo $w$ (\ref{prop_desl_w}). Veja um exemplo na figura:
+ \begin{figure}[!ht]
+ \begin{center}
+ \includegraphics{figs/cap_propriedades_transformada_figura_9}
+ \hspace{10pt}
+ \includegraphics{figs/cap_propriedades_transformada_figura_10}\end{center}
+ \caption{\label{sinal_discreto1}}
+ \end{figure}
+ 
+ {\bf Obs:} Observamos que se a frequência de amostragem $w_a$ for superior a $2w_c$, então $F_T(w)=\frac{1}{T}F(w)$ no intervalo $[-w_c,w_c]$ e, portanto, toda a informação de $f(t)$ é preservada. De fato, neste caso, podemos escrever:
+ \begin{eqnarray*}
+ f(t)&=&\frac{1}{2\pi}\int_{-\infty}^\infty F(w)e^{iwt}dw\\
+ &=&\frac{1}{2\pi}\int_{-w_c}^{w_c} F(w)e^{iwt}dw\\
+ &=&\frac{1}{2\pi}\int_{-w_c}^{w_c} TF_T(w)e^{iwt}dw
+ \end{eqnarray*}
+% Como $F_T(w)$ pode ser calculada apenas com base nos pontos de amostragem, $f(t)$ pode ser reconstruída. Se $w_a<2w_c$, então existe superposição espectral, o que impede a reconstrução da $f(t)$. Este resultado é conhecido como teorema da amostragem de Nyquist-Shannon ou teorema cardinal da interpolação.
+% \end{obs}
+% \begin{teo} Suponha que $f(t)$ é uma função real cujo espectro é limitado pela frequência $w_c$, isto é, $F(w)=0$ se $|w|>w_c$, e $T<\frac{\pi}{w_c}$, então
+% \begin{equation}
+% f(t)=\sum_{n=-\infty}^\infty f(nT) \frac{2\sen\left(\frac{w_a}{2}(t-nT)\right)}{w_a(t-nT)}
+% \end{equation}
+% \end{teo}
+% \begin{proof} Seja $F_T(w)$ a transformada de Fourier do sinal amostrado, conforme vimos, vale a expressão:
+% \begin{equation}
+% TF_T(w)=\sum_{n=-\infty}^\infty F(w-w_n).
+% \end{equation}
+% Observe que $TF_T(w)$ é uma função periódica de período $w_a$ (veja figura \ref{sinal_discreto1}), de forma que $TF_T(w)$ admite uma representação em série de Fourier:
+% \begin{equation}
+% TF_T(w)=\sum_{-\infty}^\infty D_n e^{iv_n w}=\sum_{-\infty}^\infty D_n e^{in Tw},
+% \end{equation}
+% onde usamos que $v_n=\frac{2\pi n}{w_a}=Tn$ e 
+% \begin{eqnarray*}
+% D_n&=&\frac{1}{w_a}\int_{-w_a/2}^{w_a/2}TF_T(w)e^{-in Tw}dw\\
+% &=&\frac{1}{w_a}\int_{-w_a/2}^{w_a/2}F(w)e^{-in Tw}dw\\
+% &=&\frac{1}{w_a}\int_{-\infty}^{\infty}F(w)e^{-in T w}dw,\quad \hbox{pois}\ F(w)=0\ \hbox{se}\ |w|>\frac{w_a}{2}>w_c\\
+% &=&\frac{2\pi}{w_a}f(-nT)=Tf(-nT),\quad \hbox{usando a transformada inversa}.
+% \end{eqnarray*}
+% Logo,
+% \begin{equation}
+% TF_T(w)=T\sum_{n=-\infty}^\infty f(-nT) e^{in Tw}.
+% \end{equation}
+% Usando a transformada inversa, temos:
+% \begin{eqnarray*}
+% f(t)&=&\frac{1}{2\pi}\int_{-w_a/2}^{w_a/2}TF_T(w) e^{i w t}dw\\
+% &=&\frac{1}{2\pi}\int_{-w_a/2}^{w_a/2}T\sum_{n=-\infty}^\infty f(-nT) e^{in Tw} e^{i w t}dw\\
+% &=&\frac{T}{2\pi}\int_{-w_a/2}^{w_a/2}\sum_{n=-\infty}^\infty f(-nT) e^{iw(t+nT)} dw\\
+% &=&\frac{1}{w_a}\sum_{n=-\infty}^\infty f(-nT)\int_{-w_a/2}^{w_a/2}  e^{iw(t+nT)} dw\\
+% &=&\frac{1}{w_a}\sum_{n=-\infty}^\infty f(-nT)\int_{-w_a/2}^{w_a/2}  \cos(w(t+nT)) dw,\quad \hbox{pois o seno é ímpar}\\
+% &=&\frac{1}{w_a}\sum_{n=-\infty}^\infty f(-nT)\left[  \frac{\sen(w(t+nT))}{t+nT} \right]_{-w_a/2}^{w_a/2}\\
+% &=&\sum_{n=-\infty}^\infty f(-nT) \frac{2\sen\left(\frac{w_a}{2}(t+nT)\right)}{w_a(t+nT)} 
+% \end{eqnarray*}
+% Substituindo $n$ por $-n$ obtemos a expressão:
+% \begin{equation}
+% f(t)=\sum_{n=-\infty}^\infty f(nT) \frac{2\sen\left(\frac{w_a}{2}(t-nT)\right)}{w_a(t-nT)}.
+% \end{equation}
+% \end{proof}
+% 
+% 
+% 
+
  \end{document}
