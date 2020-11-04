@@ -1,0 +1,990 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.7)  4 NOV 2020 13:05
+entering extended mode
+**./notas_fourier.tex
+(notas_fourier.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-18>
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/base\bk10.clo
+File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+) (C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen137
+))
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen138
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count176
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count177
+\leftroot@=\count178
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count179
+\DOTSCASE@=\count180
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen139
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count181
+\c@MaxMatrixCols=\count182
+\dotsspace@=\muskip16
+\c@parentequation=\count183
+\dspbrk@lvl=\count184
+\tag@help=\toks19
+\row@=\count185
+\column@=\count186
+\maxfields@=\count187
+\andhelp@=\toks20
+\eqnshift@=\dimen140
+\alignsep@=\dimen141
+\tagshift@=\dimen142
+\tagwidth@=\dimen143
+\totwidth@=\dimen144
+\lineht@=\dimen145
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count188
+\Gm@cntv=\count189
+\c@Gm@tempcnt=\count190
+\Gm@bindingoffset=\dimen146
+\Gm@wd@mp=\dimen147
+\Gm@odd@mp=\dimen148
+\Gm@even@mp=\dimen149
+\Gm@layoutwidth=\dimen150
+\Gm@layoutheight=\dimen151
+\Gm@layouthoffset=\dimen152
+\Gm@layoutvoffset=\dimen153
+\Gm@dimlist=\toks23
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+mode.def
+File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count191
+\l__pdf_internal_box=\box47
+) (notas_fourier.aux)
+\openout1 = `notas_fourier.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count192
+\scratchdimen=\dimen154
+\scratchbox=\box48
+\nofMPsegments=\count193
+\nofMParguments=\count194
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count195
+\MPscratchDim=\dimen155
+\MPnumerator=\count196
+\makeMPintoPDFobject=\count197
+\everyMPtoPDFconversion=\toks25
+)
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=540.60239pt
+* \textheight=591.5302pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-0.93083pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=115.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Chapter 1.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+
+
+(C:\Users\fazed\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[1
+
+
+{C:/Users/fazed/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Reference `coef' on page 2 undefined on input line 92.
+
+[2] [3]
+Package epstopdf Info: Source file: <figs/cap_series_figura_1.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 195107 bytes
+(epstopdf)             Output file: <figs/cap_series_figura_1-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 11693 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_series_figura_1-ep
+s-converted-to.pdf figs/cap_series_figura_1.eps>
+(epstopdf)             \includegraphics on input line 154.
+Package epstopdf Info: Output file is already uptodate.
+<figs/cap_series_figura_1-eps-converted-to.pdf, id=24, 302.12875pt x 90.3375pt>
+
+File: figs/cap_series_figura_1-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/cap_series_figura_1-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_series_figura_1-eps-converted-to.pdf  used on
+ input line 154.
+(pdftex.def)             Requested size: 302.128pt x 90.33727pt.
+
+
+LaTeX Warning: Reference `coef' on page 4 undefined on input line 155.
+
+[4 <./figs/cap_series_figura_1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/cap_series_figura_2.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 191932 bytes
+(epstopdf)             Output file: <figs/cap_series_figura_2-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 62600 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_series_figura_2-ep
+s-converted-to.pdf figs/cap_series_figura_2.eps>
+(epstopdf)             \includegraphics on input line 183.
+Package epstopdf Info: Output file is already uptodate.
+<figs/cap_series_figura_2-eps-converted-to.pdf, id=42, 302.12875pt x 79.29625pt
+>
+File: figs/cap_series_figura_2-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/cap_series_figura_2-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_series_figura_2-eps-converted-to.pdf  used on
+ input line 183.
+(pdftex.def)             Requested size: 302.128pt x 79.29604pt.
+
+
+LaTeX Warning: Reference `teo_Dirichlet' on page 5 undefined on input line 196.
+
+
+Package epstopdf Info: Source file: <figs/cap_series_figura_3.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 199626 bytes
+(epstopdf)             Output file: <figs/cap_series_figura_3-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 11207 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_series_figura_3-ep
+s-converted-to.pdf figs/cap_series_figura_3.eps>
+(epstopdf)             \includegraphics on input line 199.
+Package epstopdf Info: Output file is already uptodate.
+<figs/cap_series_figura_3-eps-converted-to.pdf, id=43, 302.12875pt x 143.53625p
+t>
+File: figs/cap_series_figura_3-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/cap_series_figura_3-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_series_figura_3-eps-converted-to.pdf  used on
+ input line 199.
+(pdftex.def)             Requested size: 302.128pt x 143.53589pt.
+
+LaTeX Warning: Reference `coef' on page 5 undefined on input line 201.
+
+[5 <./figs/cap_series_figura_2-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figs/cap_series_figura_4.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 192808 bytes
+(epstopdf)             Output file: <figs/cap_series_figura_4-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-10-21 12:57:45
+(epstopdf)                    size: 90264 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_series_figura_4-ep
+s-converted-to.pdf figs/cap_series_figura_4.eps>
+(epstopdf)             \includegraphics on input line 220.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_series_figura_4-eps-converted-to.
+pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+<figs/cap_series_figura_4-eps-converted-to.pdf, id=55, 302.12875pt x 146.5475pt
+>
+File: figs/cap_series_figura_4-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/cap_series_figura_4-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_series_figura_4-eps-converted-to.pdf  used on
+ input line 220.
+(pdftex.def)             Requested size: 302.128pt x 146.54712pt.
+
+Underfull \hbox (badness 1184) in paragraph at lines 221--221
+[]\OT1/cmr/m/n/10 Figure 1.2: []Graficos de $\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [] [] (\OML/cmm/m/it/10 t\OT1/cmr/m/
+n/10 )$ (azul), $\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cm
+r/m/n/10 ) = [] []$ (verde), $\OML/cmm/m/it/10 g[]\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 t\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t
+\OT1/cmr/m/n/10 ) =
+ []
+
+[6 <./figs/cap_series_figura_3-eps-converted-to.pdf> <./figs/cap_series_figura_
+4-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `teo_Dirichlet' on page 7 undefined on input line 230.
+
+
+Package epstopdf Info: Source file: <figs/cap_series_figura_5.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 199864 bytes
+(epstopdf)             Output file: <figs/cap_series_figura_5-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2020-10-21 12:57:46
+(epstopdf)                    size: 12390 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_series_figura_5-ep
+s-converted-to.pdf figs/cap_series_figura_5.eps>
+(epstopdf)             \includegraphics on input line 233.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_series_figura_5-eps-converted-to.
+pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+
+<figs/cap_series_figura_5-eps-converted-to.pdf, id=75, 302.12875pt x 90.3375pt>
+
+File: figs/cap_series_figura_5-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/cap_series_figura_5-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_series_figura_5-eps-converted-to.pdf  used on
+ input line 233.
+(pdftex.def)             Requested size: 302.128pt x 90.33727pt.
+
+LaTeX Warning: Reference `coef' on page 7 undefined on input line 235.
+
+[7 <./figs/cap_series_figura_5-eps-converted-to.pdf>] [8
+
+]
+Chapter 2.
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_figura_2.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 211745 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_figura_2-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2020-10-21 12:57:47
+(epstopdf)                    size: 7670 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_figura_2-eps-converted-to.pdf figs/cap_diagramas_espectro_figura_2.eps>
+(epstopdf)             \includegraphics on input line 287.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_figura_2-eps-c
+onverted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+<figs/cap_diagramas_espectro_figura_2-eps-converted-to.pdf, id=91, 205.76875pt 
+x 89.33376pt>
+File: figs/cap_diagramas_espectro_figura_2-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use figs/cap_diagramas_espectro_figura_2-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_figura_2-eps-converted-to.
+pdf  used on input line 287.
+(pdftex.def)             Requested size: 205.76823pt x 89.33353pt.
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_figura_3.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 224710 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_figura_3-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2020-10-21 12:57:48
+(epstopdf)                    size: 9179 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_figura_3-eps-converted-to.pdf figs/cap_diagramas_espectro_figura_3.eps>
+(epstopdf)             \includegraphics on input line 288.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_figura_3-eps-c
+onverted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+<figs/cap_diagramas_espectro_figura_3-eps-converted-to.pdf, id=92, 205.76875pt 
+x 142.5325pt>
+File: figs/cap_diagramas_espectro_figura_3-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use figs/cap_diagramas_espectro_figura_3-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_figura_3-eps-converted-to.
+pdf  used on input line 288.
+(pdftex.def)             Requested size: 205.76823pt x 142.53214pt.
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_figura_4.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 230584 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_figura_4-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2020-10-21 12:57:49
+(epstopdf)                    size: 9666 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_figura_4-eps-converted-to.pdf figs/cap_diagramas_espectro_figura_4.eps>
+(epstopdf)             \includegraphics on input line 298.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_figura_4-eps-c
+onverted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+<figs/cap_diagramas_espectro_figura_4-eps-converted-to.pdf, id=93, 324.21124pt 
+x 114.4275pt>
+File: figs/cap_diagramas_espectro_figura_4-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use figs/cap_diagramas_espectro_figura_4-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_figura_4-eps-converted-to.
+pdf  used on input line 298.
+(pdftex.def)             Requested size: 324.21045pt x 114.42722pt.
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_figura_5.eps>
+(epstopdf)                    date: 2020-10-19 12:53:26
+(epstopdf)                    size: 230973 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_figura_5-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2020-10-21 12:57:50
+(epstopdf)                    size: 9494 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_figura_5-eps-converted-to.pdf figs/cap_diagramas_espectro_figura_5.eps>
+(epstopdf)             \includegraphics on input line 299.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_figura_5-eps-c
+onverted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <
+1.5> allowed
+<figs/cap_diagramas_espectro_figura_5-eps-converted-to.pdf, id=94, 324.21124pt 
+x 153.57375pt>
+File: figs/cap_diagramas_espectro_figura_5-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use figs/cap_diagramas_espectro_figura_5-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_figura_5-eps-converted-to.
+pdf  used on input line 299.
+(pdftex.def)             Requested size: 324.21045pt x 153.57336pt.
+
+Overfull \hbox (110.04073pt too wide) in paragraph at lines 298--300
+[][] [] 
+ []
+
+[9] [10 <./figs/cap_diagramas_espectro_figura_2-eps-converted-to.pdf> <./figs/c
+ap_diagramas_espectro_figura_3-eps-converted-to.pdf> <./figs/cap_diagramas_espe
+ctro_figura_4-eps-converted-to.pdf> <./figs/cap_diagramas_espectro_figura_5-eps
+-converted-to.pdf>]
+
+LaTeX Warning: Reference `ex_quadrada' on page 11 undefined on input line 388.
+
+[11]
+Package epstopdf Info: Source file: <figs/cap_propriedades_series_figura_1.eps>
+
+(epstopdf)                    date: 2020-10-21 12:57:17
+(epstopdf)                    size: 199626 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_series_figura_1-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2020-10-21 12:57:51
+(epstopdf)                    size: 11009 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_serie
+s_figura_1-eps-converted-to.pdf figs/cap_propriedades_series_figura_1.eps>
+(epstopdf)             \includegraphics on input line 397.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_series_figura_1-eps-
+converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version 
+<1.5> allowed
+<figs/cap_propriedades_series_figura_1-eps-converted-to.pdf, id=155, 302.12875p
+t x 143.53625pt>
+File: figs/cap_propriedades_series_figura_1-eps-converted-to.pdf Graphic file (
+type pdf)
+<use figs/cap_propriedades_series_figura_1-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_series_figura_1-eps-converted-to
+.pdf  used on input line 397.
+(pdftex.def)             Requested size: 302.128pt x 143.53589pt.
+
+LaTeX Warning: Reference `ex_quadrada' on page 12 undefined on input line 399.
+
+[12 <./figs/cap_propriedades_series_figura_1-eps-converted-to.pdf>]
+Chapter 3.
+Package epstopdf Info: Source file: <figs/cap_transformada_de_fourier_figura_7.
+eps>
+(epstopdf)                    date: 2020-10-23 08:53:55
+(epstopdf)                    size: 192840 bytes
+(epstopdf)             Output file: <figs/cap_transformada_de_fourier_figura_7-
+eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-23 12:55:51
+(epstopdf)                    size: 8937 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_transformada_de_fo
+urier_figura_7-eps-converted-to.pdf figs/cap_transformada_de_fourier_figura_7.e
+ps>
+(epstopdf)             \includegraphics on input line 448.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_transformada_de_fourier_figura_7-
+eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most vers
+ion <1.5> allowed
+<figs/cap_transformada_de_fourier_figura_7-eps-converted-to.pdf, id=167, 376.40
+625pt x 90.3375pt>
+File: figs/cap_transformada_de_fourier_figura_7-eps-converted-to.pdf Graphic fi
+le (type pdf)
+<use figs/cap_transformada_de_fourier_figura_7-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_transformada_de_fourier_figura_7-eps-converte
+d-to.pdf  used on input line 448.
+(pdftex.def)             Requested size: 376.40532pt x 90.33727pt.
+[13
+
+ <./figs/cap_transformada_de_fourier_figura_7-eps-converted-to.pdf>]
+[14]
+Chapter 4.
+
+LaTeX Warning: Reference `trans_Fourier' on page 15 undefined on input line 475
+.
+
+[15
+
+]
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_transformada_f
+igura_1.eps>
+(epstopdf)                    date: 2020-10-23 12:54:51
+(epstopdf)                    size: 189442 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_transformada_f
+igura_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-23 12:55:52
+(epstopdf)                    size: 10844 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_transformada_figura_1-eps-converted-to.pdf figs/cap_diagramas_espectro_transfo
+rmada_figura_1.eps>
+(epstopdf)             \includegraphics on input line 539.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_transformada_f
+igura_1-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at m
+ost version <1.5> allowed
+<figs/cap_diagramas_espectro_transformada_figura_1-eps-converted-to.pdf, id=186
+, 294.09875pt x 81.30376pt>
+File: figs/cap_diagramas_espectro_transformada_figura_1-eps-converted-to.pdf Gr
+aphic file (type pdf)
+<use figs/cap_diagramas_espectro_transformada_figura_1-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_transformada_figura_1-eps-
+converted-to.pdf  used on input line 539.
+(pdftex.def)             Requested size: 294.09802pt x 81.30354pt.
+[16]
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_transformada_f
+igura_2.eps>
+(epstopdf)                    date: 2020-10-23 12:54:51
+(epstopdf)                    size: 189456 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_transformada_f
+igura_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-23 12:55:53
+(epstopdf)                    size: 10670 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_transformada_figura_2-eps-converted-to.pdf figs/cap_diagramas_espectro_transfo
+rmada_figura_2.eps>
+(epstopdf)             \includegraphics on input line 558.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_transformada_f
+igura_2-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at m
+ost version <1.5> allowed
+<figs/cap_diagramas_espectro_transformada_figura_2-eps-converted-to.pdf, id=190
+, 294.09875pt x 50.1875pt>
+File: figs/cap_diagramas_espectro_transformada_figura_2-eps-converted-to.pdf Gr
+aphic file (type pdf)
+<use figs/cap_diagramas_espectro_transformada_figura_2-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_transformada_figura_2-eps-
+converted-to.pdf  used on input line 558.
+(pdftex.def)             Requested size: 294.09802pt x 50.18736pt.
+Package epstopdf Info: Source file: <figs/cap_diagramas_espectro_transformada_f
+igura_3.eps>
+(epstopdf)                    date: 2020-10-23 12:54:51
+(epstopdf)                    size: 224609 bytes
+(epstopdf)             Output file: <figs/cap_diagramas_espectro_transformada_f
+igura_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-23 12:55:55
+(epstopdf)                    size: 9592 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_diagramas_espectro
+_transformada_figura_3-eps-converted-to.pdf figs/cap_diagramas_espectro_transfo
+rmada_figura_3.eps>
+(epstopdf)             \includegraphics on input line 559.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_diagramas_espectro_transformada_f
+igura_3-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at m
+ost version <1.5> allowed
+<figs/cap_diagramas_espectro_transformada_figura_3-eps-converted-to.pdf, id=191
+, 299.1175pt x 122.4575pt>
+File: figs/cap_diagramas_espectro_transformada_figura_3-eps-converted-to.pdf Gr
+aphic file (type pdf)
+<use figs/cap_diagramas_espectro_transformada_figura_3-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_diagramas_espectro_transformada_figura_3-eps-
+converted-to.pdf  used on input line 559.
+(pdftex.def)             Requested size: 299.11676pt x 122.45718pt.
+[17 <./figs/cap_diagramas_espectro_transformada_figura_1-eps-converted-to.pdf> 
+<./figs/cap_diagramas_espectro_transformada_figura_2-eps-converted-to.pdf> <./f
+igs/cap_diagramas_espectro_transformada_figura_3-eps-converted-to.pdf>]
+[18
+
+]
+Chapter 5.
+[19]
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+2.eps>
+(epstopdf)                    date: 2020-10-23 12:54:51
+(epstopdf)                    size: 189780 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+2-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-23 12:55:56
+(epstopdf)                    size: 10835 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_2-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_2.eps>
+(epstopdf)             \includegraphics on input line 632.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+2-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_2-eps-converted-to.pdf, id=230, 294.
+09875pt x 61.22874pt>
+File: figs/cap_propriedades_transformada_figura_2-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_2-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_2-eps-conver
+ted-to.pdf  used on input line 632.
+(pdftex.def)             Requested size: 294.09802pt x 61.22858pt.
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+3.eps>
+(epstopdf)                    date: 2020-10-23 12:54:51
+(epstopdf)                    size: 198028 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+3-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-23 12:55:57
+(epstopdf)                    size: 20419 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_3-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_3.eps>
+(epstopdf)             \includegraphics on input line 633.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+3-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_3-eps-converted-to.pdf, id=231, 361.
+35pt x 210.7875pt>
+File: figs/cap_propriedades_transformada_figura_3-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_3-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_3-eps-conver
+ted-to.pdf  used on input line 633.
+(pdftex.def)             Requested size: 361.34912pt x 210.78699pt.
+[20]
+Underfull \vbox (badness 1264) has occurred while \output is active []
+
+ [21 <./figs/cap_propriedades_transformada_figura_2-eps-converted-to.pdf> <./fi
+gs/cap_propriedades_transformada_figura_3-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `prop_der' on page 22 undefined on input line 684.
+
+[22] [23] [24
+
+]
+Chapter 6.
+[25] [26] [27] [28] [29]
+
+LaTeX Warning: Reference `tab_int_def' on page 30 undefined on input line 925.
+
+
+LaTeX Warning: Reference `tab_int_def' on page 30 undefined on input line 925.
+
+[30]
+Chapter 7.
+[31
+
+]
+
+LaTeX Warning: Reference `ex_ant' on page 32 undefined on input line 976.
+
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+4.eps>
+(epstopdf)                    date: 2020-10-23 12:54:51
+(epstopdf)                    size: 206962 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+4-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-10-28 13:10:36
+(epstopdf)                    size: 12427 bytes
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_4-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_4.eps>
+(epstopdf)             \includegraphics on input line 985.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+4-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_4-eps-converted-to.pdf, id=287, 143.
+53625pt x 81.30376pt>
+File: figs/cap_propriedades_transformada_figura_4-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_4-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_4-eps-conver
+ted-to.pdf  used on input line 985.
+(pdftex.def)             Requested size: 143.53589pt x 81.30354pt.
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+5.eps>
+(epstopdf)                    date: 2020-10-28 13:12:09
+(epstopdf)                    size: 208701 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+5-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_5-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_5.eps>
+(epstopdf)             \includegraphics on input line 986.
+runsystem(epstopdf --outfile=figs/cap_propriedades_transformada_figura_5-eps-co
+nverted-to.pdf figs/cap_propriedades_transformada_figura_5.eps)...executed (all
+owed).
+
+Package epstopdf Info: Result file: <figs/cap_propriedades_transformada_figura_
+5-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-11-04 13:05:34
+(epstopdf)                    size: 13127 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+5-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_5-eps-converted-to.pdf, id=288, 143.
+53625pt x 109.40875pt>
+File: figs/cap_propriedades_transformada_figura_5-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_5-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_5-eps-conver
+ted-to.pdf  used on input line 986.
+(pdftex.def)             Requested size: 143.53589pt x 109.40846pt.
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+6.eps>
+(epstopdf)                    date: 2020-10-28 13:12:09
+(epstopdf)                    size: 209066 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+6-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_6-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_6.eps>
+(epstopdf)             \includegraphics on input line 987.
+runsystem(epstopdf --outfile=figs/cap_propriedades_transformada_figura_6-eps-co
+nverted-to.pdf figs/cap_propriedades_transformada_figura_6.eps)...executed (all
+owed).
+
+Package epstopdf Info: Result file: <figs/cap_propriedades_transformada_figura_
+6-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-11-04 13:05:36
+(epstopdf)                    size: 13266 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+6-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_6-eps-converted-to.pdf, id=289, 143.
+53625pt x 146.5475pt>
+File: figs/cap_propriedades_transformada_figura_6-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_6-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_6-eps-conver
+ted-to.pdf  used on input line 987.
+(pdftex.def)             Requested size: 143.53589pt x 146.54712pt.
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+7.eps>
+(epstopdf)                    date: 2020-10-28 13:12:09
+(epstopdf)                    size: 195018 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+7-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_7-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_7.eps>
+(epstopdf)             \includegraphics on input line 988.
+runsystem(epstopdf --outfile=figs/cap_propriedades_transformada_figura_7-eps-co
+nverted-to.pdf figs/cap_propriedades_transformada_figura_7.eps)...executed (all
+owed).
+
+Package epstopdf Info: Result file: <figs/cap_propriedades_transformada_figura_
+7-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-11-04 13:05:37
+(epstopdf)                    size: 6873 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+7-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_7-eps-converted-to.pdf, id=290, 123.
+46124pt x 109.40875pt>
+File: figs/cap_propriedades_transformada_figura_7-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_7-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_7-eps-conver
+ted-to.pdf  used on input line 988.
+(pdftex.def)             Requested size: 123.46092pt x 109.40846pt.
+[32 <./figs/cap_propriedades_transformada_figura_4-eps-converted-to.pdf> <./fig
+s/cap_propriedades_transformada_figura_5-eps-converted-to.pdf> <./figs/cap_prop
+riedades_transformada_figura_6-eps-converted-to.pdf> <./figs/cap_propriedades_t
+ransformada_figura_7-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `sinal_discreto' on page 33 undefined on input line 10
+01.
+
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+8.eps>
+(epstopdf)                    date: 2020-10-28 13:12:09
+(epstopdf)                    size: 229506 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+8-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_8-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_8.eps>
+(epstopdf)             \includegraphics on input line 1004.
+runsystem(epstopdf --outfile=figs/cap_propriedades_transformada_figura_8-eps-co
+nverted-to.pdf figs/cap_propriedades_transformada_figura_8.eps)...executed (all
+owed).
+
+Package epstopdf Info: Result file: <figs/cap_propriedades_transformada_figura_
+8-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-11-04 13:05:38
+(epstopdf)                    size: 13369 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+8-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_8-eps-converted-to.pdf, id=332, 316.
+18124pt x 201.75375pt>
+File: figs/cap_propriedades_transformada_figura_8-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_8-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_8-eps-conver
+ted-to.pdf  used on input line 1004.
+(pdftex.def)             Requested size: 316.18047pt x 201.75325pt.
+[33 <./figs/cap_propriedades_transformada_figura_8-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `prop_desl_w' on page 34 undefined on input line 1032.
+
+
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+9.eps>
+(epstopdf)                    date: 2020-10-28 13:12:09
+(epstopdf)                    size: 205019 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+9-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_9-eps-converted-to.pdf figs/cap_propriedades_transformada_figura
+_9.eps>
+(epstopdf)             \includegraphics on input line 1035.
+runsystem(epstopdf --outfile=figs/cap_propriedades_transformada_figura_9-eps-co
+nverted-to.pdf figs/cap_propriedades_transformada_figura_9.eps)...executed (all
+owed).
+
+Package epstopdf Info: Result file: <figs/cap_propriedades_transformada_figura_
+9-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-11-04 13:05:40
+(epstopdf)                    size: 15363 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+9-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most ve
+rsion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_9-eps-converted-to.pdf, id=346, 91.3
+4125pt x 85.31876pt>
+File: figs/cap_propriedades_transformada_figura_9-eps-converted-to.pdf Graphic 
+file (type pdf)
+<use figs/cap_propriedades_transformada_figura_9-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_9-eps-conver
+ted-to.pdf  used on input line 1035.
+(pdftex.def)             Requested size: 91.34102pt x 85.31853pt.
+Package epstopdf Info: Source file: <figs/cap_propriedades_transformada_figura_
+10.eps>
+(epstopdf)                    date: 2020-10-28 13:12:09
+(epstopdf)                    size: 226962 bytes
+(epstopdf)             Output file: <figs/cap_propriedades_transformada_figura_
+10-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figs/cap_propriedades_trans
+formada_figura_10-eps-converted-to.pdf figs/cap_propriedades_transformada_figur
+a_10.eps>
+(epstopdf)             \includegraphics on input line 1037.
+runsystem(epstopdf --outfile=figs/cap_propriedades_transformada_figura_10-eps-c
+onverted-to.pdf figs/cap_propriedades_transformada_figura_10.eps)...executed (a
+llowed).
+
+Package epstopdf Info: Result file: <figs/cap_propriedades_transformada_figura_
+10-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-11-04 13:05:41
+(epstopdf)                    size: 44820 bytes.
+
+
+pdfTeX warning: pdflatex.exe (file ./figs/cap_propriedades_transformada_figura_
+10-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most v
+ersion <1.5> allowed
+<figs/cap_propriedades_transformada_figura_10-eps-converted-to.pdf, id=347, 313
+.17pt x 70.2625pt>
+File: figs/cap_propriedades_transformada_figura_10-eps-converted-to.pdf Graphic
+ file (type pdf)
+<use figs/cap_propriedades_transformada_figura_10-eps-converted-to.pdf>
+Package pdftex.def Info: figs/cap_propriedades_transformada_figura_10-eps-conve
+rted-to.pdf  used on input line 1037.
+(pdftex.def)             Requested size: 313.16922pt x 70.26231pt.
+[34 <./figs/cap_propriedades_transformada_figura_9-eps-converted-to.pdf> <./fig
+s/cap_propriedades_transformada_figura_10-eps-converted-to.pdf>]
+(notas_fourier.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3017 strings out of 480790
+ 57655 string characters out of 2897301
+ 289236 words of memory out of 3000000
+ 18983 multiletter control sequences out of 15000+200000
+ 538068 words of font info for 46 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,12n,27p,1037b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/fazed/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/fazed/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/fazed/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/fazed/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/User
+s/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><
+C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+7.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsl10.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy5.pfb><C:/Users/fazed/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/fazed/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on notas_fourier.pdf (34 pages, 704269 bytes).
+PDF statistics:
+ 415 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+
